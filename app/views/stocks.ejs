@@ -7,17 +7,22 @@
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <link rel="stylesheet" href="/css/style.css"/>
-        
+        <script src="http://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+
         <title></title>
     </head>
     
     <body>
         <br>
         
-        <b>Stock Symbol: </b><input type="text" id="stockSymbol">
-        <button id="stockPriceUpdate">Update</button>
+        
+        <form action="/stocks" method="POST">
+            <b>Stock Symbol: </b><input id="stockSymbol" type="text" name="stock_symbol">
+            <input type="submit" />
+        </form>
+        <!-- <button  >Update</button> -->
         <h2>Price</h2>
-        <p id="price"></p>
+        <p id="price" name="price></p>
         <p id="currentDate"></p>
         
         <h1>Sector Prices</h1>
@@ -42,7 +47,6 @@
         
     </body>
     
-    <script src="http://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
     <script src="scripts/main.js"></script>
     <script type="text/javascript"></script>
 </html>
