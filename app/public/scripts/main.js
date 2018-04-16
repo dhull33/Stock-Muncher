@@ -5,7 +5,7 @@ function update_stock_price() {
         var symbol = document.getElementById("stockSymbol").value.toUpperCase();
         var url2 = "&interval=15min&apikey="
         var apiKey = "3SW8F3VSYVSP0VAZ";
-        
+        // Retreives individual stock prices
         $.get(url + symbol + url2 + apiKey).done(function(response) {
             console.log("Success");
             alert("Success")
@@ -43,7 +43,7 @@ function update_sector_price() {
         console.log("Submitted")
         var url = "https://www.alphavantage.co/query?function=SECTOR&apikey="
         var apiKey = "3SW8F3VSYVSP0VAZ";
-        
+        // retrieves sector prices
         $.get(url + apiKey).done(function(response) {
             console.log("Success");
             alert("Success")
