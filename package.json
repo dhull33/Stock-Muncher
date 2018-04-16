@@ -10,6 +10,7 @@
   "license": "ISC",
   "dependencies": {
     "bluebird": "^3.5.1",
+    "chart.js": "^2.7.2",
     "echarts-gl": "^1.1.0",
     "ejs": "^2.5.8",
     "express": "^4.16.3",
