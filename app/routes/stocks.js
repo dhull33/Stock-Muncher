@@ -38,7 +38,6 @@ router.post('/stocks',function(req,res){
           console.log(symbol);
           
           fetch(url + symbol + url2 + apiKey)
-            //.then(res => res.json())
             .then(res => {
               var response = res.json();
               console.log(response["Time Series (15min)"]["2018-04-16 14:30:00"])
