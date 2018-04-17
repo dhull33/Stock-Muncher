@@ -63,12 +63,12 @@ function update_sector_price() {
 //            console.log(sectorPerformance[sectors[1]]);
 //            console.log(sectors[1])
             
-            for (i = 0; i < sectors.length; i++) {
+            for (let i = 0; i < sectors.length; i++) {
                 var row = table.insertRow(i + 1);
                 var rowHeading = row.insertCell(0);
                 rowHeading.innerHTML = sectors[i];
                 console.log(sectors[i]);
-                for (j = 0; j < sectorResponse.length; j++) {
+                for (let j = 0; j < sectorResponse.length; j++) {
                     var cell = row.insertCell(j + 1);
                     cell.innerHTML = response[sectorResponse[j]][sectors[i]];
                     console.log(response[sectorResponse[j]][sectors[i]]);
@@ -85,12 +85,12 @@ function update_sector_price() {
 
 }
 
-$( "#stockPriceUpdate" ).click(function(event) {
+document.getElementById( "stockPriceUpdate" ).click(function(event) {
     update_stock_price();
     
 });
 
-$( "#sectorPriceUpdate" ).click(function(event) {
+document.getElementById( "sectorPriceUpdate" ).click(function(event) {
     update_sector_price()
     
 });
