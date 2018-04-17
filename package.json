@@ -17,9 +17,9 @@
     "node-fetch": "^2.1.2",
     "pg": "^7.4.1",
     "pg-hstore": "^2.3.2",
-    "pg-promise": "^8.2.3",
+    "pg-promise": "^8.3.0",
     "request": "^2.85.0",
-    "sequelize": "^4.37.5"
+    "sequelize": "^4.37.6"
   },
   "devDependencies": {},
   "repository": {
