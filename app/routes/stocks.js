@@ -19,7 +19,7 @@ router.get('/stocks',function(req,res){
       // res.render(page to render, object to pass to the page)
       res.render('stocks',{'stocks' : data});
     })
-  })
+  });
 
 router.post('/stocks',function(req,res){
     function update_stock_price() {
@@ -49,14 +49,14 @@ router.post('/stocks',function(req,res){
             console.log(stockPrice)
         // currentPrice = 4;
       
-        db.none('INSERT INTO stock_purchase(stock_symbol, purchase_price_each) values($1, $2)',[symbol, stockPrice]).then(function(){
+        /*db.none('INSERT INTO stock_purchase(stock_symbol, purchase_price_each) values($1, $2)',[symbol, stockPrice]).then(function(){
       
           db.any('SELECT * FROM stocks').then(function(data){
             // res.render(page to render, object to pass to the page)
             res.render('stocks', {'stocks' : data});
           })
             
-        })
+        })*/
       })();
 
     }
