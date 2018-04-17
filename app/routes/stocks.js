@@ -15,9 +15,11 @@ var options = {
 
 router.get('/stocks',function(req,res){
 
-    db.any('SELECT * FROM stocks').then(function(data){
+    db.any('SELECT * FROM beatthemarket').then(function(data){
       // res.render(page to render, object to pass to the page)
-      res.render('stocks',{'stocks' : data});
+      res.render('stocks',{
+          'stocks' : data
+      });
     })
   });
 

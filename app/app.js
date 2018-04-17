@@ -7,7 +7,7 @@ var bodyParser = require('body-parser');
 var pgp = require('pg-promise')(options);
 var connectionString = 'postgres://localhost:5432/beatthemarket';
 var db = pgp(connectionString);
-var Sequalize = require('sequalize');   // used to be able to make changes to tables through code
+var  Sequelize= require('sequelize');   // used to be able to make changes to tables through code
 var sequelize = new Sequelize('postgres://localhost:5432/beatthemarket');
 
 var options = {
