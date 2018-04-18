@@ -1,13 +1,18 @@
+
+
 function update_stock_price() {
     (function() {
         console.log("Submitted")
         var url = "https://www.alphavantage.co/query?function=TIME_SERIES_INTRADAY&symbol="
         var symbol = document.getElementById("stockSymbol").value.toUpperCase() + ":"; // Added : to end in case autocomplete is not used and only stock symbol is used
         symbol = symbol.substr(0, symbol.indexOf(":")); // Keeps symbol only
-
         console.log(symbol);
+
+        //specifies time interval
         var url2 = "&interval=15min&apikey="
         var apiKey = "3SW8F3VSYVSP0VAZ";
+
+
         // Retreives individual stock prices
         $.get(url + symbol + url2 + apiKey).done(function(response) {
             console.log("Success");
@@ -21,7 +26,7 @@ function update_stock_price() {
         // handle success
         function updateUISuccess(response) {
             console.log(response);
-            var timeSeries15 = response["Time Series (1min)"];
+            var timeSeries15 = response["Time Series (15min)"];
             var currentDateData = Object.keys(timeSeries15)[0];
             var timeZone = response["Meta Data"]["6. Time Zone"];
             console.log(timeSeries15[currentDateData]);
@@ -41,6 +46,7 @@ function update_stock_price() {
 
 }
 
+//Updates Sector Perormance
 function update_sector_price() {
     (function() {
         console.log("Submitted")
@@ -52,7 +58,7 @@ function update_sector_price() {
             updateUISuccess(response);
         }).fail(function(error) {
             console.log("Failed");
-            alert("Failed");
+            window.alert("Failed");
             updateUIError();
         })
         var sectorResponse = ["Rank A: Real-Time Performance", "Rank B: 1 Day Performance", "Rank C: 5 Day Performance", "Rank D: 1 Month Performance", "Rank E: 3 Month Performance", "Rank F: Year-to-Date (YTD) Performance", "Rank G: 1 Year Performance", "Rank H: 3 Year Performance", "Rank I: 5 Year Performance", "Rank J: 10 Year Performance"];
