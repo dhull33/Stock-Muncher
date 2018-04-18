@@ -2,13 +2,15 @@ function update_stock_price() {
     (function() {
         console.log("Submitted")
         var url = "https://www.alphavantage.co/query?function=TIME_SERIES_INTRADAY&symbol="
-        var symbol = document.getElementById("stockSymbol").value.toUpperCase();
+        var symbol = document.getElementById("stockSymbol").value.toUpperCase() + ":"; // Added : to end in case autocomplete is not used and only stock symbol is used
+        symbol = symbol.substr(0, symbol.indexOf(":")); // Keeps symbol only
+
+        console.log(symbol);
         var url2 = "&interval=15min&apikey="
         var apiKey = "3SW8F3VSYVSP0VAZ";
         // Retreives individual stock prices
         $.get(url + symbol + url2 + apiKey).done(function(response) {
             console.log("Success");
-            alert("Success")
             updateUISuccess(response);
         }).fail(function(error) {
             console.log("Failed");
@@ -21,10 +23,11 @@ function update_stock_price() {
             console.log(response);
             var timeSeries15 = response["Time Series (15min)"];
             var currentDateData = Object.keys(timeSeries15)[0];
-            var timeZone = response["Meta Data"]["6. Time Zone"]
+            var timeZone = response["Meta Data"]["6. Time Zone"];
             console.log(timeSeries15[currentDateData]);
             console.log(currentDateData)
             var stockPrice = timeSeries15[currentDateData]["4. close"];
+            $("#stockSymbolText").html(symbol);
             $("#price").html(stockPrice);
             $("#currentDate").html(currentDateData + " " + timeZone);
         }
@@ -46,7 +49,6 @@ function update_sector_price() {
         // retrieves sector prices
         $.get(url + apiKey).done(function(response) {
             console.log("Success");
-            alert("Success")
             updateUISuccess(response);
         }).fail(function(error) {
             console.log("Failed");
@@ -63,12 +65,12 @@ function update_sector_price() {
 //            console.log(sectorPerformance[sectors[1]]);
 //            console.log(sectors[1])
             
-            for (i = 0; i < sectors.length; i++) {
+            for (let i = 0; i < sectors.length; i++) {
                 var row = table.insertRow(i + 1);
                 var rowHeading = row.insertCell(0);
                 rowHeading.innerHTML = sectors[i];
                 console.log(sectors[i]);
-                for (j = 0; j < sectorResponse.length; j++) {
+                for (let j = 0; j < sectorResponse.length; j++) {
                     var cell = row.insertCell(j + 1);
                     cell.innerHTML = response[sectorResponse[j]][sectors[i]];
                     console.log(response[sectorResponse[j]][sectors[i]]);
@@ -80,17 +82,34 @@ function update_sector_price() {
         function updateUIError() {
             console.log("Fail");
         }
-
     })();
-
 }
 
-$( "#stockPriceUpdate" ).click(function(event) {
+$("#stockPriceUpdate").on("click", function(e) {
+    console.log(e.target);
     update_stock_price();
-    
-});
+})
 
-$( "#sectorPriceUpdate" ).click(function(event) {
-    update_sector_price()
-    
-});
+$("#sectorPriceUpdate").on("click", function(e) {
+    console.log(e.target);
+    update_sector_price();
+})
+
+// Auto complete list
+function getStockList() {
+    var url = 'scripts/data/stock_symbols.json';
+    $.getJSON(url, function(data) {
+        console.log(data[0]["Symbol"]);
+        var i = 0;
+        $(data).each(function() {
+            $("#stockSymbolList").append('<option value=' + data[i]["Symbol"] + ":" + data[i]["Name"] + '></option>');
+            i ++;
+        })
+    })
+}
+getStockList();
+
+// // Auto complete list
+// $(document).ready(function(){
+//     $("#stockSymbolList").append('<option value="Test"></option>');
+// });

@@ -1,5 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
+    <style>
+            #res {
+                margin: 0px;
+                padding-left: 0px;
+                width: 150px;
+            }
+            
+            #res li {
+                list-style-type: none;
+            }
+            
+            #res li:hover {
+                background: #110D3B;
+                color: #FFF;
+                cursor: pointer;
+            }
+        </style>
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,17 +30,28 @@
     </head>
     
     <body>
+        <h1>Stock Purchase Page</h1>
+        
+        <button id="stockPriceUpdate">Refresh Stock Price</button>
+        
         <br>
-        
-        
         <form action="/stocks" method="POST">
-            <b>Stock Symbol: </b><input id="stockSymbol" type="text" name="stock_symbol">
-            <input type="submit" />
+            <b>Stock Symbol: </b><input list="stockSymbolList" id="stockSymbol" type="text" name="stock_symbol">
+            <datalist id="stockSymbolList">
+
+            </datalist>    
+            
+            <h2>Stock Symbol</h2>
+            <h4 id="stockSymbolText"></h4>
+            <h2>Estimated Price</h2>
+            <p id="price"></p>
+            
+            <p id="currentDate"></p>
+            <br>
+            <input type="submit" value="Buy Stock" />
         </form>
         <!-- <button  >Update</button> -->
-        <h2>Price</h2>
-        <p id="price" name="price></p>
-        <p id="currentDate"></p>
+        
         
         <h1>Sector Prices</h1>
         <button id="sectorPriceUpdate">Update</button>
@@ -47,6 +75,6 @@
         
     </body>
     
-    <script src="scripts/main.js"></script>
     <script type="text/javascript"></script>
+    <script src="scripts/stocks.js"></script>
 </html>
