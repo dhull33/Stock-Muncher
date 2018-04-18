@@ -10,3 +10,48 @@
     border-right: 1px solid black;
     text-align: center;
 }
+
+.stockSelection {
+    background-color: black;
+}
+
+/* Styles for custom dropdown list */
+#res {
+    margin-left: 100px;
+    padding-left: 0px;
+    width: 60%;
+}
+
+#res li {
+    list-style-type: none;
+}
+
+#res p {
+    background: black;
+    margin-top: -15px;
+}
+
+#res p:hover {
+    background: rgb(42, 31, 159);
+    color: #FFF;
+    cursor: pointer;
+}
+
+#stockSymbol {
+    margin-bottom: 18px;
+}
+
+.stockSymbol {
+    color: white;
+    font-size: 18px;
+}
+
+.stockName {
+    color: grey;
+    font-size: 16px;
+}
+
+.stockSector {
+    color: yellow;
+    font-size: 14px;
+}
