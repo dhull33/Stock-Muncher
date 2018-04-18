@@ -6,12 +6,12 @@ var promise = require('bluebird');
 var bodyParser = require('body-parser');
 var pgp = require('pg-promise')(options);
 
-var connectionString = 'postgres://david:dhull33@localhost:5432/beatthemarket';
+var connectionString = 'postgres://localhost:5432/stocks';
 var db = pgp(connectionString);
 
 // ### Set Up and Test Sequelize ###
 var  Sequelize= require('sequelize');
-var sequelize = new Sequelize('postgres://david:dhull33@localhost:5432/beatthemarket');
+var sequelize = new Sequelize('postgres://localhost:5432/stocks');
 
 sequelize.authenticate()  .then(() => {
     console.log('Connection has been established successfully.');
