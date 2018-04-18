@@ -1,1 +1,1 @@
-# Stock Muncher
+# Stock Muncher: Eat the Competition 
