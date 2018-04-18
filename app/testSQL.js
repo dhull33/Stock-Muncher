@@ -45,6 +45,7 @@ const myChart = new Chart(ctx, {
         "1/30/18"
         ],
         datasets: [{
+            //Label: title and appears in tooltips
             label: 'Google',
             data: [1126.219971,
                 1131.410034,
