@@ -2,10 +2,17 @@ var express = require("express");
 var router = express.Router();
 var promise = require('bluebird');
 var pgp = require('pg-promise')(options);
-var connectionString = 'postgres://localhost:5432/stocks';
+
+var connectionString = 'postgres://david:dhull33@localhost:5432/beatthemarket';
+
 var db = pgp(connectionString);
+
 var bodyParser = require('body-parser');
-router.use(bodyParser.urlencoded({extended :false}));
+
+router.use(bodyParser.urlencoded({
+    extended :false
+}));
+
 var fetch = require('node-fetch');
 var request = require('request');
 
@@ -27,10 +34,15 @@ router.post('/stocks',function(req,res){
     function update_stock_price() {
       (function() {
           console.log("Submitted")
+
           var url = "https://www.alphavantage.co/query?function=TIME_SERIES_INTRADAY&symbol="
+
           var symbol = req.body.stock_symbol;
+
           var url2 = "&interval=1min&apikey="
+
           var apiKey = "3SW8F3VSYVSP0VAZ";
+
           // Retreives individual stock prices
           var stockPrice;
           console.log(symbol);

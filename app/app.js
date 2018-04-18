@@ -5,10 +5,20 @@ var app = express();
 var promise = require('bluebird');
 var bodyParser = require('body-parser');
 var pgp = require('pg-promise')(options);
-var connectionString = 'postgres://localhost:5432/beatthemarket';
+
+var connectionString = 'postgres://david:dhull33@localhost:5432/beatthemarket';
 var db = pgp(connectionString);
-var  Sequelize= require('sequelize');   // used to be able to make changes to tables through code
-var sequelize = new Sequelize('postgres://localhost:5432/beatthemarket');
+
+// ### Set Up and Test Sequelize ###
+var  Sequelize= require('sequelize');
+var sequelize = new Sequelize('postgres://david:dhull33@localhost:5432/beatthemarket');
+
+sequelize.authenticate()  .then(() => {
+    console.log('Connection has been established successfully.');
+})
+    .catch(err => {
+        console.error('Unable to connect to the database:', err);
+    });
 
 var options = {
   promiseLib : promise
