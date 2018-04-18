@@ -108,8 +108,3 @@ function getStockList() {
     })
 }
 getStockList();
-
-// // Auto complete list
-// $(document).ready(function(){
-//     $("#stockSymbolList").append('<option value="Test"></option>');
-// });

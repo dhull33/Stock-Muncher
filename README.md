@@ -1,1 +1,1 @@
-# Beat_the_Market
+# Stock Muncher
