@@ -47,7 +47,10 @@ function update_stock_price(type, req, res) {
                     db.none('INSERT INTO stock_purchase(user_id, stock_symbol, purchase_price_each, purchase_date) values($1, $2, $3, $4)',[userId, symbol, stockPrice, currentDateData]).then(function(){
                     })
                 }
-            })
+            }).catch((err) =>{
+                console.log("ERROR");
+        });
+
     })();
 }
 

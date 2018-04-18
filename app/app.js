@@ -6,8 +6,8 @@ var promise = require('bluebird');
 var bodyParser = require('body-parser');
 var pgp = require('pg-promise')(options);
 
-//var connectionString = 'postgres://david:dhull33@localhost:5432/beatthemarket';
-//var db = pgp(connectionString);
+var connectionString = 'postgres://localhost:5432/stocks';
+var db = pgp(connectionString);
 
 // ### Set Up and Test Sequelize ###
 // var  Sequelize= require('sequelize');
@@ -30,6 +30,7 @@ app.set('views', 'views');
 
 // ### Routes ###
 app.use(require("./routes/index"));
+app.use(require("./routes/stocks"));
 
 //app.use(require("./routes/stocks"));
 app.use(bodyParser.urlencoded({extended :false}));

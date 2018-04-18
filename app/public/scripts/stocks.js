@@ -14,14 +14,14 @@ function update_stock_price() {
             updateUISuccess(response);
         }).fail(function(error) {
             console.log("Failed");
-            alert("Failed");
+            alert("Failed. Please Try Again.");
             updateUIError();
         })
 
         // handle success
         function updateUISuccess(response) {
             console.log(response);
-            var timeSeries15 = response["Time Series (15min)"];
+            var timeSeries15 = response["Time Series (1min)"];
             var currentDateData = Object.keys(timeSeries15)[0];
             var timeZone = response["Meta Data"]["6. Time Zone"];
             console.log(timeSeries15[currentDateData]);
