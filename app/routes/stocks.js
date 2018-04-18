@@ -123,6 +123,5 @@ router.post('/stocks',function(req,res){
             update_stock_price(type, req, res);
         })
     }
-});
 
 module.exports = router;

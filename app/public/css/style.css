@@ -10,3 +10,19 @@
     border-right: 1px solid black;
     text-align: center;
 }
+
+
+/*Search bar */
+
+button[type='submit']{
+    background: #0A2E36 ;
+    color: #14CC60;
+    height: 25px;
+    width: 50px;
+}
+
+
+#search{
+    display: inline-flex;
+    justify-content: right;
+}
