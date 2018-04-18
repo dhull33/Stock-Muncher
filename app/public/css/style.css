@@ -24,3 +24,8 @@ button[type='submit']{
     display: inline-flex;
     justify-content: right;
 }
+
+.header{
+    display: flex;
+    justify-content: center;
+}
