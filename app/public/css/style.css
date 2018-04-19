@@ -29,3 +29,12 @@ button[type='submit']{
     display: flex;
     justify-content: center;
 }
+
+.navbar{
+    background: #0A2E36;
+}
+
+.fontmeSpGreen {
+    font-family: "Cute Font", sans-serif;
+    color: #27FB6B;
+}
