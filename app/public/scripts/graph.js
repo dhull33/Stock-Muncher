@@ -51,8 +51,6 @@ function drawChart() {
 
             // array that holds intra-day prices
             const todayDate= currentDateData.slice(0,10);
-            console.log('Date Fool');
-            console.log(todayDate);
 
             let newData = [];
 
@@ -61,7 +59,6 @@ function drawChart() {
 
                 let curDateData = Object.keys(timeSeries15)[i];
                 let testDate = currentDateData.slice(0,10);
-                console.log(testDate);
 
                 if (testDate == todayDate) {
                     let date= new Date(curDateData);
@@ -91,16 +88,54 @@ function drawChart() {
             const data = new google.visualization.arrayToDataTable(newData, true); // Treat first row as data as well
 
             let options = {
-                legend: 'none'
+                legend: 'right',
+                colors: ["#364156"],
+                backgroundColor: '#0A2E36',
+                candlestick: {
+                    fallingColor: { strokeWidth: 0, stroke: 'black', fill: '#a52714' }, // red
+                    risingColor: { strokeWidth: 0, stroke: 'black', fill: '#0f9d58' }   // green
+                },
+                hAxis: {
+                    title: 'Time',
+                    titleTextStyle: {
+                        color: '#FBFBFB'
+                    },
+                    textStyle: {
+                        color: '#FBFBFB'
+                    },
+                    viewWindowMode: 'pretty',
+                },
+
+                vAxis: {
+                    title: '$Price',
+                    titleTextStyle: {
+                        color: '#FBFBFB'
+                    },
+                    textStyle: {
+                        color:'#FBFBFB'
+                    }
+                }
+
             };
 
 
             const chart = new google.visualization.CandlestickChart(document.getElementById('chart_div'));
 
-            //actually draws the chart
 
             chart.draw(data, options);
 
+            // ### Re-sizes and Draws the chart
+            function resize () {
+                // change dimensions if necessary
+                chart.draw(data, options);
+            };
+
+            if (window.addEventListener) {
+                window.addEventListener('resize', resize);
+            }
+            else {
+                window.attachEvent('onresize', resize);
+            }
         }
 
         // handle error

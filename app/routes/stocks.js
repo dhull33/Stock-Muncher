@@ -44,8 +44,7 @@ function update_stock_price(type, req, res) {
 
                 // Insert data retrieved from API into database
                 if (type == "post") {
-                    db.none('INSERT INTO stock_purchase(user_id, stock_symbol, purchase_price_each, purchase_date) values($1, $2, $3, $4)',[userId, symbol, stockPrice, currentDateData]).then(function(){
-                    })
+                    db.none('INSERT INTO stock_purchase(user_id, stock_symbol, purchase_price_each, purchase_date) values($1, $2, $3, $4)',[userId, symbol, stockPrice, currentDateData])
                 }
             }).catch((err) =>{
                 console.log("ERROR");

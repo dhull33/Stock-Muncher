@@ -27,11 +27,16 @@ function update_stock_price() {
         function updateUISuccess(response) {
             console.log(response);
             var timeSeries15 = response["Time Series (15min)"];
+
+            //Use object.keys to access data
             var currentDateData = Object.keys(timeSeries15)[0];
             var timeZone = response["Meta Data"]["6. Time Zone"];
             console.log(timeSeries15[currentDateData]);
+
             console.log(currentDateData)
             var stockPrice = timeSeries15[currentDateData]["4. close"];
+
+
             $("#stockSymbolText").html(symbol);
             $("#price").html(stockPrice);
             $("#currentDate").html(currentDateData + " " + timeZone);
