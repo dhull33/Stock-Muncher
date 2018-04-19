@@ -18,7 +18,17 @@ var url = "https://www.alphavantage.co/query?function=TIME_SERIES_INTRADAY&symbo
 var url2 = "&interval=1min&apikey="
 var apiKey = "3SW8F3VSYVSP0VAZ";
 
-function update_stock_price(type, req, res) {
+
+
+router.get('/stocks',function(req,res){
+  var symbol = req.body.stock_symbol
+  db.any('SELECT * FROM stocks').then(function(data){
+    // res.render(page to render, object to pass to the page)
+    res.render('stocks',{'stocks' : data});
+  })
+})
+
+router.post('/stocks',function(req,res){
   (function() {
       console.log("Submitted")
       var symbol = req.body.stock_symbol + ":"; // Added : to end in case autocomplete is not used and only stock symbol is used
@@ -26,6 +36,14 @@ function update_stock_price(type, req, res) {
       var userId = "Testing";
       // Retreives individual stock prices
       console.log(symbol);
+      var currentdate = new Date(); 
+      var datetime = currentdate.getFullYear() + "/"
+                + (currentdate.getMonth()+1)  + "/"
+                + currentdate.getDate() + " "
+                + currentdate.getHours() + ":"  
+                + currentdate.getMinutes() + ":" 
+                + currentdate.getSeconds();
+      console.log(datetime);
 
       fetch(url + symbol + url2 + apiKey)
         .then(res => res.json())
@@ -43,25 +61,15 @@ function update_stock_price(type, req, res) {
         // .catch(err => console.error(err));
           
           // Insert data retrieved from API into database
-          if (type == "post") {
-            db.none('INSERT INTO stock_purchase(user_id, stock_symbol, purchase_price_each, purchase_date) values($1, $2, $3, $4)',[userId, symbol, stockPrice, currentDateData]).then(function(){
-          })
-        }  
+          
+          db.none('INSERT INTO stock_purchase(user_id, stock_symbol, purchase_price_each, purchase_date) values($1, $2, $3, $4)',[userId, symbol, stockPrice, datetime]).then(function(){
+        })
+          
+          
     }) 
   })();
-}
-
-router.get('/stocks',function(req,res){
-  var type = "get";
-  // update_stock_price(type, req, res);
-  res.render('stocks');
-
+  
 })
-
-router.post('/stocks',function(req,res){
-    var type = "post"
-    update_stock_price(type, req, res);
-  })
 
 
 module.exports = router;

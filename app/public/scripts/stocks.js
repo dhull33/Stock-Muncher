@@ -69,11 +69,11 @@ function update_sector_price() {
                 var row = table.insertRow(i + 1);
                 var rowHeading = row.insertCell(0);
                 rowHeading.innerHTML = sectors[i];
-                console.log(sectors[i]);
+                // console.log(sectors[i]);
                 for (let j = 0; j < sectorResponse.length; j++) {
                     var cell = row.insertCell(j + 1);
                     cell.innerHTML = response[sectorResponse[j]][sectors[i]];
-                    console.log(response[sectorResponse[j]][sectors[i]]);
+                    // console.log(response[sectorResponse[j]][sectors[i]]);
                 }
             }
         }

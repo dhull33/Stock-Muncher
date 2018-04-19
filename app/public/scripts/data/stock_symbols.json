@@ -1,26 +1,5 @@
 [
  {
-   "Symbol": "PIH",
-   "Name": "1347 Property Insurance Holdings, Inc.",
-   "Sector": "Finance",
-   "Industry": "Property-Casualty Insurers",
-   "Summary_Quote": "https://www.nasdaq.com/symbol/pih"
- },
- {
-   "Symbol": "PIHPP",
-   "Name": "1347 Property Insurance Holdings, Inc.",
-   "Sector": "Finance",
-   "Industry": "Property-Casualty Insurers",
-   "Summary_Quote": "https://www.nasdaq.com/symbol/pihpp"
- },
- {
-   "Symbol": "TURN",
-   "Name": "180 Degree Capital Corp.",
-   "Sector": "Finance",
-   "Industry": "Finance/Investors Services",
-   "Summary_Quote": "https://www.nasdaq.com/symbol/turn"
- },
- {
    "Symbol": "FLWS",
    "Name": "1-800 FLOWERS.COM, Inc.",
    "Sector": "Consumer Services",
@@ -110,20 +89,6 @@
    "Sector": "Health Care",
    "Industry": "Major Pharmaceuticals",
    "Summary_Quote": "https://www.nasdaq.com/symbol/abeo"
- },
- {
-   "Symbol": "ABEOW",
-   "Name": "Abeona Therapeutics Inc.",
-   "Sector": "Health Care",
-   "Industry": "Major Pharmaceuticals",
-   "Summary_Quote": "https://www.nasdaq.com/symbol/abeow"
- },
- {
-   "Symbol": "ABIL",
-   "Name": "Ability Inc.",
-   "Sector": "Consumer Durables",
-   "Industry": "Telecommunications Equipment",
-   "Summary_Quote": "https://www.nasdaq.com/symbol/abil"
  },
  {
    "Symbol": "ABMD",

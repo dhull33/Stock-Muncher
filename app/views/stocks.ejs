@@ -18,7 +18,7 @@
         <button id="stockPriceUpdate">Refresh Stock Price</button>
         
         <br>
-        <form action="/stocks" method="POST">
+        <form action="/stocks" method="POST" autocomplete="off">
             <b>Stock Symbol: </b><input list="stockSymbolList" id="stockSymbol" type="text" name="stock_symbol">
             <datalist id="stockSymbolList">
                 
@@ -57,7 +57,7 @@
         
     </body>
 
-    <script src="../routes/stocks.js"></script>
+    <script src="scripts/stocks.js"></script>
 
 
 </html>
