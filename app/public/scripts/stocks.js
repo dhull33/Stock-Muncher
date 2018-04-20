@@ -109,6 +109,8 @@ $("#sectorPriceUpdate").on("click", function(e) {
 // }
 // getStockList();
 
+
+// Autocomplete
 $(document).ready(function(){
     var url = 'scripts/data/stock_symbols.json';
     var stockList = [];
@@ -149,7 +151,7 @@ $(document).ready(function(){
             //First search
             if(drew == false){
                 //Create list for results
-                $("#stockSymbol").after('<ul id="res"></ul>');
+                $(".stockSymbol").after('<ul id="res"></ul>');
                 
                 //Prevent redrawing/binding of list
                 drew = true;
@@ -173,7 +175,7 @@ $(document).ready(function(){
                 var stockSymbol = results[term].substring(0, number - 1);
                 var stockName = results[term].substring(number + 2, number2 - 1);
                 var stockSector = results[term].substring(number2 + 2, results[term].length);
-                $("#res").append("<p><b><span class='stockSymbol'>" + stockSymbol + "</span></b> <br /><span class='stockName'>" + stockName + "</span><br /><i><span class='stockSector'>" + stockSector + "</p>");
+                $("#res").append("<p><b><span class='stockSymbol'>" + stockSymbol + "</span></b><span class='stockName'>   (" + stockName + ")</span><br /><i><span class='stockSector'>" + stockSector + "</p>");
                 count += 1
                 if (count > 9) {
                     break;  // Limits to 10 results

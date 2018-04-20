@@ -16,6 +16,9 @@ var options = {
 
 app.use(require("./routes/index"));
 app.use(require("./routes/stocks"));
+app.use(require("./routes/stockmanage"));
+app.use(require("./routes/stock_list"));
+
 
 app.set('view engine', 'ejs');
 app.set('views', 'views');

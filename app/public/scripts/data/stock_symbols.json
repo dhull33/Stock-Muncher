@@ -98,13 +98,6 @@
    "Summary_Quote": "https://www.nasdaq.com/symbol/abmd"
  },
  {
-   "Symbol": "ABLX",
-   "Name": "Ablynx NV",
-   "Sector": "Health Care",
-   "Industry": "Biotechnology: Biological Products (No Diagnostic Substances)",
-   "Summary_Quote": "https://www.nasdaq.com/symbol/ablx"
- },
- {
    "Symbol": "AXAS",
    "Name": "Abraxas Petroleum Corporation",
    "Sector": "Energy",
@@ -187,13 +180,6 @@
    "Sector": "Health Care",
    "Industry": "Major Pharmaceuticals",
    "Summary_Quote": "https://www.nasdaq.com/symbol/acrx"
- },
- {
-   "Symbol": "ACER",
-   "Name": "Acer Therapeutics Inc.",
-   "Sector": "Health Care",
-   "Industry": "Major Pharmaceuticals",
-   "Summary_Quote": "https://www.nasdaq.com/symbol/acer"
  },
  {
    "Symbol": "ACET",
@@ -649,13 +635,6 @@
    "Sector": "Health Care",
    "Industry": "Major Pharmaceuticals",
    "Summary_Quote": "https://www.nasdaq.com/symbol/albo"
- },
- {
-   "Symbol": "ABDC",
-   "Name": "Alcentra Capital Corp.",
-   "Sector": "n/a",
-   "Industry": "n/a",
-   "Summary_Quote": "https://www.nasdaq.com/symbol/abdc"
  },
  {
    "Symbol": "ALDR",
@@ -1470,13 +1449,6 @@
    "Summary_Quote": "https://www.nasdaq.com/symbol/arcw"
  },
  {
-   "Symbol": "ABIO",
-   "Name": "ARCA biopharma, Inc.",
-   "Sector": "Health Care",
-   "Industry": "Biotechnology: In Vitro & In Vivo Diagnostic Substances",
-   "Summary_Quote": "https://www.nasdaq.com/symbol/abio"
- },
- {
    "Symbol": "RKDA",
    "Name": "Arcadia Biosciences, Inc.",
    "Sector": "Basic Industries",
@@ -1832,13 +1804,6 @@
    "Sector": "Finance",
    "Industry": "Business Services",
    "Summary_Quote": "https://www.nasdaq.com/symbol/atacu"
- },
- {
-   "Symbol": "AAME",
-   "Name": "Atlantic American Corporation",
-   "Sector": "Finance",
-   "Industry": "Life Insurance",
-   "Summary_Quote": "https://www.nasdaq.com/symbol/aame"
  },
  {
    "Symbol": "ACBI",
@@ -17911,13 +17876,6 @@
    "Sector": "Basic Industries",
    "Industry": "Major Chemicals",
    "Summary_Quote": "https://www.nasdaq.com/symbol/regi"
- },
- {
-   "Symbol": "ABAC",
-   "Name": "Renmin Tianli Group, Inc.",
-   "Sector": "Consumer Non-Durables",
-   "Industry": "Farming/Seeds/Milling",
-   "Summary_Quote": "https://www.nasdaq.com/symbol/abac"
  },
  {
    "Symbol": "RCII",
