@@ -24,11 +24,11 @@ CREATE TABLE users (
 /* Stock Purchase table is created */
 
 CREATE TABLE stock_purchase (
-    purchase_id INT NOT NULL PRIMARY KEY,
-    user_id VARCHAR NOT NULL REFERENCES users(username),
-    stock_symbol VARCHAR REFERENCES stock(stock_symbol),
+    purchase_id SERIAL NOT NULL PRIMARY KEY,
+    user_id VARCHAR,
+    stock_symbol VARCHAR,
     purchase_price_each MONEY,
-    purchase_date DATE,
+    purchase_date timestamp,
     QTY INTEGER
 
 );

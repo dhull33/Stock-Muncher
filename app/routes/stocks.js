@@ -16,8 +16,8 @@ var options = {
 }
 
 var stockPrice = 0;
-var url = "https://www.alphavantage.co/query?function=TIME_SERIES_INTRADAY&symbol="
-var url2 = "&interval=1min&apikey="
+var url = "https://www.alphavantage.co/query?function=TIME_SERIES_INTRADAY&symbol=";
+var url2 = "&interval=1min&apikey=";
 var apiKey = "3SW8F3VSYVSP0VAZ";
 
 

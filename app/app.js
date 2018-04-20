@@ -10,6 +10,7 @@ var pgp = require('pg-promise')(options);
 var connectionString = 'postgres://localhost:5432/stocks';
 var db = pgp(connectionString);
 
+
 var options = {
   promiseLib : promise
 }
@@ -23,10 +24,15 @@ app.use(require("./routes/stock_list"));
 app.set('view engine', 'ejs');
 app.set('views', 'views');
 
+// ### Routes ###
+app.use(require("./routes/index"));
+app.use(require("./routes/stocks"));
+
+//app.use(require("./routes/stocks"));
 app.use(bodyParser.urlencoded({extended :false}));
 
 //public folder
-app.use(express.static('public'));
+app.use(express.static('./public'));
 
 var port = 3000;
 
