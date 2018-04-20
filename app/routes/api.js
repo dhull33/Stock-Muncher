@@ -14,10 +14,8 @@ var options = {
 }
 
 router.post('/api_stocks',function(req,res){ // Creates an API so that out front end can access our database
-  console.log(req.body);
   var queryString = req.body && req.body.userString?req.body.userString:null
    
-  var symbol = req.body.stock_symbol
   db.any(`SELECT * FROM stocks WHERE stock_symbol LIKE '${queryString.toUpperCase()}%' or stock_symbol LIKE '% ${queryString.toUpperCase()}'`).then(function(stockData) {
     res.json({'stocks' : stockData});
     console.log(stockData[0]);
