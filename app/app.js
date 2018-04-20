@@ -1,3 +1,4 @@
+// import { TIMEOUT } from 'dns';
 
 // ### Dependencies ###
 var express = require('express');
@@ -9,16 +10,6 @@ var pgp = require('pg-promise')(options);
 var connectionString = 'postgres://localhost:5432/stocks';
 var db = pgp(connectionString);
 
-// ### Set Up and Test Sequelize ###
-// var  Sequelize= require('sequelize');
-/*var sequelize = new Sequelize('postgres://david:dhull33@localhost:5432/beatthemarket');
-
-sequelize.authenticate()  .then(() => {
-    console.log('Connection has been established successfully.');
-})
-    .catch(err => {
-        console.error('Unable to connect to the database:', err);
-    }); */
 
 var options = {
   promiseLib : promise
@@ -40,6 +31,9 @@ app.use(express.static('./public'));
 
 var port = 3000;
 
+var myStock = require('./util/updateStockPrices.js');
+
 var server = app.listen(port, function(){
     console.log('Example app listening on port ' + port);
+    setInterval(myStock.updateBatchStocks, 24000); // Loops through JSON file to fill all current stock prices from API. Accesses API every 24 seconds. Loops through all 3300 stocks in about 13 minutes.
 });

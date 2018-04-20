@@ -80,11 +80,11 @@ function update_sector_price() {
                 var row = table.insertRow(i + 1);
                 var rowHeading = row.insertCell(0);
                 rowHeading.innerHTML = sectors[i];
-                console.log(sectors[i]);
+                // console.log(sectors[i]);
                 for (let j = 0; j < sectorResponse.length; j++) {
                     var cell = row.insertCell(j + 1);
                     cell.innerHTML = response[sectorResponse[j]][sectors[i]];
-                    console.log(response[sectorResponse[j]][sectors[i]]);
+                    // console.log(response[sectorResponse[j]][sectors[i]]);
                 }
             }
         }
@@ -106,16 +106,94 @@ $("#sectorPriceUpdate").on("click", function(e) {
     update_sector_price();
 })
 
-// Auto complete list
-function getStockList() {
+// // Old Auto complete list version
+// function getStockList() {
+//     var url = 'scripts/data/stock_symbols.json';
+//     $.getJSON(url, function(data) {
+//         console.log(data[0]["Symbol"]);
+//         var i = 0;
+//         $(data).each(function() {
+//             $("#stockSymbolList").append('<option class="stockSelection" value=' + data[i]["Symbol"] + ":" + data[i]["Name"] + '></option>');
+//             i ++;
+//         })
+//     })
+// }
+// getStockList();
+
+$(document).ready(function(){
     var url = 'scripts/data/stock_symbols.json';
+    var stockList = [];
     $.getJSON(url, function(data) {
         console.log(data[0]["Symbol"]);
         var i = 0;
         $(data).each(function() {
-            $("#stockSymbolList").append('<option value=' + data[i]["Symbol"] + ":" + data[i]["Name"] + '></option>');
+            // stockList.push([data[i]["Symbol"], data[i]["Name"], data[i]["Sector"]]);
+            stockList.push(data[i]["Symbol"] + " : " + data[i]["Name"] + " : " + data[i]["Sector"]);
             i ++;
         })
     })
-}
-getStockList();
+
+    console.log(stockList);
+    
+    var cache = {};
+    var drew = false;
+    
+    $("#stockSymbol").on("keyup", function(event){
+        var query = $("#stockSymbol").val()
+ 
+        if($("#stockSymbol").val().length >= 1){
+            
+            //Check if we've searched for this term before
+            if(query in cache){
+                results = cache[query];
+            }
+            else{
+                //Case insensitive search for stock array
+                var results = $.grep(stockList, function(item){
+                    return item.search(RegExp(query, "i")) != -1;
+                });
+                
+                //Add results to cache
+                cache[query] = results;
+            }
+            console.log(results);
+            //First search
+            if(drew == false){
+                //Create list for results
+                $("#stockSymbol").after('<ul id="res"></ul>');
+                
+                //Prevent redrawing/binding of list
+                drew = true;
+                
+                //Bind click event to list elements in results
+                $("#res").on("click", "p", function(stockLine){
+                    $("#stockSymbol").val($(this).text().substring(0, $(this).text().indexOf(" "))); // Keeps stock symbol only in input box
+                    $("#res").empty();
+                 });
+            }
+            //Clear old results
+            else{
+                $("#res").empty();
+            }
+            
+            //Add results to the list
+            var count = 0;
+            for(term in results){
+                var number = results[term].indexOf(":");
+                var number2 = results[term].lastIndexOf(":");
+                var stockSymbol = results[term].substring(0, number - 1);
+                var stockName = results[term].substring(number + 2, number2 - 1);
+                var stockSector = results[term].substring(number2 + 2, results[term].length);
+                $("#res").append("<p><b><span class='stockSymbol'>" + stockSymbol + "</span></b> <br /><span class='stockName'>" + stockName + "</span><br /><i><span class='stockSector'>" + stockSector + "</p>");
+                count += 1
+                if (count > 9) {
+                    break;  // Limits to 10 results
+                }
+            }
+        }
+        //Handle backspace/delete so results don't remain with less than 3 characters
+        else if(drew){
+            $("#res").empty();
+        }
+    });
+});
