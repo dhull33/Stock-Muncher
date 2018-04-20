@@ -69,9 +69,23 @@ button[type='submit']{
     justify-content: right;
 }
 
+/*For 'stock muncher' in header */
 .header{
     display: flex;
     justify-content: center;
+    color: #27FB6B;
+    font-family: 'Cute Font', cursive;
+    font-size: 15vw;
+}
+
+/*For 'eat the competition' in header */
+.header2{
+    display: flex;
+    justify-content: center;
+    color: #27FB6B;
+    font-family: 'Cute Font', cursive;
+    font-size: 15vw;
+    margin-top: -5rem;
 }
 
 /*Sets color of navbar*/
@@ -81,4 +95,11 @@ button[type='submit']{
 
 body {
     background-color: #0A2E36;
+}
+
+.cuteFont {
+    color: #27FB6B;
+    font-family: 'Cute Font', cursive;
+    font-size: 27px;
+
 }
