@@ -9,8 +9,6 @@ router.use(bodyParser.urlencoded({extended :false}));
 var fetch = require('node-fetch');
 var request = require('request');
 
-var stockList = require('../public/scripts/data/stock_symbols.json');
-
 var options = {
     promiseLib : promise
 }
@@ -25,7 +23,7 @@ var apiKey = "3SW8F3VSYVSP0VAZ";
 router.get('/stocks',function(req,res){
   var symbol = req.body.stock_symbol
   db.any('SELECT * FROM stocks').then(function(stockData) {
-    res.render('stocks',{'stocks' : stockData, 'stockList' : stockList});
+    res.render('stocks',{'stocks' : stockData});
   })
 })
 

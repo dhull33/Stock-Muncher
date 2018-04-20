@@ -71,8 +71,7 @@
                         <b></b><input list="stockSymbolList" id="stockSymbol" type="text" name="stock_symbol" placeholder="Stock Symbol" autocomplete="off"><button class="btn btn-secondary" id="stockPriceUpdate">Refresh Stock Price</button>
                     </div>
                     <datalist id="stockSymbolList">
-                        <span> <% stocks[0].purchase_price_each %> </span>
-                        <span> <% stockList[0]["Symbol"] %></span>
+                    
                     </datalist>    
                 </div>
               </div>
@@ -81,7 +80,8 @@
         
         
         <br>
-        <form action="/stocks" method="POST" autocomplete="off">
+
+        <!-- <form action="/stocks" method="POST" autocomplete="off">
             <h2>Stock Symbol</h2>
             <h4 id="stockSymbolText"><%= stocks.symbol  %></h4>
             <h2>Estimated Price</h2>
@@ -110,13 +110,13 @@
                 <th>10 Year</th>
             </tr>
             
-        </table>
+        </table> -->
         
     </body>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-    <!-- <script src="scripts/stocks.js" type="text/javascript"></script> -->
+    <script src="scripts/stocks.js" type="text/javascript"></script>
     
 
 </html>

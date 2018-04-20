@@ -19,14 +19,11 @@ app.use(require("./routes/index"));
 app.use(require("./routes/stocks"));
 app.use(require("./routes/stockmanage"));
 app.use(require("./routes/stock_list"));
+app.use(require("./routes/api"))
 
 
 app.set('view engine', 'ejs');
 app.set('views', 'views');
-
-// ### Routes ###
-app.use(require("./routes/index"));
-app.use(require("./routes/stocks"));
 
 //app.use(require("./routes/stocks"));
 app.use(bodyParser.urlencoded({extended :false}));

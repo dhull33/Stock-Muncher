@@ -19,7 +19,7 @@
 #res {
     padding: 0;
     margin-left: 0px;
-    width: 300px;
+    width: 90%;
 }
 
 #res li {
@@ -54,6 +54,13 @@
 .stockSector {
     color: yellow;
     font-size: 14px;
+}
+
+.stockPrice {
+    font-size: 18px;
+    color: green;
+    float: right;
+    margin-right: 20px;
 }
 
 .modal-dialog {
