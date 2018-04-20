@@ -12,14 +12,19 @@ CREATE TABLE users (
 
 /* Stock table is created */
 
- CREATE TABLE stock (
-     stock_symbol VARCHAR UNIQUE NOT NULL PRIMARY KEY,
+ CREATE TABLE stocks (
+     stock_symbol VARCHAR NOT NULL PRIMARY KEY,
      stock_name VARCHAR,
      sector VARCHAR,
      current_price MONEY,
-     current_volume INTEGER
+     current_volume INT,
+     stock_price_date TIMESTAMP,
+     price_update_date TIMESTAMP
 
 );
+
+
+
 
 /* Stock Purchase table is created */
 
