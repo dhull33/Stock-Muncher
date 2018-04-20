@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg preserveAspectRatio="none" version="1.1" viewBox="0 0 1920 1080" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+ <defs>
+  <radialGradient id="cc" cx="0" cy="0" r="18.95" gradientTransform="translate(-18.6 20.75)" gradientUnits="userSpaceOnUse">
+   <stop stop-color="#fff" offset="0"/>
+   <stop offset="1"/>
+  </radialGradient>
+  <radialGradient id="co" cx="0" cy="0" r="7.05" gradientTransform="translate(-35.05 31.95)" gradientUnits="userSpaceOnUse">
+   <stop stop-color="#fff" offset="0"/>
+   <stop offset="1"/>
+  </radialGradient>
+  <radialGradient id="cz" cx="0" cy="0" r="8.25" gradientTransform="translate(-26.6 23.75)" gradientUnits="userSpaceOnUse">
+   <stop stop-color="#fff" offset="0"/>
+   <stop offset="1"/>
+  </radialGradient>
+  <radialGradient id="df" cx="0" cy="0" r="21.85" gradientTransform="translate(-9.35 21)" gradientUnits="userSpaceOnUse">
+   <stop stop-color="#fff" offset="0"/>
+   <stop offset="1"/>
+  </radialGradient>
+  <radialGradient id="dg" cx="0" cy="0" r="20.4" gradientTransform="translate(14.15 2)" gradientUnits="userSpaceOnUse">
+   <stop stop-color="#fff" offset="0"/>
+   <stop offset="1"/>
+  </radialGradient>
+  <radialGradient id="be" cx="0" cy="0" r="16.75" gradientTransform="translate(29.15 -1.5)" gradientUnits="userSpaceOnUse">
+   <stop stop-color="#fff" offset="0"/>
+   <stop offset="1"/>
+  </radialGradient>
+  <radialGradient id="bf" cx="0" cy="0" r="65.7" gradientTransform="translate(-3.6 2.75)" gradientUnits="userSpaceOnUse">
+   <stop stop-color="#f00" offset="0"/>
+   <stop offset="1"/>
+  </radialGradient>
+  <radialGradient id="bg" cx="0" cy="0" r="32.5" gradientTransform="translate(42.4 -11.25)" gradientUnits="userSpaceOnUse">
+   <stop stop-color="#fff" offset="0"/>
+   <stop offset="1"/>
+  </radialGradient>
+  <radialGradient id="bh" cx="0" cy="0" r="23.6" gradientTransform="translate(37.15 -1.75)" gradientUnits="userSpaceOnUse">
+   <stop stop-color="#fff" offset="0"/>
+   <stop offset="1"/>
+  </radialGradient>
+  <radialGradient id="cd" cx="0" cy="0" r="3.05" gradientTransform="translate(-33 27.9)" gradientUnits="userSpaceOnUse">
+   <stop stop-color="#f00" offset="0"/>
+   <stop offset="1"/>
+  </radialGradient>
+  <radialGradient id="ce" cx="0" cy="0" r="10.3" gradientTransform="translate(.8 6.15)" gradientUnits="userSpaceOnUse">
+   <stop stop-color="#f00" offset="0"/>
+   <stop offset="1"/>
+  </radialGradient>
+  <radialGradient id="cf" cx="0" cy="0" r="3.25" gradientTransform="translate(18.25 -2.45)" gradientUnits="userSpaceOnUse">
+   <stop stop-color="#f00" offset="0"/>
+   <stop offset="1"/>
+  </radialGradient>
+  <radialGradient id="ch" cx="0" cy="0" r="13.5" gradientTransform="translate(36.7 -30.5)" gradientUnits="userSpaceOnUse">
+   <stop stop-color="#f00" offset="0"/>
+   <stop offset="1"/>
+  </radialGradient>
+  <radialGradient id="ci" cx="0" cy="0" r="58.1" gradientTransform="translate(-13.6 -6)" gradientUnits="userSpaceOnUse">
+   <stop stop-color="#f00" offset="0"/>
+   <stop offset="1"/>
+  </radialGradient>
+  <radialGradient id="cj" cx="0" cy="0" r="6.85" gradientTransform="translate(-54.35 35.15)" gradientUnits="userSpaceOnUse">
+   <stop stop-color="#f00" offset="0"/>
+   <stop offset="1"/>
+  </radialGradient>
+  <radialGradient id="ck" cx="0" cy="0" r="7.2" gradientTransform="translate(-44.75 36.35)" gradientUnits="userSpaceOnUse">
+   <stop stop-color="#f00" offset="0"/>
+   <stop offset="1"/>
+  </radialGradient>
+  <radialGradient id="cl" cx="0" cy="0" r="7.4" gradientTransform="translate(-23.5 9.05)" gradientUnits="userSpaceOnUse">
+   <stop stop-color="#fff" offset="0"/>
+   <stop offset="1"/>
+  </radialGradient>
+  <radialGradient id="cm" cx="0" cy="0" r="8.15" gradientTransform="translate(-17.1 6.2)" gradientUnits="userSpaceOnUse">
+   <stop stop-color="#fff" offset="0"/>
+   <stop offset="1"/>
+  </radialGradient>
+  <radialGradient id="cn" cx="0" cy="0" r="7.55" gradientTransform="translate(-4.85 2.95)" gradientUnits="userSpaceOnUse">
+   <stop stop-color="#fff" offset="0"/>
+   <stop offset="1"/>
+  </radialGradient>
+  <radialGradient id="cp" cx="0" cy="0" r="13.8" gradientTransform="translate(20 -9.3)" gradientUnits="userSpaceOnUse">
+   <stop stop-color="#fff" offset="0"/>
+   <stop offset="1"/>
+  </radialGradient>
+  <radialGradient id="cq" cx="0" cy="0" r="6.2" gradientTransform="translate(14.4 -5.8)" gradientUnits="userSpaceOnUse">
+   <stop stop-color="#fff" offset="0"/>
+   <stop offset="1"/>
+  </radialGradient>
+  <radialGradient id="cr" cx="0" cy="0" r="5.75" gradientTransform="translate(10.25 -4.8)" gradientUnits="userSpaceOnUse">
+   <stop stop-color="#fff" offset="0"/>
+   <stop offset="1"/>
+  </radialGradient>
+  <radialGradient id="cs" cx="0" cy="0" r="33.55" gradientTransform="translate(0 6.55)" gradientUnits="userSpaceOnUse">
+   <stop stop-color="#f00" offset="0"/>
+   <stop offset="1"/>
+  </radialGradient>
+  <radialGradient id="ct" cx="0" cy="0" r="7" gradientTransform="translate(2.4 -1.05)" gradientUnits="userSpaceOnUse">
+   <stop stop-color="#fff" offset="0"/>
+   <stop offset="1"/>
+  </radialGradient>
+  <radialGradient id="cu" cx="0" cy="0" r="7.1" gradientTransform="translate(4 -3.05)" gradientUnits="userSpaceOnUse">
+   <stop stop-color="#fff" offset="0"/>
+   <stop offset="1"/>
+  </radialGradient>
+  <radialGradient id="cv" cx="0" cy="0" r="3.6" gradientTransform="translate(-28.05 12.95)" gradientUnits="userSpaceOnUse">
+   <stop stop-color="#f00" offset="0"/>
+   <stop offset="1"/>
+  </radialGradient>
+  <radialGradient id="cw" cx="0" cy="0" r="1.7" gradientTransform="translate(-20.85 9.85)" gradientUnits="userSpaceOnUse">
+   <stop stop-color="#f00" offset="0"/>
+   <stop offset="1"/>
+  </radialGradient>
+  <radialGradient id="cx" cx="0" cy="0" r="4.5" gradientTransform="translate(-10.3 6.15)" gradientUnits="userSpaceOnUse">
+   <stop stop-color="#f00" offset="0"/>
+   <stop offset="1"/>
+  </radialGradient>
+  <radialGradient id="cy" cx="0" cy="0" r="3.3" gradientTransform="translate(-1.05 1.65)" gradientUnits="userSpaceOnUse">
+   <stop stop-color="#f00" offset="0"/>
+   <stop offset="1"/>
+  </radialGradient>
+  <radialGradient id="da" cx="0" cy="0" r="1.2" gradientTransform="translate(12.9 -4.35)" gradientUnits="userSpaceOnUse">
+   <stop stop-color="#f00" offset="0"/>
+   <stop offset="1"/>
+  </radialGradient>
+  <radialGradient id="db" cx="0" cy="0" r="3.35" gradientTransform="translate(27.2 -7)" gradientUnits="userSpaceOnUse">
+   <stop stop-color="#f00" offset="0"/>
+   <stop offset="1"/>
+  </radialGradient>
+  <radialGradient id="dc" cx="0" cy="0" r="3.05" gradientTransform="translate(30.35 -3.2)" gradientUnits="userSpaceOnUse">
+   <stop stop-color="#f00" offset="0"/>
+   <stop offset="1"/>
+  </radialGradient>
+  <radialGradient id="dd" cx="0" cy="0" r="32.1" gradientTransform="translate(1.35 10.45)" gradientUnits="userSpaceOnUse">
+   <stop stop-color="#f00" offset="0"/>
+   <stop offset="1"/>
+  </radialGradient>
+  <radialGradient id="de" cx="0" cy="0" r="4.15" gradientTransform="translate(-29.4 18.15)" gradientUnits="userSpaceOnUse">
+   <stop stop-color="#f00" offset="0"/>
+   <stop offset="1"/>
+  </radialGradient>
+  <g id="cg">
+   <path d="m-9.1 36.25q-1.6-9.35-6.75-17.75-3.2-11.85-8 2.5 8.15 3.2 14.75 15.25z" fill="url(#cc)"/>
+   <path d="m-35.15 29.25q-6.15-2.95-4 3.4 3.35 5 9.15 4.25-5.95-2.4-5.15-7.65z" fill="url(#co)"/>
+   <path d="m-26.9 32v-2.75l1.75 1.4v-2.5l2.65 0.95-1.35-8.1q-10.6-4.65-7 5.5l3.95 5.5z" fill="url(#cz)"/>
+   <path d="m-7.85 10.75q-9.35-1.45-8 7.75 12.2 9.25 26.75 10.75-13.2-6.2-18.75-18.5z" fill="url(#df)"/>
+   <path d="m15.8-1.15l-2.15-4.1q-9.9-5.15-7 5 1.45 0.8 2.75 1.75 8.3 6.35 8.75 20.5 2.8-11.9-2.35-23.15z" fill="url(#dg)"/>
+   <path d="m28.9-7.25q-16.15-14.9-8.25 3.5 8.6 6.35 11.75 16v-11.25q-0.75-4.2-3.5-8.25z" fill="url(#be)"/>
+   <path d="m28.9-7.25q-2.1-8.85 5.25-3-1.7-22.15 8.05-8.65 12.45-18-11.05-23.35l-89.5 72.5q-0.05 12.05 3.25 12 11.3-1.2 15.95-9.6-2.15-6.35 4-3.4 3.1 1.05 4.3-2.75-3.6-10.15 7-5.5 4.8-14.35 8-2.5-1.35-9.2 8-7.75 11.4 1.45 17.25-9.25-1.3-0.95-2.75-1.75-2.9-10.15 7-5l2.15 4.1q3.85 3 4.85-2.6-7.9-18.4 8.25-3.5z" fill="url(#bf)"/>
+   <path d="m34.15-10.25l6.3 7.1q5.15-14.25 17.95 20.15-0.45-23.8-14.75-33.75l-1.45-2.15q-9.75-13.5-8.05 8.65z" fill="url(#bg)"/>
+   <path d="m40.45-3.15l-6.3-7.1q-7.35-5.85-5.25 3 2.75 4.05 3.5 8.25 12.1 2.65 17.25 17.25-0.85-12.6-9.2-21.4z" fill="url(#bh)"/>
+  </g>
+  <g id="bt">
+   <path d="m-25.5 1.95q2.35 4.15 0 9.25 1.9 2.2 3.5-1-0.15-6.45-3.5-8.25z" fill="url(#cl)"/>
+   <path d="m-19.75 9.45q3.85 4.6 5.75-1.75-2.3-4.5 0-9-4.35 4.05-5.75 10.75z" fill="url(#cm)"/>
+   <path d="m-6.6 4.6q4.35 5.25 3-1.75-0.8-3.3-4.5-6.25 2.55 4 1.5 8z" fill="url(#cn)"/>
+   <path d="m13.65-21.55q5.55 4.05 5.6 14.5 3.95 4.85 5.4-1.25-4.6-10.6-11-13.25z" fill="url(#cp)"/>
+   <path d="m19.25-7.05q-5.1 0.5-7-4.1-0.85 3.05 1.25 6.6 4.75 2.1 5.75-2.5z" fill="url(#cq)"/>
+   <path d="m7.65-9.65q1.8 3.3 0 6.6 1.85 3.15 4.6-1.1-1.1-3.85-4.6-5.5z" fill="url(#cr)"/>
+   <path d="m7.65-3.05q0.35 4.4-3.15 2 0.2 3.75-3 1.5-2.05 3.7-5.1 2.4 1.35 7-3 1.75-3 3.05-7.4 3.1-1.9 6.35-5.75 1.75-0.45 1.65-2.25 0.75-1.6 3.2-3.5 1-3.7 0.8-5.1 3.5-1.9 5.75 2.35 6.85 29.9-10 59.15-22.25 1-2.5-0.75-6.1-1.45-2.95-5.5-1.5-1.45 6.1-5.4 1.25-1 4.6-5.75 2.5l-1.25 0.4q-2.75 4.25-4.6 1.1z" fill="url(#cs)"/>
+   <path d="m4.5-1.05l-1.75-1.8-4-4.2q2.45 3.75 2.75 7.5 3.2 2.25 3-1.5z" fill="url(#ct)"/>
+   <path d="m2.75-2.85l1.75 1.8q3.5 2.4 3.15-2-3.75-2.3-4.85-6.4-1.05 3.05-0.05 6.6z" fill="url(#cu)"/>
+  </g>
+  <g id="dh">
+   <path d="m20.5-50.9l-4.85-0.4q-14.8 0-25.25 10.45-9.15 9.25-10.25 21.7l-0.15 4q0.15 13.6 9.15 23.45l1.25 1.3q10.45 10.4 25.25 10.4l4.85-0.3q11.6-1.45 20.25-10.1h0.1l-25.2-25.25 25.2-25.1-0.1-0.1q-8.65-8.65-20.25-10.05z" fill="#ff0"/>
+  </g>
+  <g id="bi">
+   <path d="m14 5.85l-0.4-1.35q-0.55-1.7-1.5-3.2-2.35-3.7-5.65-3.7t-5.65 3.7-2.35 8.95q0 4.7 1.9 8.15l0.45 0.8q1.3 2.05 2.9 2.95 2.8-0.85 5.05-3.75 2.95-3.8 4.85-11.05l0.4-1.5z"/>
+   <path d="m-10.25-16.3q-3 4.75-3.85 10.95-0.4 2.55-0.4 5.35 0 9.55 4.25 16.25l1.55 2.15q3.75 4.6 8.7 4.6 2 0 3.85-0.75l-0.15-0.1q-1.6-0.9-2.9-2.95l-0.45-0.8q-1.9-3.45-1.9-8.15 0-5.25 2.35-8.95t5.65-3.7 5.65 3.7q0.95 1.5 1.5 3.2l0.4 1.35 0.05 0.25q0.45-2.9 0.45-6.1 0-9.55-4.25-16.3-4.25-6.7-10.25-6.7t-10.25 6.7z" fill="#fff"/>
+  </g>
+  <path id="bu" d="m40.45-3.15l-6.3-7.1q-7.35-5.85-5.25 3 2.75 4.05 3.5 8.25 12.1 2.65 17.25 17.25-0.85-12.6-9.2-21.4 5.15-14.25 17.95 20.15-0.45-23.8-14.75-33.75l-1.45-2.15q-9.75-13.5-8.05 8.65m-5.25 3q-16.15-14.9-8.25 3.5 8.6 6.35 11.75 16v-11.25m-23 0.5q-1.3-0.95-2.75-1.75-2.9-10.15 7-5l2.15 4.1q5.15 11.25 2.35 23.15-0.45-14.15-8.75-20.5zm-17.25 9.25q5.55 12.3 18.75 18.5-14.55-1.5-26.75-10.75 5.15 8.4 6.75 17.75-6.6-12.05-14.75-15.25l1.35 8.1-2.65-0.95v2.5l-1.75-1.4v2.75l-3.95-5.5m-4.3 2.75q-0.8 5.25 5.15 7.65-5.8 0.75-9.15-4.25m23.3-14.15q-1.35-9.2 8-7.75m-31.3 21.9q-2.15-6.35 4-3.4m4.3-2.75q-3.6-10.15 7-5.5 4.8-14.35 8-2.5" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round"/>
+  <path id="bv" d="m-35.15 29.25q3.1 1.05 4.3-2.75" fill="none" stroke="url(#cd)" stroke-linecap="round" stroke-linejoin="round"/>
+  <path id="bw" d="m-7.85 10.75q11.4 1.45 17.25-9.25" fill="none" stroke="url(#ce)" stroke-linecap="round" stroke-linejoin="round"/>
+  <path id="bx" d="m15.8-1.15q3.85 3 4.85-2.6" fill="none" stroke="url(#cf)" stroke-linecap="round" stroke-linejoin="round"/>
+  <path id="by" d="m42.2-18.9q12.45-18-11.05-23.35" fill="none" stroke="url(#ch)" stroke-linecap="round" stroke-linejoin="round"/>
+  <path id="bz" d="m31.15-42.25l-89.5 72.5" fill="none" stroke="url(#ci)" stroke-linecap="round" stroke-linejoin="round"/>
+  <path id="ca" d="m-58.35 30.25q-0.05 12.05 3.25 12" fill="none" stroke="url(#cj)" stroke-linecap="round" stroke-linejoin="round"/>
+  <path id="cb" d="m-55.1 42.25q11.3-1.2 15.95-9.6" fill="none" stroke="url(#ck)" stroke-linecap="round" stroke-linejoin="round"/>
+  <path id="bk" d="m-30.6 14.7q1.4-2.7 5.1-3.5" fill="none" stroke="url(#cv)" stroke-linecap="round" stroke-linejoin="round"/>
+  <path id="bl" d="m2.75-2.85l1.75 1.8q3.5 2.4 3.15-2-3.75-2.3-4.85-6.4-1.05 3.05-0.05 6.6l-4-4.2q2.45 3.75 2.75 7.5 3.2 2.25 3-1.5m3.15-2q1.8-3.3 0-6.6 3.5 1.65 4.6 5.5m1.25-0.4q-2.1-3.55-1.25-6.6 1.9 4.6 7 4.1-0.05-10.45-5.6-14.5 6.4 2.65 11 13.25m-50.15 19.5q2.35-5.1 0-9.25 3.35 1.8 3.5 8.25m2.25-0.75q1.4-6.7 5.75-10.75-2.3 4.5 0 9m7.4-3.1q1.05-4-1.5-8 3.7 2.95 4.5 6.25m22.85-9.9q-1 4.6-5.75 2.5m-5.85 1.5q1.85 3.15 4.6-1.1m12.4-4.15q-1.45 6.1-5.4 1.25m-25.85 11.65q4.35 5.25 3-1.75m-16.15 6.6q3.85 4.6 5.75-1.75m-11.5 3.5q1.9 2.2 3.5-1" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round"/>
+  <path id="bm" d="m-22 10.2q1.8 0.9 2.25-0.75" fill="none" stroke="url(#cw)" stroke-linecap="round" stroke-linejoin="round"/>
+  <path id="bn" d="m-14 7.7q4.4-0.05 7.4-3.1" fill="none" stroke="url(#cx)" stroke-linecap="round" stroke-linejoin="round"/>
+  <path id="bo" d="m-3.6 2.85q3.05 1.3 5.1-2.4" fill="none" stroke="url(#cy)" stroke-linecap="round" stroke-linejoin="round"/>
+  <path id="bp" d="m12.25-4.15l1.25-0.4" fill="none" stroke="url(#da)" stroke-linecap="round" stroke-linejoin="round"/>
+  <path id="bq" d="m24.65-8.3q4.05-1.45 5.5 1.5" fill="none" stroke="url(#db)" stroke-linecap="round" stroke-linejoin="round"/>
+  <path id="br" d="m30.15-6.8q1.75 3.6 0.75 6.1" fill="none" stroke="url(#dc)" stroke-linecap="round" stroke-linejoin="round"/>
+  <path id="bs" d="m30.9-0.7q-29.25 12.25-59.15 22.25" fill="none" stroke="url(#dd)" stroke-linecap="round" stroke-linejoin="round"/>
+  <path id="bj" d="m-28.25 21.55q-4.25-1.1-2.35-6.85" fill="none" stroke="url(#de)" stroke-linecap="round" stroke-linejoin="round"/>
+ </defs>
+ <g transform="matrix(3.1763 -.30542 .33574 3.4916 1205.4 379.95)">
+  <use xlink:href="#cg"/>
+  <use xlink:href="#bu"/>
+  <use xlink:href="#bv"/>
+  <use xlink:href="#bw"/>
+  <use xlink:href="#bx"/>
+  <use xlink:href="#by"/>
+  <use xlink:href="#bz"/>
+  <use xlink:href="#ca"/>
+  <use xlink:href="#cb"/>
+ </g>
+ <g transform="matrix(3.1461 5.4492 -4.918 2.8394 1223.5 623.95)">
+  <use xlink:href="#bt"/>
+  <use xlink:href="#bk"/>
+  <use xlink:href="#bl"/>
+  <use xlink:href="#bm"/>
+  <use xlink:href="#bn"/>
+  <use xlink:href="#bo"/>
+  <use xlink:href="#bp"/>
+  <use xlink:href="#bq"/>
+  <use xlink:href="#br"/>
+  <use xlink:href="#bs"/>
+  <use xlink:href="#bj"/>
+ </g>
+ <g transform="matrix(11.44 0 0 10.645 884.7 676.4)">
+  <use xlink:href="#dh"/>
+ </g>
+ <g transform="matrix(5.6862 0 0 3.087 983.65 333.9)">
+  <use xlink:href="#bi"/>
+ </g>
+</svg>

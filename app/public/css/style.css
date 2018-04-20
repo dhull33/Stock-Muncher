@@ -13,7 +13,6 @@
 
 
 /*Search bar */
-
 button[type='submit']{
     background: #0A2E36 ;
     color: #14CC60;
@@ -30,11 +29,11 @@ button[type='submit']{
     justify-content: center;
 }
 
+/*Sets color of navbar*/
 .navbar{
     background: #0A2E36;
 }
 
-.fontmeSpGreen {
-    font-family: "Cute Font", sans-serif;
-    color: #27FB6B;
+body {
+    background-color: #036D19;
 }
