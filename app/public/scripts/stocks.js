@@ -120,18 +120,12 @@ $("#sectorPriceUpdate").on("click", function(e) {
 // }
 // getStockList();
 
+
+// Autocomplete
 $(document).ready(function(){
-    var url = 'scripts/data/stock_symbols.json';
+    var url = '/api_stocks';
     var stockList = [];
-    $.getJSON(url, function(data) {
-        console.log(data[0]["Symbol"]);
-        var i = 0;
-        $(data).each(function() {
-            // stockList.push([data[i]["Symbol"], data[i]["Name"], data[i]["Sector"]]);
-            stockList.push(data[i]["Symbol"] + " : " + data[i]["Name"] + " : " + data[i]["Sector"]);
-            i ++;
-        })
-    })
+
 
     console.log(stockList);
     
@@ -156,18 +150,46 @@ $(document).ready(function(){
                 //Add results to cache
                 cache[query] = results;
             }
-            console.log(results);
+            
+            // Accesses our stock database and fills the dropdown
+            var data = {userString: $("#stockSymbol").val()}
+            var success = function(res){
+                console.log(res, 'got a response')
+                if(res.stocks.length){
+                    stockData = res.stocks;
+                    stockDataLength = stockData.length;
+                    
+                    for (var i = 0; i <= Math.min(stockDataLength, 9); i++) {
+                        var stockSymbol = stockData[i].stock_symbol;
+                        var stockName = stockData[i].stock_name;
+                        var stockSector = stockData[i].sector;
+                        var stockPrice = stockData[i].current_price;
+                        $("#res").append("<p><b><span class='stockSymbol'>" + " " + stockSymbol + 
+                        "<span class='stockPrice'>" + stockPrice + "</span><br /></b><span class='stockName'>" + stockName + "</span><br /><i><span class='stockSector'>" + stockSector  + "</span></p>");
+                    }
+                    
+                }
+            }
+            $.ajax({
+                type: "POST",
+                url: '/api_stocks',
+                data: data,
+                success: success,
+                dataType: 'json'
+            });
+
             //First search
             if(drew == false){
                 //Create list for results
-                $("#stockSymbol").after('<ul id="res"></ul>');
+                $(".stockSymbol").after('<ul id="res"></ul>');
                 
                 //Prevent redrawing/binding of list
                 drew = true;
                 
                 //Bind click event to list elements in results
-                $("#res").on("click", "p", function(stockLine){
-                    $("#stockSymbol").val($(this).text().substring(0, $(this).text().indexOf(" "))); // Keeps stock symbol only in input box
+                $("#res").on("click", "p", function(stockLine){ 
+                    
+                    $("#stockSymbol").val($(this).text().substring(0, $(this).text().indexOf("$"))); // Keeps stock symbol only in input box
                     $("#res").empty();
                  });
             }
@@ -176,24 +198,10 @@ $(document).ready(function(){
                 $("#res").empty();
             }
             
-            //Add results to the list
-            var count = 0;
-            for(term in results){
-                var number = results[term].indexOf(":");
-                var number2 = results[term].lastIndexOf(":");
-                var stockSymbol = results[term].substring(0, number - 1);
-                var stockName = results[term].substring(number + 2, number2 - 1);
-                var stockSector = results[term].substring(number2 + 2, results[term].length);
-                $("#res").append("<p><b><span class='stockSymbol'>" + stockSymbol + "</span></b> <br /><span class='stockName'>" + stockName + "</span><br /><i><span class='stockSector'>" + stockSector + "</p>");
-                count += 1
-                if (count > 9) {
-                    break;  // Limits to 10 results
-                }
-            }
         }
         //Handle backspace/delete so results don't remain with less than 3 characters
-        else if(drew){
-            $("#res").empty();
-        }
+            else if(drew){
+                $("#res").empty();
+            }
     });
-});
+})

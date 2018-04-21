@@ -22,9 +22,8 @@ var apiKey = "3SW8F3VSYVSP0VAZ";
 
 router.get('/stocks',function(req,res){
   var symbol = req.body.stock_symbol
-  db.any('SELECT * FROM stocks').then(function(data){
-    // res.render(page to render, object to pass to the page)
-    res.render('stocks',{'stocks' : data});
+  db.any('SELECT * FROM stocks').then(function(stockData) {
+    res.render('stocks',{'stocks' : stockData});
   })
 })
 
@@ -65,7 +64,9 @@ router.post('/stocks',function(req,res){
           // Insert data retrieved from API into database
           
           db.none('INSERT INTO stock_purchase(user_id, stock_symbol, purchase_price_each, purchase_date) values($1, $2, $3, $4)',[userId, symbol, stockPrice, datetime]).then(function(){
-        })
+            var parsedStock = {symbol: symbol, stockPrice: stockPrice}
+            res.render('stocks', {'stocks' : parsedStock});
+          })
           
           
     }) 
