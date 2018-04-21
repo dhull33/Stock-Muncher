@@ -94,6 +94,10 @@ button[type='submit']{
     justify-content: right;
 }
 
+.navbar{
+    background: #0A2E36;
+}
+
 /*For 'stock muncher' in header */
 .header{
     display: flex;
@@ -134,13 +138,6 @@ body {
 }
 
 
-/*Makes Graphs Responsive*/
-@media screen and (width: 1080px) {
-    div#chart_div {
-        zoom: 1.5;
-
-    }
-}
 
 #res {
     margin: 0px;
