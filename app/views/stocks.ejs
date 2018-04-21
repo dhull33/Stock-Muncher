@@ -1,32 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
-<<<<<<< HEAD
     <style>
-            #res {
-                margin: 0px;
-                padding-left: 0px;
-                width: 150px;
-            }
-            
-            #res li {
-                list-style-type: none;
-            }
-            
-            #res li:hover {
-                background: #110D3B;
-                color: #FFF;
-                cursor: pointer;
-            }
+        /*Makes Graphs Responsive*/
+        @media screen and (width: 1080px) {
+            div#chart_div {
+                zoom: 0;
 
-            @media screen and (width: 1080px) {
-                div#chart_div {
-                    zoom:1.5;
-
-                }
             }
-        </style>
-=======
->>>>>>> 652b3dcdd8282e347eeabbcd806fd9690cfd5d00
+        }
+
+        #res {
+            margin: 0px;
+            padding-left: 0px;
+            width: 150px;
+        }
+
+        #res li {
+            list-style-type: none;
+        }
+
+        #res li:hover {
+            background: #110D3B;
+            color: #FFF;
+            cursor: pointer;
+        }
+    </style>
+
+
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -37,17 +37,21 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 
-        <link rel="stylesheet" href="css/style.css" type="text/css"/>
-
-
+        <!-- ### jQuery for bootstrap ###-->
         <script src="http://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+
 
         <!--Google Charts -->
         <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 
-        <script type="text/javascript" src="scripts/graph.js">
-        </script>
+        <!-- Our CSS stylesheet -->
+        <link rel="stylesheet" href="css/style.css" type="text/css">
 
+        <!--Google Font: Cute Font-->
+        <link href="https://fonts.googleapis.com/css?family=Cute+Font" rel="stylesheet">
+
+        <!-- ### Script for graphs: Must be in <head> ###-->
+        <script type="text/javascript" src="scripts/graph.js"></script>
 
         <title></title>
     </head>
