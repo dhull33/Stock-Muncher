@@ -22,8 +22,8 @@ app.set('views', 'views');
 // ### Routes ###
 app.use(require("./routes/index"));
 app.use(require("./routes/stocks"));
+app.use(require("./routes/userPage"))
 
-//app.use(require("./routes/stocks"));
 app.use(bodyParser.urlencoded({extended :false}));
 
 //public folder
