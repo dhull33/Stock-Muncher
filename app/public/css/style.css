@@ -37,9 +37,9 @@
     cursor: pointer;
 }
 
-#stockSymbol {
-    margin-bottom: 18px;
-}
+/*#stockSymbol {*/
+    /*margin-bottom: 18px;*/
+/*}*/
 
 .stockSymbol {
     color: white;
@@ -94,8 +94,10 @@ button[type='submit']{
 }
 
 body {
-    background-color: #0A2E36;
-    color: white;
+    /*background-color: #0A2E36;*/
+    color: #27FB6B;
+    /*font-family: 'Cute Font', cursive;*/
+    /*font-size: 27px;*/
 }
 
 .cuteFont {

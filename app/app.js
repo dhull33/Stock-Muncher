@@ -7,8 +7,8 @@ var promise = require('bluebird');
 var bodyParser = require('body-parser');
 var pgp = require('pg-promise')(options);
 
-var connectionString = 'postgres://localhost:5432/stocks';
-var db = pgp(connectionString);
+//var connectionString = 'postgres://localhost:5432/stocks';
+//var db = pgp(connectionString);
 
 
 var options = {

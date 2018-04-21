@@ -13,18 +13,20 @@
         <% include partials/template/navBar.ejs %>
 
         <!-- CONTENT GOES HERE -->
+        <div class="container">
+            <h1 class="">hi user!</h1>
+        </div>
 
-        <h1>Stock Purchase Page</h1>
-
-        <button id="stockPriceUpdate">Refresh Stock Price</button>
+        <!--<button id="stockPriceUpdate">Refresh Stock Price</button>-->
 
         <br>
         <form action="/userPage" method="POST" autocomplete="off">
-            <b>Stock Symbol: </b><input list="stockSymbolList" id="stockSymbol" type="text" name="stock_symbol">
-            <datalist id="stockSymbolList">
+            <!--<b>Stock Symbol: </b><input list="stockSymbolList" id="stockSymbol" type="text" name="stock_symbol">-->
+            <!--<datalist id="stockSymbolList">-->
 
-            </datalist>
+            <!--</datalist>-->
 
+            <!-- SYMBOL & PRICE output to page -->
             <h2>Stock Symbol</h2>
             <h4 id="stockSymbolText"></h4>
             <h2>Estimated Price</h2>
