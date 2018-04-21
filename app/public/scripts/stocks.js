@@ -156,11 +156,11 @@ $(document).ready(function(){
             var success = function(res){
                 console.log(res, 'got a response')
                 if(res.stocks.length){
-                    stockData = res.stocks;
-                    stockDataLength = stockData.length;
+                    var stockData = res.stocks;
+                    var stockDataLength = stockData.length;
                     
                     for (var i = 0; i <= Math.min(stockDataLength, 9); i++) {
-                        var stockSymbol = stockData[i].stock_symbol;
+                        var stockSymbol = stockData[i]['stock_symbol'];
                         var stockName = stockData[i].stock_name;
                         var stockSector = stockData[i].sector;
                         var stockPrice = stockData[i].current_price;
