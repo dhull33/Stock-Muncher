@@ -49,7 +49,9 @@ router.post('/stocks',function(req,res){
         .then(json => {
           // Assigns response to a variable so that we could access multiple data fields from JSON response
           var stockData = json;
-          var timeSeries15 = stockData["Time Series (1min)"];
+
+          // I may changed time series from 15min to 1min which might be why its fucking up
+          var timeSeries15 = stockData["Time Series (15min)"];
           var currentDateData = Object.keys(timeSeries15)[0];
           var stockPrice = timeSeries15[currentDateData]["4. close"];
           var timeZone = stockData["Meta Data"]["6. Time Zone"]

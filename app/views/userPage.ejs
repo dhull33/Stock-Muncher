@@ -1,0 +1,85 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <!--Head.ejs goes here-->
+        <% include partials/template/head.ejs %>
+
+    </head>
+
+    <body>
+        <!--Navbar goes here-->
+        <% include partials/template/navBar.ejs %>
+
+        <!-- CONTENT GOES HERE -->
+        <div class="container">
+            <h1 class="">hi user!</h1>
+        </div>
+
+        <!--<button id="stockPriceUpdate">Refresh Stock Price</button>-->
+
+        <br>
+        <form action="/userPage" method="POST" autocomplete="off">
+            <!--<b>Stock Symbol: </b><input list="stockSymbolList" id="stockSymbol" type="text" name="stock_symbol">-->
+            <!--<datalist id="stockSymbolList">-->
+
+            <!--</datalist>-->
+
+            <!-- SYMBOL & PRICE output to page -->
+            <h2>Stock Symbol</h2>
+            <h4 id="stockSymbolText"></h4>
+            <h2>Estimated Price</h2>
+            <p id="price"></p>
+
+            <p id="currentDate"></p>
+            <br>
+            <input type="submit" value="Buy Stock" />
+        </form>
+
+
+        <h1>Sector Prices</h1>
+        <button id="sectorPriceUpdate">Update</button>
+        <table id="sectorTable">
+            <tr>
+                <th>Sector Name</th>
+                <th>Real Time</th>
+                <th>1 Day</th>
+                <th>5 Day</th>
+                <th>1 Month</th>
+                <th>3 Month</th>
+                <th>YTD</th>
+                <th>1 Year</th>
+                <th>3 Year</th>
+                <th>5 Year</th>
+                <th>10 Year</th>
+            </tr>
+
+        </table>
+
+        <div id="dashboard_div" class="container-fluid">
+            <div id="filter-div"></div>
+            <div id="chart_div" class='container-fluid' style="width: 100vw; height: 70vh;"></div>
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+        <!--Footer goes here-->
+        <div id="footer">
+
+            <% include partials/template/footer.ejs %>
+        </div>
+    </body>
+
+    <!-- end.ejs goes here -->
+    <% include partials/template/end.ejs %>
+
+</html>

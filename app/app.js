@@ -7,8 +7,8 @@ var promise = require('bluebird');
 var bodyParser = require('body-parser');
 var pgp = require('pg-promise')(options);
 
-var connectionString = 'postgres://localhost:5432/stocks';
-var db = pgp(connectionString);
+//var connectionString = 'postgres://localhost:5432/stocks';
+//var db = pgp(connectionString);
 
 
 var options = {
@@ -17,6 +17,9 @@ var options = {
 
 app.use(require("./routes/index"));
 app.use(require("./routes/stocks"));
+
+app.use(require("./routes/userPage"))
+
 app.use(require("./routes/stockmanage"));
 app.use(require("./routes/stock_list"));
 app.use(require("./routes/api"))
@@ -25,7 +28,6 @@ app.use(require("./routes/api"))
 app.set('view engine', 'ejs');
 app.set('views', 'views');
 
-//app.use(require("./routes/stocks"));
 app.use(bodyParser.urlencoded({extended :false}));
 
 //public folder

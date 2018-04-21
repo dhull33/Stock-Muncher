@@ -1,5 +1,6 @@
 
-google.charts.load('current', {packages: ['corechart']});
+google.charts.load('current', {packages: ['corechart', 'controls']});
+
 google.charts.setOnLoadCallback(function(){
     $("#stockPriceUpdate").on("click", function(e) {
         console.log(e.target);
@@ -75,8 +76,8 @@ function drawChart() {
                 }
             }
 
-            console.log("");
-            console.log(newData);
+            //console.log("");
+            //console.log(newData);
             //console.log(timeSeries15.length);
 
 
@@ -89,7 +90,7 @@ function drawChart() {
 
             let options = {
                 legend: 'right',
-                colors: ["#364156"],
+                colors: ["white"],
                 backgroundColor: '#0A2E36',
                 candlestick: {
                     fallingColor: { strokeWidth: 0, stroke: 'black', fill: '#a52714' }, // red

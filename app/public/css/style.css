@@ -37,9 +37,10 @@
     cursor: pointer;
 }
 
-#stockSymbol {
-    margin-bottom: 18px;
-}
+/* This was messing up the search bar in the nav */
+/*#stockSymbol {*/
+    /*margin-bottom: 18px;*/
+/*}*/
 
 .stockSymbol {
     color: white;
@@ -61,6 +62,7 @@
     color: green;
     float: right;
     margin-right: 20px;
+
 }
 
 .modal-dialog {
@@ -78,3 +80,82 @@
     min-height: 100%;
     border-radius: 0;
 }
+
+
+/*Search bar */
+button[type='submit']{
+    background: #0A2E36 ;
+    color: #14CC60;
+}
+
+
+#search{
+    display: inline-flex;
+    justify-content: right;
+}
+
+/*For 'stock muncher' in header */
+.header{
+    display: flex;
+    justify-content: center;
+    color: #27FB6B;
+    font-family: 'Cute Font', cursive;
+    font-size: 15vw;
+}
+
+/*For 'eat the competition' in header */
+.header2{
+    display: flex;
+    justify-content: center;
+    color: #27FB6B;
+    font-family: 'Cute Font', cursive;
+    font-size: 15vw;
+    margin-top: -5rem;
+
+
+
+body {
+    background-color: #0A2E36;
+    color: #27FB6B;
+    /*font-family: 'Cute Font', cursive;*/
+    /*font-size: 27px;*/
+}
+
+.cuteFont {
+    color: #27FB6B;
+    font-family: 'Cute Font', cursive;
+    font-size: 27px;
+
+}
+
+
+.introMunch{
+    fill: #036D19;
+}
+
+
+/*Makes Graphs Responsive*/
+@media screen and (width: 1080px) {
+    div#chart_div {
+        zoom: 1.5;
+
+    }
+}
+
+#res {
+    margin: 0px;
+    padding-left: 0px;
+    width: 150px;
+}
+
+#res li {
+    list-style-type: none;
+}
+
+#res li:hover {
+    background: #110D3B;
+    color: #FFF;
+    cursor: pointer;
+}
+
+
