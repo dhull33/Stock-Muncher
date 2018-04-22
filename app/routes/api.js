@@ -24,7 +24,7 @@ router.post('/api_stocks',function(req,res) { // Creates an API so that out fron
         res.json({'stocks': stockData});
     })
 
-    router.post('/api_all_stocks', function (req, res) { // Creates an API so that out front end can access our database
+    router.post('/api_all_stocks', function (req, res) { // Creates an API so that our front end can access our database
 
         db.any(`SELECT * FROM stocks WHERE stock_price_date > (CURRENT_DATE - 30) ORDER BY
   stock_symbol`).then(function (stockData) {

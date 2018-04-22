@@ -15,8 +15,8 @@ function drawChart() {
     (function() {
         console.log("Submitted")
         var url = "https://www.alphavantage.co/query?function=TIME_SERIES_INTRADAY&symbol="
-        var symbol = document.getElementById("stockSymbol").value.toUpperCase() + ":"; // Added : to end in case autocomplete is not used and only stock symbol is used
-        symbol = symbol.substr(0, symbol.indexOf(":")); // Keeps symbol only
+       var symbol = $("stockSymbol").value;
+        // var symbol = document.getElementById("stockSymbol"); // Added : to end in case autocomplete is not used and only stock symbol is used
         console.log(symbol);
 
         //specifies time interval

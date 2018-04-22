@@ -103,10 +103,11 @@ function update_sector_price() {
                     tdElements[i].classList.add('red');
 
                 }
-                else if(num > 0){
+                else if(num >= 0){
                     tdElements[i].classList.add('green');
 
                 }
+
                 else{
                     tdElements[i].classList.add('j');
                 }
