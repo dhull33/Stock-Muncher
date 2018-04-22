@@ -184,61 +184,6 @@ button[type='submit']{
     background-color: rgb(17, 17, 17)
 } */
 
-#loading {
-    display: block;
-    margin: 120px auto -120px auto;
-
-}
-
-#logo {
-
-}
-
-#stockMuncherText {
-    position: relative;
-    top: 50px;
-    left: 100px;
-}
-
-.topAnimation {
-    /* border: 16px solid #f3f3f3;
-    border-radius: 50%;
-    border-top: 16px solid #3498db; */
-    width: 120px;
-    height: 120px;
-    -webkit-animation: myfirst 10s infinite; /* Safari */
-    animation: myfirst 10s infinite;
-    animation-direction: normal;
-    position: relative;
-    top: 0px;
-  }
-
-  @-webkit-keyframes spin {
-    0% { -webkit-transform: rotate(0deg); }
-    100% { -webkit-transform: rotate(360deg); }
-  }
-  
-  @keyframes spin {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
-  }
-
-  @-webkit-keyframes myfirst {
-    0%   {right: 0px; top: -50px;}
-    90%  {left: 500px; top: -50px;}
-    90%  {left: 500px; top: -200px;}
-    90%  {left: 0px; top: -200px;}
-    100% {left: 0px; top: -100px;}
-}
-
-@keyframes myfirst {
-    0%   {left: 0px; top: -50px;}
-    90%  {left: 500px; top: -50px;}
-    90%  {left: 500px; top: -200px;}
-    90%  {left: 0px; top: -200px;}
-    100% {left: 0px; top: -100px;}
-}
-
 #leftNavBar {
     background-color: floralwhite;
 }
@@ -272,3 +217,65 @@ button[type='submit']{
     border-bottom: 2px dotted black;
     border-right: 2px dotted black;
 }
+
+/* Animation section  */
+#stockMuncherText {
+    position: relative;
+    top: 50px;
+    left: 200px;
+    letter-spacing: 20px;
+}
+
+.topAnimation {
+    /* border: 16px solid #f3f3f3;
+    border-radius: 50%;
+    border-top: 16px solid #3498db; */
+    -webkit-animation: myfirst 8s infinite; /* Safari */
+    animation: stockMunch 8s infinite;
+    animation-direction: normal;
+    position: relative;
+    top: 0px;
+  }
+
+@-webkit-keyframes stockMunch {
+    0%   {right: 40px; top: -50px;}
+    90%  {left: 500px; top: -50px;}
+    91%  {left: 500px; top: -200px;}
+    92%  {left: 0px; top: -200px;}
+    100% {left: 0px; top: -100px;}
+}
+
+@keyframes stockMunch {
+    0%   {left: 40px; top: -50px;}
+    90%  {left: 500px; top: -50px;}
+    91%  {left: 500px; top: -200px;}
+    92%  {left: 0px; top: -200px;}
+    100% {left: 0px; top: -100px;}
+}
+
+#loading {
+    display: block;
+    margin: 120px auto -120px auto;
+
+}
+
+.loader {
+    border: 5px solid #f3f3f3;
+    border-radius: 50%;
+    border-top: 5px solid black;
+    width: 120px;
+    height: 120px;
+    -webkit-animation: spin 2s linear infinite; /* Safari */
+    animation: spin 2s linear infinite;
+  }
+  
+  /* Safari */
+  @-webkit-keyframes spin {
+    0% { -webkit-transform: rotate(0deg); }
+    100% { -webkit-transform: rotate(360deg); }
+  }
+  
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }

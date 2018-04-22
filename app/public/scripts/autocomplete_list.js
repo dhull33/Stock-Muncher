@@ -1,3 +1,36 @@
+$("#loading").hide();
+var str = " Stock Muncher.";
+var n = 0;
+var eatenString = " ";
+
+// var typeLines = function() { 
+function typeLines() {
+
+    var brokenLetterList = ["$"];
+    var strLen = str.length;
+
+    if (n < strLen) {
+        newStrArray = str.substring(n, strLen);
+    }
+    
+    n += 2; // to eat two letters at a time
+
+    if (n >= strLen + 24) { // Added 24 to make sure timing is right at the time the stock muncher is not earing the letters
+        n = 0;
+        eatenString = "";
+    }
+    if (n > 2 && n <= strLen) {
+        eatenString += brokenLetterList[Math.floor(Math.random() * brokenLetterList.length)];
+    }
+    
+
+    $("#stockMuncherText").html(eatenString + newStrArray);
+    //$("#text").html(j);
+        
+}
+
+setInterval(typeLines, 400);
+
 // Autocomplete list
 $("#loading").hide();
 
