@@ -4,12 +4,12 @@ function update_stock_price() {
     (function() {
         console.log("Submitted")
         var url = "https://www.alphavantage.co/query?function=TIME_SERIES_INTRADAY&symbol="
-        var symbol = document.getElementById("stockSymbol").value.toUpperCase() + ":"; // Added : to end in case autocomplete is not used and only stock symbol is used
-        symbol = symbol.substr(0, symbol.indexOf(":")); // Keeps symbol only
+        var symbol = document.getElementById("stockSymbol").value.toUpperCase() +  ':'; // Added : to end in case autocomplete is not used and only stock symbol is used
+        //symbol = symbol.substr(0, symbol.indexOf(":")); // Keeps symbol only
         console.log(symbol);
 
         //specifies time interval
-        var url2 = "&interval=15min&apikey="
+        var url2 = "&interval=1min&apikey="
         var apiKey = "3SW8F3VSYVSP0VAZ";
 
 
@@ -26,7 +26,7 @@ function update_stock_price() {
         // handle success
         function updateUISuccess(response) {
             console.log(response);
-            var timeSeries15 = response["Time Series (15min)"];
+            var timeSeries15 = response["Time Series (1min)"];
 
             //Use object.keys to access data
             var currentDateData = Object.keys(timeSeries15)[0];
@@ -78,14 +78,39 @@ function update_sector_price() {
             
             for (let i = 0; i < sectors.length; i++) {
                 var row = table.insertRow(i + 1);
+
                 var rowHeading = row.insertCell(0);
+
                 rowHeading.innerHTML = sectors[i];
                 // console.log(sectors[i]);
                 for (let j = 0; j < sectorResponse.length; j++) {
                     var cell = row.insertCell(j + 1);
+
                     cell.innerHTML = response[sectorResponse[j]][sectors[i]];
-                    // console.log(response[sectorResponse[j]][sectors[i]]);
+                    //console.log(response[sectorResponse[j]][sectors[i]]);
                 }
+            }
+
+            //Changes the color of the cells
+            let tdElements = document.querySelectorAll("td");
+
+            for(let i=0; i < tdElements.length; i++){
+                let text = tdElements[i].innerHTML;
+
+                let num = parseFloat(text);
+
+                if(num < 0){
+                    tdElements[i].classList.add('red');
+
+                }
+                else if(num > 0){
+                    tdElements[i].classList.add('green');
+
+                }
+                else{
+                    tdElements[i].classList.add('j');
+                }
+
             }
         }
 
@@ -94,14 +119,19 @@ function update_sector_price() {
             console.log("Fail");
         }
     })();
-}
+};
 
 $("#stockPriceUpdate").on("click", function(e) {
     console.log(e.target);
     update_stock_price();
-})
+});
 
-$("#sectorPriceUpdate").on("click", function(e) {
-    console.log(e.target);
+//Made sector tables update automatically
+$(document).ready( function() {
+    //console.log(e.target);
     update_sector_price();
-})
+
+});
+
+
+

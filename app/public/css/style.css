@@ -1,4 +1,20 @@
 
+/*### Keep body styling at the top ###*/
+body {
+    background-color: #0A2E36;
+    color: #27FB6B;
+    /*font-family: 'Cute Font', cursive;*/
+    /*font-size: 27px;*/
+}
+
+.introMunch{
+    display: block;
+    margin: 5em auto 0px auto;
+    width: 600px;
+    height: 300px;
+}
+
+
 #sectorTable th {
     font-weight: 700;
     border-bottom: 4px solid black;
@@ -10,6 +26,7 @@
     border-bottom: 1px dashed black;
     border-right: 1px solid black;
     text-align: center;
+    color: #FBFBFB;
 }
 
 .stockSelection {
@@ -118,6 +135,10 @@ button[type='submit']{
     justify-content: right;
 }
 
+.navbar{
+    background: #0A2E36;
+}
+
 /*For 'stock muncher' in header */
 .header{
     display: flex;
@@ -125,25 +146,21 @@ button[type='submit']{
     color: #27FB6B;
     font-family: 'Cute Font', cursive;
     font-size: 15vw;
+    margin-top: -5rem;
+
 }
 
 /*For 'eat the competition' in header */
-.header2{
+.header2 {
     display: flex;
     justify-content: center;
     color: #27FB6B;
     font-family: 'Cute Font', cursive;
     font-size: 15vw;
     margin-top: -5rem;
+
 }
 
-
-body {
-    background-color: #0A2E36;
-    color: #27FB6B;
-    /*font-family: 'Cute Font', cursive;*/
-    /*font-size: 27px;*/
-}
 
 .cuteFont {
     color: #27FB6B;
@@ -152,19 +169,10 @@ body {
 
 }
 
-
-.introMunch{
-    fill: #036D19;
+.mainBut {
+    background-color: #D2D7DF;
 }
 
-
-/*Makes Graphs Responsive*/
-@media screen and (width: 1080px) {
-    div#chart_div {
-        zoom: 1.5;
-
-    }
-}
 
 #graphArea {
     background-color: blue;
@@ -178,6 +186,26 @@ body {
 #leftNavBar {
     background-color: floralwhite;
 }
+
+/* Resize navbar logo*/
+.resize {
+    max-width: 150px;
+    max-height: 150px;
+}
+
+
+.red {
+    background-color: darkred;
+}
+
+.green {
+    background-color: darkgreen;
+}
+
+.j {
+
+}
+
 
 #stockListHeader {
     font-size: 20px;
