@@ -5,33 +5,61 @@ var express = require('express');
 var app = express();
 var promise = require('bluebird');
 var bodyParser = require('body-parser');
-var pgp = require('pg-promise')(options);
+
+const passport = require('passport')
+const LocalStrategy = require('passport-local').Strategy
+
+var cookieParser = require('cookie-Parser');
+var bodyParser = require('body-parser');
+var session = require('express-session');
+const bcrypt = require('bcryptjs');
 
 //var connectionString = 'postgres://localhost:5432/stocks';
-//var db = pgp(connectionString);
+
+// var db = pgp(connectionString);
+
+const config = {
+  host: 'localhost',
+  port: 5432,
+  database: 'stocks',
+  user: 'postgres'
+};
+// pg-promise initialization options:
+const initOptions = {
+  // Use a custom promise library, instead of the default ES6 Promise:
+  promiseLib: promise,
+};
+// Load and initialize pg-promise:
+const pgp = require('pg-promise')(initOptions);
+// Create the database instance:
+const db = pgp(config);
 
 
-var options = {
-  promiseLib : promise
-}
+
 
 app.use(require("./routes/index"));
 app.use(require("./routes/stocks"));
-
+app.use(require("./routes/stockmanage"));
+app.use(require("./routes/stock_list"));
+app.use(require("./routes/api"))
+app.use(require("./routes/login"))
+app.use(require("./routes/signup"))
 app.use(require("./routes/userPage"))
-
-app.use(require("./routes/stocklist"));
-app.use(require("./routes/api"));
-
-
+app.use(require('./routes/logout'))
 
 app.set('view engine', 'ejs');
 app.set('views', 'views');
 
-app.use(bodyParser.urlencoded({extended :false}));
 
-//public folder
+//app.use(require("./routes/stocks"));
+app.use(bodyParser.urlencoded({extended: true}));
+app.use(bodyParser.json());
 app.use(express.static('./public'));
+
+
+app.use(passport.initialize());
+app.use(passport.session());
+
 
 var port = 3000;
 
