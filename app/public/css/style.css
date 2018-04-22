@@ -25,6 +25,7 @@ body {
     border-bottom: 1px dashed black;
     border-right: 1px solid black;
     text-align: center;
+    color: #FBFBFB;
 }
 
 .stockSelection {
@@ -167,4 +168,21 @@ button[type='submit']{
     cursor: pointer;
 }
 
+/* Resize navbar logo*/
+.resize {
+    max-width: 150px;
+    max-height: 150px;
+}
 
+
+.red {
+    background-color: darkred;
+}
+
+.green {
+    background-color: darkgreen;
+}
+
+.j{
+
+}
