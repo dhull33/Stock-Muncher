@@ -68,12 +68,12 @@ $(document).ready(function(){
                 drew = true;
                 
                 //Bind click event to list elements in results
-                $(".stockData").on("click", function(stockLine){ 
-                    currentStockSymbol = $(this).html().substring($(this).html().indexOf(">") + 1, $(this).html().indexOf("</td>"));
-                    $("#stockSymbol").val(currentStockSymbol); // Keeps stock symbol only in input box
+                // $(".stockData").on("click", function(stockLine){ 
+                //     currentStockSymbol = $(this).html().substring($(this).html().indexOf(">") + 1, $(this).html().indexOf("</td>"));
+                //     $("#stockSymbol").val(currentStockSymbol); // Keeps stock symbol only in input box
 
-                    $("#res").empty();
-                 });
+                //     $("#res").empty();
+                //  });
             }
             //Clear old results
             else{
@@ -124,3 +124,10 @@ function defaultData() {
 
 defaultData();
 
+// Makes the on click work on page load before the user types anything. Place anything here that should be updated when the user selects a stock.
+$(".stockData").on("click", function(stockLine){ 
+    currentStockSymbol = $(this).html().substring($(this).html().indexOf(">") + 1, $(this).html().indexOf("</td>"));
+    $("#stockSymbol").val(currentStockSymbol); // Keeps stock symbol only in input box
+
+    $("#res").empty();
+ });

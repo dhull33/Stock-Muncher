@@ -30,6 +30,7 @@
 
 #stockListTable {
     margin-top: 12px;
+    width: 100%;
 }
 
 #res span {
@@ -88,7 +89,7 @@
     text-align: center;
 }
 
-.modal-dialog {
+/* .modal-dialog {
     width: 100%;
     height: 100%;
     margin-top: 0;
@@ -102,7 +103,7 @@
     min-width: 100%;
     min-height: 100%;
     border-radius: 0;
-}
+} */
 
 
 /*Search bar */
@@ -186,4 +187,4 @@ body {
 #stockList td {
     border-bottom: 2px dotted black;
     border-right: 2px dotted black;
-} 
+}
