@@ -39,8 +39,8 @@ const db = pgp(config);
 
 app.use(require("./routes/index"));
 app.use(require("./routes/stocks"));
-app.use(require("./routes/stockmanage"));
-app.use(require("./routes/stock_list"));
+app.use(require("./routes/stocklist"));
+//app.use(require("./routes/stock_list"));
 app.use(require("./routes/api"))
 app.use(require("./routes/login"))
 app.use(require("./routes/signup"))
