@@ -9,11 +9,7 @@ var bodyParser = require('body-parser');
 const passport = require('passport')
 const LocalStrategy = require('passport-local').Strategy
 
-<<<<<<< HEAD
 var cookieParser = require('cookie-parser');
-=======
-var cookieParser = require('cookie-Parser');
->>>>>>> 410811f5d9705aa18ede2cdae35cd7d7fa45de6e
 var bodyParser = require('body-parser');
 var session = require('express-session');
 const bcrypt = require('bcryptjs');
@@ -44,11 +40,6 @@ const db = pgp(config);
 app.use(require("./routes/index"));
 app.use(require("./routes/stocks"));
 app.use(require("./routes/stocklist"));
-<<<<<<< HEAD
-//app.use(require("./routes/stock_list"));
-=======
-//app.use(require("./routes/stock_list"));
->>>>>>> 410811f5d9705aa18ede2cdae35cd7d7fa45de6e
 app.use(require("./routes/api"))
 app.use(require("./routes/login"))
 app.use(require("./routes/signup"))
