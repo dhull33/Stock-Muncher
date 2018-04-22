@@ -39,19 +39,11 @@ exports.updateBatchStocks = (function() {
 
     var currentdate = new Date();
     var datetime = currentdate.getFullYear() + "/"
-<<<<<<< HEAD
         + (currentdate.getMonth()+1)  + "/"
         + currentdate.getDate() + " "
         + currentdate.getHours() + ":"
         + currentdate.getMinutes() + ":"
         + currentdate.getSeconds();
-=======
-            + (currentdate.getMonth()+1)  + "/"
-            + currentdate.getDate() + " "
-            + currentdate.getHours() + ":"  
-            + currentdate.getMinutes() + ":" 
-            + currentdate.getSeconds();
->>>>>>> db22f1f2fd2dbd7049d2134b48af290c386c9ea0
     // console.log(datetime);  // Shows current date
 
     // runs api
