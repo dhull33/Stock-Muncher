@@ -17,14 +17,14 @@ body {
 
 #sectorTable th {
     font-weight: 700;
-    border-bottom: 4px solid black;
+    /*border-bottom: 4px solid black;*/
     padding-right: 20px;
 }
 
 #sectorTable td {
     margin-right: 20px;
     border-bottom: 1px dashed black;
-    border-right: 1px solid black;
+    /*border-right: 1px solid black;*/
     text-align: center;
     color: #FBFBFB;
 }
@@ -50,7 +50,7 @@ body {
     width: 100%;
 }
 
-#res span {
+#res span{
     background: black;
     margin-top: -15px;
 }
@@ -74,12 +74,12 @@ body {
 .stockSymbol {
     color: white;
     font-size: 18px;
-    width: 25%;
+    /*width: 25%;*/
 }
 
-#blankrow {
+/*#blankrow {
     height: 10px;
-}
+} */
 
 .stockName {
     background-color: black;
@@ -102,7 +102,7 @@ body {
     width: 35%
 }
 
-.stockSybol, .stockSector, .stockPrice {
+.stockSymbol, .stockSector, .stockPrice {
     text-align: center;
 }
 
@@ -175,12 +175,12 @@ button[type='submit']{
 
 
 #graphArea {
-    background-color: blue;
-    height: 500px;
+    /*background-color: blue;*/
+    max-height: 500vh;
 }
 
 #stockSearchArea {
-    background-color: rgb(17, 17, 17)
+    /*background-color: rgb(17, 17, 17)*/
 }
 
 #leftNavBar {
@@ -215,4 +215,13 @@ button[type='submit']{
 #stockList td {
     border-bottom: 2px dotted black;
     border-right: 2px dotted black;
+}
+
+table{
+    border: 3px solid white;
+}
+
+.graph{
+    width: 120vw;
+    height: 75vh;
 }
