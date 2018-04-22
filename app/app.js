@@ -21,7 +21,11 @@ app.use(require("./routes/stocks"));
 app.use(require("./routes/userPage"))
 
 app.use(require("./routes/stocklist"));
+<<<<<<< HEAD
 app.use(require("./routes/api"));
+=======
+app.use(require("./routes/api"))
+>>>>>>> db22f1f2fd2dbd7049d2134b48af290c386c9ea0
 
 
 app.set('view engine', 'ejs');

@@ -130,5 +130,8 @@ $("#stockPriceUpdate").on("click", function(e) {
 $(document).ready( function() {
     //console.log(e.target);
     update_sector_price();
+
 });
+
+
 

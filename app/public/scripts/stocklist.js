@@ -1,9 +1,9 @@
-
-// Modal Autocomplete list
+//Autocomplete list
 $(document).ready(function(){
     var url = '/api_all_stocks';
 
     console.log('Check');
+
 
     // Accesses our stock database and fills the dropdown
     var success = function(res){
@@ -20,6 +20,8 @@ $(document).ready(function(){
 
         }
 
+
+
     }
     $.ajax({
         type: 'POST',
@@ -28,4 +30,6 @@ $(document).ready(function(){
         dataType: 'json'
     });
 
+
 })
+

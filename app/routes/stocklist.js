@@ -21,25 +21,25 @@ var apiKey = "3SW8F3VSYVSP0VAZ";
 
 
 router.get('/stocklist',function(req,res){
-    var symbol = req.body.stock_symbol
-    db.any('SELECT * FROM stock_purchase').then(function(data){
-        // res.render(page to render, object to pass to the page)
-        db.any('SELECT * FROM users').then(function(userData) {
-            res.render('stocklist',{'stocks' : data, 'users' : userData});
-        })
+  var symbol = req.body.stock_symbol
+  db.any('SELECT * FROM stock_purchase').then(function(data){
+    // res.render(page to render, object to pass to the page)
+    db.any('SELECT * FROM users').then(function(userData) {
+      res.render('stocklist',{'stocks' : data, 'users' : userData});
     })
+  })
 })
 
 router.post('/stocklist',function(req,res){
-
-    db.any('SELECT * FROM stock_purchase').then(function(data){
-        // res.render(page to render, object to pass to the page)
-        db.any('SELECT * FROM users').then(function(userData) {
-            res.render('stocklist',{'stocks' : data, 'users' : userData});
-        })
-
+ 
+  db.any('SELECT * FROM stock_purchase').then(function(data){
+    // res.render(page to render, object to pass to the page)
+    db.any('SELECT * FROM users').then(function(userData) {
+      res.render('stocklist',{'stocks' : data, 'users' : userData});
     })
-
+      
+  })
+  
 })
 
 

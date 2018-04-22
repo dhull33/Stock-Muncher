@@ -14,6 +14,7 @@ body {
     height: 300px;
 }
 
+
 #sectorTable th {
     font-weight: 700;
     border-bottom: 4px solid black;
@@ -36,19 +37,25 @@ body {
 #res {
     padding: 0;
     margin-left: 0px;
-    width: 90%;
+    background-color: black;
+
 }
 
-#res li {
+/* #res li {
     list-style-type: none;
+} */
+
+#stockListTable {
+    margin-top: 12px;
+    width: 100%;
 }
 
-#res p {
+#res span {
     background: black;
     margin-top: -15px;
 }
 
-#res p:hover {
+#stockListTable .stockData:hover {
     background: rgb(42, 31, 159);
     color: #FFF;
     cursor: pointer;
@@ -59,30 +66,47 @@ body {
     /*margin-bottom: 18px;*/
 /*}*/
 
+.stockData {
+    margin-bottom: 20px;
+    background-color:  #0A2E36;
+}
+
 .stockSymbol {
     color: white;
     font-size: 18px;
+    width: 25%;
+}
+
+#blankrow {
+    height: 10px;
 }
 
 .stockName {
+    background-color: black;
     color: grey;
     font-size: 16px;
+    width: 100%;
 }
 
 .stockSector {
     color: yellow;
     font-size: 14px;
+    width: 40%;
 }
 
 .stockPrice {
     font-size: 18px;
-    color: green;
-    float: right;
+    color: #27FB6B;;
+    /* float: right; */
     margin-right: 20px;
-
+    width: 35%
 }
 
-.modal-dialog {
+.stockSybol, .stockSector, .stockPrice {
+    text-align: center;
+}
+
+/* .modal-dialog {
     width: 100%;
     height: 100%;
     margin-top: 0;
@@ -96,7 +120,7 @@ body {
     min-width: 100%;
     min-height: 100%;
     border-radius: 0;
-}
+} */
 
 
 /*Search bar */
@@ -137,6 +161,7 @@ button[type='submit']{
 
 }
 
+
 .cuteFont {
     color: #27FB6B;
     font-family: 'Cute Font', cursive;
@@ -149,23 +174,17 @@ button[type='submit']{
 }
 
 
-
-
-
-#res {
-    margin: 0px;
-    padding-left: 0px;
-    width: 150px;
+#graphArea {
+    background-color: blue;
+    height: 500px;
 }
 
-#res li {
-    list-style-type: none;
+#stockSearchArea {
+    background-color: rgb(17, 17, 17)
 }
 
-#res li:hover {
-    background: #110D3B;
-    color: #FFF;
-    cursor: pointer;
+#leftNavBar {
+    background-color: floralwhite;
 }
 
 /* Resize navbar logo*/
@@ -183,6 +202,17 @@ button[type='submit']{
     background-color: darkgreen;
 }
 
-.j{
+.j {
 
+}
+
+
+#stockListHeader {
+    font-size: 20px;
+    border-bottom: 3px solid black;
+}
+
+#stockList td {
+    border-bottom: 2px dotted black;
+    border-right: 2px dotted black;
 }
