@@ -84,7 +84,7 @@ function update_sector_price() {
 
                 rowHeading.innerHTML = sectors[i];
                 // console.log(sectors[i]);
-                for (let j = 0; j < sectorResponse.length; j++) {
+                for (let j = 0; j < 9; j++) {
                     var cell = row.insertCell(j + 1);
 
                     cell.innerHTML = response[sectorResponse[j]][sectors[i]];

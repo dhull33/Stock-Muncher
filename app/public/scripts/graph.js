@@ -3,7 +3,7 @@ google.charts.load('current', {packages: ['corechart', 'controls']});
 
 google.charts.setOnLoadCallback(function(){
     $("#stockPriceUpdate").on("click", function() {
-        //console.log(e.target);
+        drawChart(symbol);
     });
 });
 

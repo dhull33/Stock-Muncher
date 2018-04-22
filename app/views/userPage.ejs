@@ -11,15 +11,10 @@
 
     <div class="container-fluid">
         <div class="row">
-            <div id="leftNavBar" class="col-sm-1">
-                <h2>Left Nav Bar</h2>
-            </div>
-            <div id="graphArea" class="col-sm-8">
-                <div id='chart_div' class="container"></div>
+            <div class="col-sm">
 
-
-                <h2>Graph Area</h2>
-                <table id="sectorTable">
+                <h1 style="display: flex; justify-content: center">Sector Performance</h1>
+                <table id="sectorTable" class="table table-bordered">
                     <tr>
                         <th>Sector Name</th>
                         <th>Real Time</th>
@@ -31,107 +26,98 @@
                         <th>1 Year</th>
                         <th>3 Year</th>
                         <th>5 Year</th>
-                        <th>10 Year</th>
                     </tr>
                 </table>
+
             </div>
 
+            <div class="row" style="margin-left: 3vw;">
 
-            <div id="stockSearchArea" class="col-sm-3">
-                <form class="form-inline my-2 my-lg-0">
+                <div id="stockSearchArea" class="col-sm">
+                    <form class="form-inline my-lg-0">
 
-                    <input id="stockSymbol" list="stockSymbolList" class="form-control" type="search" placeholder="Ticker Symbol" aria-label="Search" autocomplete="off">
+                        <input id="stockSymbol" list="stockSymbolList" class="form-control" type="search" placeholder="Ticker Symbol" aria-label="Search" autocomplete="off">
 
-                    <button id='stockPriceUpdate' class="btn btn-outline-success my-2 my-sm-0" type="submit" data-target="#modalLong"><i class="fa fa-search"></i></button>
+                        <button id='stockPriceUpdate' class="btn btn-outline-success my-2 my-sm-0" type="submit" data-target=""><i class="fa fa-search"></i></button>
 
-                </form>
-                <!-- Stock List autocomplete table -->
 
-                <table id="stockListTable">
+
+                    </form>
+                    <!-- Stock List autocomplete table -->
+
+                    <table id="stockListTable" class="table table-bordered">
+                        <div>
+                            <tr>
+                                <td colspan="4" class="stockName stockName0"></td>
+                            </tr>
+                            <tr class="stockData">
+                                <td class="stockSymbol stockSymbol0"></td>
+                                <td class="stockSector stockSector0"> </td>
+                                <td class="stockPrice stockPrice0"> </td>
+                            </tr>
+
+                        </div>
+                        <tr id="blankrow">
+                        </tr>
+                        <div>
+                            <tr>
+                                <td colspan="4" class="stockName stockName1"></td>
+                            </tr>
+                            <tr class="stockData">
+                                <td class="stockSymbol stockSymbol1"></td>
+                                <td class="stockSector stockSector1"></td>
+                                <td class="stockPrice stockPrice1"></td>
+                            </tr>
+                        </div>
+
+                        <tr id="blankrow">
+                        </tr>
+                        <div >
+                            <tr>
+                                <td colspan="4" class="stockName stockName2"></td>
+                            </tr>
+                            <tr class="stockData">
+                                <td class="stockSymbol stockSymbol2"></td>
+                                <td class="stockSector stockSector2"> </td>
+                                <td class="stockPrice stockPrice2"></td>
+                            </tr>
+                        </div>
+
+
+                    <tr id="blankrow">
+                    </tr>
                     <div>
                         <tr>
-                            <td colspan="4" class="stockName stockName0"></td>
+                            <td colspan="4" class="stockName stockName3"></td>
                         </tr>
                         <tr class="stockData">
-                            <td class="stockSymbol stockSymbol0"></td>
-                            <td class="stockSector stockSector0"> </td>
-                            <td class="stockPrice stockPrice0"> </td>
+                            <td class="stockSymbol stockSymbol3"></td>
+                            <td class="stockSector stockSector3"></td>
+                            <td class="stockPrice stockPrice3"></td>
                         </tr>
-
                     </div>
                     <tr id="blankrow">
                     </tr>
                     <div>
                         <tr>
-                            <td colspan="4" class="stockName stockName1"></td>
+                            <td colspan="4" class="stockName stockName4"></td>
                         </tr>
                         <tr class="stockData">
-                            <td class="stockSymbol stockSymbol1"></td>
-                            <td class="stockSector stockSector1"></td>
-                            <td class="stockPrice stockPrice1"></td>
+                            <td class="stockSymbol stockSymbol4"></td>
+                            <td class="stockSector stockSector4"></td>
+                            <td class="stockPrice stockPrice4"></td>
                         </tr>
                     </div>
 
-                    <tr id="blankrow">
-                    </tr>
-                    <div >
-                        <tr>
-                            <td colspan="4" class="stockName stockName2"></td>
-                        </tr>
-                        <tr class="stockData">
-                            <td class="stockSymbol stockSymbol2"></td>
-                            <td class="stockSector stockSector2"> </td>
-                            <td class="stockPrice stockPrice2"></td>
-                        </tr>
-                    </div>
-
-
-                <tr id="blankrow">
-                </tr>
-                <div>
-                    <tr>
-                        <td colspan="4" class="stockName stockName3">Name</td>
-                    </tr>
-                    <tr class="stockData">
-                        <td class="stockSymbol stockSymbol3"></td>
-                        <td class="stockSector stockSector3"></td>
-                        <td class="stockPrice stockPrice3"></td>
-                    </tr>
-                </div>
-                <tr id="blankrow">
-                </tr>
-                <div>
-                    <tr>
-                        <td colspan="4" class="stockName stockName4"></td>
-                    </tr>
-                    <tr class="stockData">
-                        <td class="stockSymbol stockSymbol4"></td>
-                        <td class="stockSector stockSector4"></td>
-                        <td class="stockPrice stockPrice4"></td>
-                    </tr>
-                </div>
-
-            </table>
+                </table>
+            </div>
         </div>
     </div>
 </div>
 
+<div id='chart_div' class="container-fluid graph"></div>
 
-<!--<button id="stockPriceUpdate">Refresh Stock Price</button>-->
-<!-- <form action="/userPage" method="POST" autocomplete="off"> -->
-<!--<b>Stock Symbol: </b><input list="stockSymbolList" id="stockSymbol" type="text" name="stock_symbol">-->
-<!--<datalist id="stockSymbolList">-->
-<!--</datalist>-->
-<!-- SYMBOL & PRICE output to page -->
-<!-- <h2>Stock Symbol</h2>
-<h4 id="stockSymbolText"></h4>
-<h2>Estimated Price</h2>
-<p id="price"></p>
-<p id="currentDate"></p>
-<br>
-<input type="submit" value="Buy Stock" />
-</form>
--->
+<div id="news" class="container-fluid"></div>
 
         <% include partials/template/footer.ejs %>
 

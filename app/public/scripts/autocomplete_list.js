@@ -212,7 +212,14 @@ function drawChart(symbol) {
             const data = new google.visualization.arrayToDataTable(newData, true); // Treat first row as data as well
 
             let options = {
-                legend: 'right',
+                title: symbol,
+                titleTextStyle: {
+                    color: '#FBFBFB',
+                    fontSize: 35,
+                    bold: true
+                },
+                titlePosition: 'out',
+                legend: 'none',
                 colors: ["white"],
                 backgroundColor: '#0A2E36',
                 candlestick: {
@@ -222,7 +229,8 @@ function drawChart(symbol) {
                 hAxis: {
                     title: 'Time',
                     titleTextStyle: {
-                        color: '#FBFBFB'
+                        color: '#FBFBFB',
+                        fontSize: 25
                     },
                     textStyle: {
                         color: '#FBFBFB'
@@ -231,9 +239,10 @@ function drawChart(symbol) {
                 },
 
                 vAxis: {
-                    title: '$Price',
+                    title: 'Price',
                     titleTextStyle: {
-                        color: '#FBFBFB'
+                        color: '#FBFBFB',
+                        fontSize: 25
                     },
                     textStyle: {
                         color:'#FBFBFB'
