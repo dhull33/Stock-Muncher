@@ -24,21 +24,16 @@ var apiKey = "3SW8F3VSYVSP0VAZ";
 
 router.get('/userPage',function(req,res){
     var symbol = req.body.stock_symbol
-<<<<<<< HEAD
     var user= req.user.username
-=======
->>>>>>> 410811f5d9705aa18ede2cdae35cd7d7fa45de6e
     db.any('SELECT * FROM stocks').then(function(data){
 
         // res.render(page to render, object to pass to the page)
         res.render('userPage',{
             pageTitle: "User's Page",
-<<<<<<< HEAD
+
             stocks : data,
-            user : user
-=======
+            user : user,
             stocks : data
->>>>>>> 410811f5d9705aa18ede2cdae35cd7d7fa45de6e
         });
     })
 })
