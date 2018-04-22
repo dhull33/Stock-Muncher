@@ -3,25 +3,47 @@
     <head>
         <!--Head.ejs goes here-->
         <% include partials/template/head.ejs %>
+
     </head>
 <body>
 <!-- CONTENT GOES HERE -->
-    <div class="container">
-        <h1 class="">hi user!</h1>
-    </div>
+    <% include partials/template/navBar.ejs %>
 
     <div class="container-fluid">
         <div class="row">
-            <div id="leftNavBar" class="col-1">
+            <div id="leftNavBar" class="col-sm-1">
                 <h2>Left Nav Bar</h2>
             </div>
-            <div id="graphArea" class="col-8">
+            <div id="graphArea" class="col-sm-8">
+                <div id='chart_div' class="container"></div>
+
+
                 <h2>Graph Area</h2>
+                <table id="sectorTable">
+                    <tr>
+                        <th>Sector Name</th>
+                        <th>Real Time</th>
+                        <th>1 Day</th>
+                        <th>5 Day</th>
+                        <th>1 Month</th>
+                        <th>3 Month</th>
+                        <th>YTD</th>
+                        <th>1 Year</th>
+                        <th>3 Year</th>
+                        <th>5 Year</th>
+                        <th>10 Year</th>
+                    </tr>
+                </table>
             </div>
-            <div id="stockSearchArea" class="col-3">
+
+
+            <div id="stockSearchArea" class="col-sm-3">
                 <form class="form-inline my-2 my-lg-0">
+
                     <input id="stockSymbol" list="stockSymbolList" class="form-control" type="search" placeholder="Ticker Symbol" aria-label="Search" autocomplete="off">
+
                     <button id='stockPriceUpdate' class="btn btn-outline-success my-2 my-sm-0" type="submit" data-target="#modalLong"><i class="fa fa-search"></i></button>
+
                 </form>
                 <!-- Stock List autocomplete table -->
 
@@ -115,8 +137,8 @@
 
 </body>
 
-<!-- end.ejs goes here -->
-<% include partials/template/end.ejs %>
+    <!-- end.ejs goes here -->
+    <% include partials/template/end.ejs %>
 </html>
 
 
