@@ -1,4 +1,4 @@
-// Modal Autocomplete list
+// Autocomplete list
 $(document).ready(function(){
     var url = '/api_all_stocks';
     

@@ -35,8 +35,7 @@ router.get('/userPage',function(req,res){
 router.post('/userPage',function(req,res){
     (function() {
         console.log("Submitted")
-        var symbol = req.body.stock_symbol + ":"; // Added : to end in case autocomplete is not used and only stock symbol is used
-        symbol = symbol.substr(0, symbol.indexOf(":")); // Keeps symbol only
+        var symbol = req.body.stock_symbol;
         var userId = "Testing";
         // Retreives individual stock prices
         console.log(symbol);
