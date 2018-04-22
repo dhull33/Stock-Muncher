@@ -1,3 +1,4 @@
+
 #sectorTable th {
     font-weight: 700;
     border-bottom: 4px solid black;
@@ -19,19 +20,24 @@
 #res {
     padding: 0;
     margin-left: 0px;
-    width: 90%;
+    background-color: black;
+
 }
 
-#res li {
+/* #res li {
     list-style-type: none;
+} */
+
+#stockListTable {
+    margin-top: 12px;
 }
 
-#res p {
+#res span {
     background: black;
     margin-top: -15px;
 }
 
-#res p:hover {
+#stockListTable .stockData:hover {
     background: rgb(42, 31, 159);
     color: #FFF;
     cursor: pointer;
@@ -42,27 +48,44 @@
     /*margin-bottom: 18px;*/
 /*}*/
 
+.stockData {
+    margin-bottom: 20px;
+    background-color:  #0A2E36;
+}
+
 .stockSymbol {
     color: white;
     font-size: 18px;
+    width: 25%;
+}
+
+#blankrow {
+    height: 10px;
 }
 
 .stockName {
+    background-color: black;
     color: grey;
     font-size: 16px;
+    width: 100%;
 }
 
 .stockSector {
     color: yellow;
     font-size: 14px;
+    width: 40%;
 }
 
 .stockPrice {
     font-size: 18px;
-    color: green;
-    float: right;
+    color: #27FB6B;;
+    /* float: right; */
     margin-right: 20px;
+    width: 35%
+}
 
+.stockSybol, .stockSector, .stockPrice {
+    text-align: center;
 }
 
 .modal-dialog {
@@ -111,7 +134,7 @@ button[type='submit']{
     font-family: 'Cute Font', cursive;
     font-size: 15vw;
     margin-top: -5rem;
-
+}
 
 
 body {
@@ -142,20 +165,17 @@ body {
     }
 }
 
-#res {
-    margin: 0px;
-    padding-left: 0px;
-    width: 150px;
+#graphArea {
+    background-color: blue;
+    height: 500px;
 }
 
-#res li {
-    list-style-type: none;
+#stockSearchArea {
+    background-color: rgb(17, 17, 17)
 }
 
-#res li:hover {
-    background: #110D3B;
-    color: #FFF;
-    cursor: pointer;
+#leftNavBar {
+    background-color: floralwhite;
 }
 
 

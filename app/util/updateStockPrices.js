@@ -14,7 +14,7 @@ var options = {
     promiseLib : promise
 }
 
-console.log(stockFile[0]["Symbol"]);
+// console.log(stockFile[0]["Symbol"]);
 
 exports.updateBatchStocks = (function() {
     console.log("Submitted");
@@ -30,7 +30,7 @@ exports.updateBatchStocks = (function() {
     for (var i = stockIndex + 1; i <= Math.min(stockIndex + 99, stockFileCount) ; i++) {
         symbol += ", " + stockFile[i]["Symbol"];
     }
-    console.log(symbol);
+    // console.log(symbol);
 
     var url2 = "&apikey=";
     var apiKey = "3SW8F3VSYVSP0VAZ";
@@ -44,7 +44,7 @@ exports.updateBatchStocks = (function() {
             + currentdate.getHours() + ":"  
             + currentdate.getMinutes() + ":" 
             + currentdate.getSeconds();
-    console.log(datetime);  // Shows current date
+    // console.log(datetime);  // Shows current date
 
     // runs api
     fetch(url + symbol + url2 + apiKey)

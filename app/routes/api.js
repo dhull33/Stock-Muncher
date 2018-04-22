@@ -19,7 +19,14 @@ router.post('/api_stocks',function(req,res){ // Creates an API so that out front
   queryString = queryString.toUpperCase();
    
   var symbol = req.body.stock_symbol
-  db.any(`SELECT * FROM stocks WHERE stock_symbol LIKE '${queryString}%' or stock_symbol LIKE '% ${queryString}'`).then(function(stockData) {
+  db.any(`SELECT * FROM stocks WHERE (stock_symbol LIKE '${queryString}%' or stock_symbol LIKE '% ${queryString}') and stock_price_date > (CURRENT_DATE - 30)`).then(function(stockData) {
+    res.json({'stocks' : stockData});
+  })
+})
+
+router.post('/api_all_stocks',function(req,res){ // Creates an API so that out front end can access our database
+
+  db.any(`SELECT * FROM stocks WHERE stock_price_date > (CURRENT_DATE - 30)`).then(function(stockData) {
     res.json({'stocks' : stockData});
   })
 })

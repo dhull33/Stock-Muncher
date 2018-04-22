@@ -41,7 +41,7 @@ CREATE TABLE stock_purchase (
 /* Stock Sell table is created */
 
 CREATE TABLE stock_sell (
-    sell_id INT NOT NULL PRIMARY KEY,
+    sell_id SERIAL NOT NULL PRIMARY KEY,
     purchase_id INTEGER REFERENCES stock_purchase(purchase_id),
     sell_price_each MONEY,
     sell_date DATE,

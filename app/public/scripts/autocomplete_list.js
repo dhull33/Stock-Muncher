@@ -1,5 +1,6 @@
-// Modal Autocomplete list
+// Autocomplete list
 $(document).ready(function(){
+
     var url = '/api_stocks';
     var stockList = [];
     var stockData;
@@ -35,18 +36,21 @@ $(document).ready(function(){
                 if(res.stocks.length){
                     stockData = res.stocks;
                     stockDataLength = stockData.length;
-                    
-                    for (var i = 0; i <= Math.min(stockDataLength, 9); i++) {
-                        var stockSymbol = stockData[i].stock_symbol;
+
+                    for (var i = 0; i <= Math.min(stockDataLength, 5);i++) {
                         var stockName = stockData[i].stock_name;
+                        var stockSymbol = stockData[i].stock_symbol;
                         var stockSector = stockData[i].sector;
                         var stockPrice = stockData[i].current_price;
-                        $("#res").append("<p><b><span class='stockSymbol' id= stockList" + i + ">" + " " + stockSymbol + 
-                        "<span class='stockPrice'>" + stockPrice + "</span><br /></b><span class='stockName'>" + stockName + ")</span><br /><i><span class='stockSector'>" + stockSector  + "</span></p>");
+                        
+                        $(".stockName" + i).text(stockName);
+                        $(".stockSymbol" + i).text(stockSymbol);
+                        $(".stockSector" + i).text(stockSector);
+                        $(".stockPrice" + i).text(stockPrice);
                     }
-                    
                 }
             }
+            // API call from our database
             $.ajax({
                 type: "POST",
                 url: url,
@@ -64,20 +68,9 @@ $(document).ready(function(){
                 drew = true;
                 
                 //Bind click event to list elements in results
-                $("#res").on("click", "p", function(stockLine){ 
-                    currentStockSymbol = $(this).text().substring(0, $(this).text().indexOf("$"));
+                $(".stockData").on("click", function(stockLine){ 
+                    currentStockSymbol = $(this).html().substring($(this).html().indexOf(">") + 1, $(this).html().indexOf("</td>"));
                     $("#stockSymbol").val(currentStockSymbol); // Keeps stock symbol only in input box
-                    $("#stockSymbolText").text(currentStockSymbol);
-                    console.log(stockLine.target);
-                    for (var i = 0; i < 10; i++) {
-                        $("#stockList" + i).on("click", function() {
-                            console.log(stockData[i].current_price);
-                        })
-                    }
-                    $("#stockList1").on("click", function() {
-                        console.log(stockData[i].current_price);
-                    })
-                    // console.log(stockData[0].current_price);
 
                     $("#res").empty();
                  });
@@ -94,3 +87,40 @@ $(document).ready(function(){
             }
     });
 })
+
+// loads some stock data on page load so that the stock data section is not empty
+function defaultData() {
+    var url = '/api_all_stocks';
+
+    var success = function(res){
+    console.log(res, 'got page load response')
+    if(res.stocks.length){
+        stockData = res.stocks;
+        stockDataLength = stockData.length;
+
+        for (var i = 0; i <= Math.min(stockDataLength, 5);i++) {
+            var stockName = stockData[i].stock_name;
+            var stockSymbol = stockData[i].stock_symbol;
+            var stockSector = stockData[i].sector;
+            var stockPrice = stockData[i].current_price;
+            
+            $(".stockName" + i).text(stockName);
+            $(".stockSymbol" + i).text(stockSymbol);
+            $(".stockSector" + i).text(stockSector);
+            $(".stockPrice" + i).text(stockPrice);
+            }
+        }
+
+    }
+
+    $.ajax({
+        type: "POST",
+        url: url,
+        success: success,
+        dataType: 'json'
+    });
+
+}
+
+defaultData();
+

@@ -25,9 +25,11 @@
 
             <!-- ### Search Bar ### -->
             <form class="form-inline my-2 my-lg-0">
-                <input id="stockSymbol" class="form-control" type="search" placeholder="Ticker Symbol" aria-label="Search">
-                <button id='stockPriceUpdate' class="btn btn-outline-success my-2 my-sm-0" type="submit"><i class="fa fa-search"></i></button>
+            <input id="stockSymbol" list="stockSymbolList" class="form-control" type="search" placeholder="Ticker Symbol" aria-label="Search">
+            <button id='stockPriceUpdate' class="btn btn-outline-success my-2 my-sm-0" type="submit" data-target="#modalLong"><i class="fa fa-search"></i></button>
+            
             </form>
+            
 
         </div>
 

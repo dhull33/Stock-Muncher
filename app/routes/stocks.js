@@ -21,7 +21,7 @@ var apiKey = "3SW8F3VSYVSP0VAZ";
 
 
 router.get('/stocks',function(req,res){
-  var symbol = req.body.stock_symbol
+  var symbol = req.body.stockSymbolText;
   db.any('SELECT * FROM stocks').then(function(stockData) {
     res.render('stocks',{'stocks' : stockData});
   })
@@ -30,10 +30,11 @@ router.get('/stocks',function(req,res){
 router.post('/stocks',function(req,res){
   (function() {
       console.log("Submitted")
-      var symbol = req.body.stock_symbol + ":"; // Added : to end in case autocomplete is not used and only stock symbol is used
-      symbol = symbol.substr(0, symbol.indexOf(":")); // Keeps symbol only
+      console.log(req.body.stock_symbol);
+      var symbol = req.body.stock_symbol; 
       var userId = "Testing";
       // Retreives individual stock prices
+      console.log("Stock Buy Test")
       console.log(symbol);
       var currentdate = new Date(); 
       var datetime = currentdate.getFullYear() + "/"
