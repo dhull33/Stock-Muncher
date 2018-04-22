@@ -1,3 +1,0 @@
-function hideButton() {
-    $(".Technology").hide();
-}

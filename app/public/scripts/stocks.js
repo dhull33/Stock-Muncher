@@ -119,115 +119,16 @@ function update_sector_price() {
             console.log("Fail");
         }
     })();
-}
+};
 
 $("#stockPriceUpdate").on("click", function(e) {
     console.log(e.target);
     update_stock_price();
-})
+});
 
 //Made sector tables update automatically
 $(document).ready( function() {
     //console.log(e.target);
     update_sector_price();
-})
+});
 
-// // Old Auto complete list version
-// function getStockList() {
-//     var url = 'scripts/data/stock_symbols.json';
-//     $.getJSON(url, function(data) {
-//         console.log(data[0]["Symbol"]);
-//         var i = 0;
-//         $(data).each(function() {
-//             $("#stockSymbolList").append('<option class="stockSelection" value=' + data[i]["Symbol"] + ":" + data[i]["Name"] + '></option>');
-//             i ++;
-//         })
-//     })
-// }
-// getStockList();
-
-
-// Autocomplete
-$(document).ready(function(){
-    var url = '/api_stocks';
-    var stockList = [];
-
-
-    console.log(stockList);
-    
-    var cache = {};
-    var drew = false;
-    
-    $("#stockSymbol").on("keyup", function(event){
-        var query = $("#stockSymbol").val()
- 
-        if($("#stockSymbol").val().length >= 1){
-            
-            //Check if we've searched for this term before
-            if(query in cache){
-                results = cache[query];
-            }
-            else{
-                //Case insensitive search for stock array
-                var results = $.grep(stockList, function(item){
-                    return item.search(RegExp(query, "i")) != -1;
-                });
-                
-                //Add results to cache
-                cache[query] = results;
-            }
-            
-            // Accesses our stock database and fills the dropdown
-            var data = {userString: $("#stockSymbol").val()}
-            var success = function(res){
-                console.log(res, 'got a response')
-                if(res.stocks.length){
-                    var stockData = res.stocks;
-                    var stockDataLength = stockData.length;
-                    
-                    for (var i = 0; i <= Math.min(stockDataLength, 9); i++) {
-                        var stockSymbol = stockData[i]['stock_symbol'];
-                        var stockName = stockData[i].stock_name;
-                        var stockSector = stockData[i].sector;
-                        var stockPrice = stockData[i].current_price;
-                        $("#res").append("<p><b><span class='stockSymbol'>" + " " + stockSymbol + 
-                        "<span class='stockPrice'>" + stockPrice + "</span><br /></b><span class='stockName'>" + stockName + "</span><br /><i><span class='stockSector'>" + stockSector  + "</span></p>");
-                    }
-                    
-                }
-            }
-            $.ajax({
-                type: "POST",
-                url: '/api_stocks',
-                data: data,
-                success: success,
-                dataType: 'json'
-            });
-
-            //First search
-            if(drew == false){
-                //Create list for results
-                $(".stockSymbol").after('<ul id="res"></ul>');
-                
-                //Prevent redrawing/binding of list
-                drew = true;
-                
-                //Bind click event to list elements in results
-                $("#res").on("click", "p", function(stockLine){ 
-                    
-                    $("#stockSymbol").val($(this).text().substring(0, $(this).text().indexOf("$"))); // Keeps stock symbol only in input box
-                    $("#res").empty();
-                 });
-            }
-            //Clear old results
-            else{
-                $("#res").empty();
-            }
-            
-        }
-        //Handle backspace/delete so results don't remain with less than 3 characters
-            else if(drew){
-                $("#res").empty();
-            }
-    });
-})

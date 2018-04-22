@@ -20,9 +20,8 @@ app.use(require("./routes/stocks"));
 
 app.use(require("./routes/userPage"))
 
-app.use(require("./routes/stockmanage"));
-app.use(require("./routes/stock_list"));
-app.use(require("./routes/api"))
+app.use(require("./routes/stocklist"));
+app.use(require("./routes/api"));
 
 
 app.set('view engine', 'ejs');
@@ -39,5 +38,5 @@ var myStock = require('./util/updateStockPrices.js');
 
 var server = app.listen(port, function(){
     console.log('Example app listening on port ' + port);
-    //setInterval(myStock.updateBatchStocks, 24000); // Loops through JSON file to fill all current stock prices from API. Accesses API every 24 seconds. Loops through all 3300 stocks in about 13 minutes.
+    setInterval(myStock.updateBatchStocks, 24000); // Loops through JSON file to fill all current stock prices from API. Accesses API every 24 seconds. Loops through all 3300 stocks in about 13 minutes.
 });
