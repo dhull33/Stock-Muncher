@@ -20,8 +20,7 @@ app.use(require("./routes/stocks"));
 
 app.use(require("./routes/userPage"))
 
-app.use(require("./routes/stockmanage"));
-app.use(require("./routes/stock_list"));
+app.use(require("./routes/stocklist"));
 app.use(require("./routes/api"))
 
 

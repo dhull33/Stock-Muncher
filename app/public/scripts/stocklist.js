@@ -10,11 +10,12 @@ $(document).ready(function(){
         var stockData = res.stocks;
         var stockDataLen = stockData.length;
         console.log(stockDataLen);
-        for (var i = 0; i < 10; i++) {
+        for (var i = 0; i < stockDataLen; i++) {
             var stockSymbol = stockData[i].stock_symbol;
-            var stockName = stockData[i].stock_symbol;
+            var stockName = stockData[i].stock_name;
+            var stockSector = stockData[i].sector;
             var stockPrice = stockData[i].current_price;
-            $('#managementTable').append('<td>' + stockSymbol + '</td><td>' + '<tr><td>' + stockName + '</td><td>' + stockPrice + '</td><br />');
+            $('#stockList').append('<tr> <td>' + (i + 1) + '</td> <td>' + stockSymbol + '</td><td>' + stockName + '</td><td>' + stockSector + '</td><td>' + stockPrice + '</td><br /></tr>');
 
         }
     

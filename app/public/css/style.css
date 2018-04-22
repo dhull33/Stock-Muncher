@@ -178,4 +178,12 @@ body {
     background-color: floralwhite;
 }
 
+#stockListHeader {
+    font-size: 20px;
+    border-bottom: 3px solid black;
+}
 
+#stockList td {
+    border-bottom: 2px dotted black;
+    border-right: 2px dotted black;
+} 

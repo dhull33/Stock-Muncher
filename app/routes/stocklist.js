@@ -20,22 +20,22 @@ var apiKey = "3SW8F3VSYVSP0VAZ";
 
 
 
-router.get('/stockmanage',function(req,res){
+router.get('/stocklist',function(req,res){
   var symbol = req.body.stock_symbol
   db.any('SELECT * FROM stock_purchase').then(function(data){
     // res.render(page to render, object to pass to the page)
     db.any('SELECT * FROM users').then(function(userData) {
-      res.render('stockmanage',{'stocks' : data, 'users' : userData});
+      res.render('stocklist',{'stocks' : data, 'users' : userData});
     })
   })
 })
 
-router.post('/stockmanage',function(req,res){
+router.post('/stocklist',function(req,res){
  
   db.any('SELECT * FROM stock_purchase').then(function(data){
     // res.render(page to render, object to pass to the page)
     db.any('SELECT * FROM users').then(function(userData) {
-      res.render('stockmanage',{'stocks' : data, 'users' : userData});
+      res.render('stocklist',{'stocks' : data, 'users' : userData});
     })
       
   })
