@@ -60,15 +60,14 @@ CREATE TABLE high_score (
     _gain REAL
 );
 
-/*Stock History Table */
 
-/* CREATE TABLE stock_history (
-    id INT NOT NULL PRIMARY KEY,
-    stock_id VARCHAR REFERENCES stock(stock_name),
-    purchase_date DATE REFERENCES stock_purchase(purchase_date),
-    sell_date DATE REFERENCES stock_sell(sell_date),
-    purchase_price MONEY REFERENCES stock_purchase(purchase_price_each),
-    sell_price MONEY REFERENCES stock_sell(sell_price_each)
-);  */
 
-/* Work in progress */
+CREATE TABLE session (
+      sid varchar NOT NULL COLLATE "default",
+        sess json NOT NULL,
+        expire timestamp(6) NOT NULL
+) WITH (OIDS=FALSE);
+
+ALTER TABLE "session"
+ADD CONSTRAINT "session_pkey"
+PRIMARY KEY("sid") NOT DEFERRABLE INITIALLY IMMEDIATE;
