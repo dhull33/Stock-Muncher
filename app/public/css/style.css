@@ -222,6 +222,13 @@ table{
 }
 
 .graph{
-    width: 120vw;
+    width: 110vw;
     height: 75vh;
+
+}
+
+.filter{
+    width: 90vw;
+    margin: -5rem auto auto 10rem;
+
 }

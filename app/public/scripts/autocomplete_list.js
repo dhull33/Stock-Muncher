@@ -252,15 +252,70 @@ function drawChart(symbol) {
             };
 
 
-            const chart = new google.visualization.CandlestickChart(document.getElementById('chart_div'));
+            const dashboard = new google.visualization.Dashboard(document.getElementById('dashboard_div'));
+
+            const zoom = new google.visualization.ControlWrapper({
+                'controlType': 'ChartRangeFilter',
+                'containerId': 'filter_div',
+                'options': {
+                    'filterColumnIndex': 0
+                }
+            });
 
 
-            chart.draw(data, options);
+            const candleStick = new google.visualization.ChartWrapper({
+                chartType: 'CandlestickChart',
+                containerId: 'chart_div',
+                options: {
+                    title: symbol,
+                    titleTextStyle: {
+                        color: '#FBFBFB',
+                        fontSize: 35,
+                        bold: true
+                    },
+                    titlePosition: 'out',
+                    legend: 'none',
+                    colors: ["white"],
+                    backgroundColor: '#0A2E36',
+                    candlestick: {
+                        fallingColor: { strokeWidth: 0, stroke: 'black', fill: '#a52714' }, // red
+                        risingColor: { strokeWidth: 0, stroke: 'black', fill: '#0f9d58' }   // green
+                    },
+                    hAxis: {
+                        textStyle: {
+                            color: '#FBFBFB'
+                        },
+                        viewWindowMode: 'pretty',
+                    },
+
+                    vAxis: {
+                        title: 'Price',
+                        titleTextStyle: {
+                            color: '#FBFBFB',
+                            fontSize: 25
+                        },
+                        textStyle: {
+                            color:'#FBFBFB'
+                        }
+                    },
+                    ui:{
+                    chartOptions: {
+                        backgroundColor: '#0A2E36',
+
+                        }
+                    }
+                }
+            });
+
+            dashboard.bind(zoom, candleStick);
+
+
+            dashboard.draw(data);
 
             // ### Re-sizes and Draws the chart
             function resize () {
                 // change dimensions if necessary
-                chart.draw(data, options);
+                dashboard.draw(data);
             };
 
             if (window.addEventListener) {
