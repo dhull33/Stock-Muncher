@@ -169,6 +169,8 @@ $(".stockData").on("click", function(stockLine){
     console.log(this);
     drawChart(currentStockSymbol);
     $("#chartTitle").text(currentStockSymbol);
+    
+    company_logo(currentStockSymbol);
 
     $("#res").empty();
  });
@@ -312,3 +314,38 @@ $(".stockData").on("click", function(stockLine){
     })();
 
 };
+
+// To show company logo
+function company_logo(symbol) {
+    (function() {
+        console.log("Submitted")
+        var url = "https://api.iextrading.com/1.0/stock/"
+        //specifies time interval
+        var url2 = "/logo"
+
+
+        // Retreives individual stock prices
+        $.get(url + symbol + url2).done(function(response) {
+            console.log("Success");
+            updateUISuccess(response);
+        }).fail(function(error) {
+            console.log("Failed");
+            alert("Failed. Please Try Again.");
+            updateUIError();
+        })
+
+        // handle success
+        function updateUISuccess(response) {
+            var companyLogo = response["url"];
+            console.log(companyLogo);
+            $("#companyLogo").attr("src", companyLogo);
+        }
+
+        // handle error
+        function updateUIError() {
+            console.log("Fail");
+        }
+
+    })();
+
+}
