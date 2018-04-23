@@ -264,43 +264,47 @@ function drawChart(symbol) {
 
 
             const candleStick = new google.visualization.ChartWrapper({
-                chartType: 'CandlestickChart',
-                containerId: 'chart_div',
-                options: {
-                    title: symbol,
-                    titleTextStyle: {
-                        color: '#FBFBFB',
-                        fontSize: 35,
-                        bold: true
+                'chartType': 'CandlestickChart',
+                'containerId': 'chart_div',
+                'options': {
+                    'title': symbol,
+                    'titleTextStyle': {
+                        'color': '#FBFBFB',
+                        'fontSize': 35,
+                        'bold': true
                     },
-                    titlePosition: 'out',
-                    legend: 'none',
-                    colors: ["white"],
-                    backgroundColor: '#0A2E36',
-                    candlestick: {
-                        fallingColor: { strokeWidth: 0, stroke: 'black', fill: '#a52714' }, // red
-                        risingColor: { strokeWidth: 0, stroke: 'black', fill: '#0f9d58' }   // green
+                    'titlePosition': 'out',
+                    'legend': 'none',
+                    'colors': ["white"],
+                    'backgroundColor': '#0A2E36',
+                    'candlestick': {
+                        'fallingColor': { 'strokeWidth': 0, 'stroke': 'black', 'fill': '#a52714' }, // red
+                        'risingColor': { 'strokeWidth': 0, 'stroke': 'black', 'fill': '#0f9d58' }   // green
                     },
-                    hAxis: {
-                        textStyle: {
-                            color: '#FBFBFB'
+                    'hAxis': {
+                        'textStyle': {
+                            'color': '#FBFBFB'
                         },
-                        viewWindowMode: 'pretty',
+                        'viewWindowMode': 'pretty',
                     },
 
-                    vAxis: {
-                        title: 'Price',
-                        titleTextStyle: {
-                            color: '#FBFBFB',
-                            fontSize: 25
+                    'vAxis': {
+                        'title': 'Price',
+                        'titleTextStyle': {
+                            'color': '#FBFBFB',
+                            'fontSize': 25
                         },
-                        textStyle: {
-                            color:'#FBFBFB'
+                        'textStyle': {
+                            'color':'#FBFBFB'
                         }
                     },
-                    ui:{
-                    chartOptions: {
-                        backgroundColor: '#0A2E36',
+                    'ui':{
+                    'chartOptions': {
+                        'backgroundColor': '#0A2E36',
+                        'legend': {
+                            'position': 'top'
+
+                        }
 
                         }
                     }
