@@ -1,0 +1,289 @@
+
+/*### Keep body styling at the top ###*/
+body {
+    background-color: #0A2E36;
+    color: #27FB6B;
+    /*font-family: 'Cute Font', cursive;*/
+    /*font-size: 27px;*/
+}
+
+.introMunch{
+    display: block;
+    margin: 5em auto 0px auto;
+    width: 600px;
+    height: 300px;
+}
+
+
+#sectorTable th {
+    font-weight: 700;
+    /*border-bottom: 4px solid black;*/
+    padding-right: 20px;
+}
+
+#sectorTable td {
+    margin-right: 20px;
+    border-bottom: 1px dashed black;
+    /*border-right: 1px solid black;*/
+    text-align: center;
+    color: #FBFBFB;
+}
+
+.stockSelection {
+    background-color: rgba(17, 33, 36, .7);
+}
+
+/* Styles for custom dropdown list */
+#res {
+    padding: 0;
+    margin-left: 0px;
+    background-color: black;
+
+}
+
+/* #res li {
+    list-style-type: none;
+} */
+
+#stockListTable {
+    margin-top: 12px;
+    width: 100%;
+}
+
+#res span{
+    background: black;
+    margin-top: -15px;
+}
+
+#stockListTable .stockData:hover {
+    background: rgb(42, 31, 159);
+    color: #FFF;
+    cursor: pointer;
+}
+
+/* This was messing up the search bar in the nav */
+/*#stockSymbol {*/
+    /*margin-bottom: 18px;*/
+/*}*/
+
+.stockData {
+    margin-bottom: 20px;
+    background-color:  #0A2E36;
+}
+
+.stockSymbol {
+    color: white;
+    font-size: 18px;
+    /*width: 25%;*/
+}
+
+/*#blankrow {
+    height: 10px;
+} */
+
+.stockName {
+    background-color: black;
+    color: grey;
+    font-size: 16px;
+    width: 100%;
+}
+
+.stockSector {
+    color: yellow;
+    font-size: 14px;
+    width: 40%;
+}
+
+.stockPrice {
+    font-size: 18px;
+    color: #27FB6B;;
+    /* float: right; */
+    margin-right: 20px;
+    width: 35%
+}
+
+.stockSymbol, .stockSector, .stockPrice {
+    text-align: center;
+}
+
+/* .modal-dialog {
+    width: 100%;
+    height: 100%;
+    margin-top: 0;
+    padding-top: 0;
+}
+
+.modal-content {
+    background-color: rgba(17, 33, 36, .6);
+    color: gray;
+    height: auto;
+    min-width: 100%;
+    min-height: 100%;
+    border-radius: 0;
+} */
+
+
+/*Search bar */
+button[type='submit']{
+    background: #0A2E36 ;
+    color: #14CC60;
+}
+
+
+#search{
+    display: inline-flex;
+    justify-content: right;
+}
+
+.navbar{
+    background: #0A2E36;
+}
+
+/*For 'stock muncher' in header */
+.header{
+    display: flex;
+    justify-content: center;
+    color: #27FB6B;
+    font-family: 'Cute Font', cursive;
+    font-size: 15vw;
+    margin-top: -5rem;
+
+}
+
+/*For 'eat the competition' in header */
+.header2 {
+    display: flex;
+    justify-content: center;
+    color: #27FB6B;
+    font-family: 'Cute Font', cursive;
+    font-size: 15vw;
+    margin-top: -5rem;
+
+}
+
+
+.cuteFont {
+    color: #27FB6B;
+    font-family: 'Cute Font', cursive;
+    font-size: 27px;
+
+}
+
+.mainBut {
+    background-color: #D2D7DF;
+}
+
+
+#graphArea {
+    /*background-color: blue;*/
+    max-height: 500vh;
+}
+
+#stockSearchArea {
+    /*background-color: rgb(17, 17, 17)*/
+}
+
+#leftNavBar {
+    background-color: floralwhite;
+}
+
+/* Resize navbar logo*/
+.resize {
+    max-width: 150px;
+    max-height: 150px;
+}
+
+
+.red {
+    background-color: darkred;
+}
+
+.green {
+    background-color: darkgreen;
+}
+
+.j {
+
+}
+
+
+#stockListHeader {
+    font-size: 20px;
+    border-bottom: 3px solid black;
+}
+
+#stockList td {
+    border-bottom: 2px dotted black;
+    border-right: 2px dotted black;
+}
+
+table{
+    border: 3px solid white;
+}
+
+.graph{
+    width: 120vw;
+    height: 75vh;
+}
+
+/* Animation section  */
+#stockMuncherText {
+    position: relative;
+    top: 50px;
+    left: 200px;
+    letter-spacing: 20px;
+}
+
+.topAnimation {
+    /* border: 16px solid #f3f3f3;
+    border-radius: 50%;
+    border-top: 16px solid #3498db; */
+    -webkit-animation: myfirst 8s infinite; /* Safari */
+    animation: stockMunch 8s infinite;
+    animation-direction: normal;
+    position: relative;
+    top: 0px;
+  }
+
+@-webkit-keyframes stockMunch {
+    0%   {right: 40px; top: -50px;}
+    90%  {left: 500px; top: -50px;}
+    91%  {left: 500px; top: -200px;}
+    92%  {left: 0px; top: -200px;}
+    100% {left: 0px; top: -100px;}
+}
+
+@keyframes stockMunch {
+    0%   {left: 40px; top: -50px;}
+    90%  {left: 500px; top: -50px;}
+    91%  {left: 500px; top: -200px;}
+    92%  {left: 0px; top: -200px;}
+    100% {left: 0px; top: -100px;}
+}
+
+#loading {
+    display: block;
+    margin: 120px auto -120px auto;
+
+}
+
+.loader {
+    border: 5px solid #f3f3f3;
+    border-radius: 50%;
+    border-top: 5px solid black;
+    width: 120px;
+    height: 120px;
+    -webkit-animation: spin 2s linear infinite; /* Safari */
+    animation: spin 2s linear infinite;
+  }
+  
+  /* Safari */
+  @-webkit-keyframes spin {
+    0% { -webkit-transform: rotate(0deg); }
+    100% { -webkit-transform: rotate(360deg); }
+  }
+  
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }

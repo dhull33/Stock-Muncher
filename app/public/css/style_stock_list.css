@@ -1,0 +1,36 @@
+.Technology {
+    color: blue;
+}
+
+.stockInfo {
+    background-color: black;
+    width: 300px;
+    margin-bottom: 1px;
+}
+
+.stockSymbol {
+    color: white;
+    font-size: 18px;
+}
+
+.stockPrice {
+    float: right;
+    color: yellowgreen;
+    margin: 0 15px 0 0;
+    font-size: 26px;
+}
+
+.stockName {
+    color: grey;
+    font-size: 16px;
+}
+
+.sectorName {
+    float: right;
+}
+
+.stockInfo:hover {
+    background: rgb(42, 31, 159);
+    color: #FFF;
+    cursor: pointer;
+}
