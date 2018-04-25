@@ -66,7 +66,7 @@ function update_sector_price() {
             window.alert("Failed");
             updateUIError();
         })
-        var sectorResponse = ["Rank A: Real-Time Performance", "Rank B: 1 Day Performance", "Rank C: 5 Day Performance", "Rank D: 1 Month Performance", "Rank E: 3 Month Performance", "Rank F: Year-to-Date (YTD) Performance", "Rank G: 1 Year Performance", "Rank H: 3 Year Performance", "Rank I: 5 Year Performance", "Rank J: 10 Year Performance"];
+        var sectorResponse = ["Rank A: Real-Time Performance", "Rank B: 1 Day Performance", "Rank C: 5 Day Performance", "Rank D: 1 Month Performance", "Rank E: 3 Month Performance", "Rank F: Year-to-Date (YTD) Performance", "Rank G: 1 Year Performance", "Rank H: 3 Year Performance", "Rank I: 5 Year Performance"];
         var sectors = ["Energy", "Utilities", "Real Estate", "Consumer Staples", "Health Care", "Materials", "Telecommunication Services", "Industrials", "Information Technology", "Consumer Discretionary", "Financials"]
         // handle success
         function updateUISuccess(response) {
@@ -103,11 +103,10 @@ function update_sector_price() {
                     tdElements[i].classList.add('red');
 
                 }
-                else if(num >= 0){
+                else if(num > 0){
                     tdElements[i].classList.add('green');
 
                 }
-
                 else{
                     tdElements[i].classList.add('j');
                 }

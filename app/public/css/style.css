@@ -3,6 +3,7 @@
 body {
     background-color: #0A2E36;
     color: #27FB6B;
+    overflow-x: hidden;
     /*font-family: 'Cute Font', cursive;*/
     /*font-size: 27px;*/
 }
@@ -17,14 +18,14 @@ body {
 
 #sectorTable th {
     font-weight: 700;
-    border-bottom: 4px solid black;
+    /*border-bottom: 4px solid black;*/
     padding-right: 20px;
 }
 
 #sectorTable td {
     margin-right: 20px;
     border-bottom: 1px dashed black;
-    border-right: 1px solid black;
+    /*border-right: 1px solid black;*/
     text-align: center;
     color: #FBFBFB;
 }
@@ -50,7 +51,7 @@ body {
     width: 100%;
 }
 
-#res span {
+#res span{
     background: black;
     margin-top: -15px;
 }
@@ -69,18 +70,17 @@ body {
 .stockData {
     margin-bottom: 20px;
     background-color:  #0A2E36;
-    min-height: 15px;
 }
 
 .stockSymbol {
     color: white;
     font-size: 18px;
-    width: 25%;
+    /*width: 25%;*/
 }
 
-#blankrow {
+/*#blankrow {
     height: 10px;
-}
+} */
 
 .stockName {
     background-color: black;
@@ -103,7 +103,7 @@ body {
     width: 35%
 }
 
-.stockSybol, .stockSector, .stockPrice {
+.stockSymbol, .stockSector, .stockPrice {
     text-align: center;
 }
 
@@ -113,7 +113,6 @@ body {
     margin-top: 0;
     padding-top: 0;
 }
-
 .modal-content {
     background-color: rgba(17, 33, 36, .6);
     color: gray;
@@ -176,13 +175,13 @@ button[type='submit']{
 
 
 #graphArea {
-    
-    /* height: 500px; */
+    /*background-color: blue;*/
+    max-height: 500vh;
 }
 
-/* #stockSearchArea {
-    background-color: rgb(17, 17, 17)
-} */
+#stockSearchArea {
+    /*background-color: rgb(17, 17, 17)*/
+}
 
 #leftNavBar {
     background-color: floralwhite;
@@ -204,7 +203,7 @@ button[type='submit']{
 }
 
 .j {
-    
+
 }
 
 
@@ -216,6 +215,15 @@ button[type='submit']{
 #stockList td {
     border-bottom: 2px dotted black;
     border-right: 2px dotted black;
+}
+
+table{
+    border: 3px solid white;
+}
+
+.graph{
+    width: 120vw;
+    height: 75vh;
 }
 
 /* Animation section  */
@@ -268,6 +276,17 @@ button[type='submit']{
     -webkit-animation: spin 2s linear infinite; /* Safari */
     animation: spin 2s linear infinite;
   }
+  .graph{
+    width: 110vw;
+    height: 75vh;
+
+}
+
+.filter{
+    width: 90vw;
+    margin: -5rem auto auto 10rem;
+
+}
   
   /* Safari */
   @-webkit-keyframes spin {
@@ -279,3 +298,8 @@ button[type='submit']{
     0% { transform: rotate(0deg); }
     100% { transform: rotate(360deg); }
   }
+ .navB{
+     border-bottom: 1px black solid;
+     background-color: darkslategray;
+     font-family: Arial, Helvetica, sans-serif;
+ }

@@ -1,22 +1,21 @@
 
 google.charts.load('current', {packages: ['corechart', 'controls']});
 
-google.charts.setOnLoadCallback(function(){
-    $("#stockPriceUpdate").on("click", function(e) {
-        console.log(e.target);
-        drawChart();
-    });
-});
+// google.charts.setOnLoadCallback(function(){
+//     $(".stockData").on("click", function() {
+//         drawChart(symbol);
+//     });
+//});
 
 
 
 
-function drawChart() {
+/*function drawChart() {
     (function() {
         console.log("Submitted")
         var url = "https://www.alphavantage.co/query?function=TIME_SERIES_INTRADAY&symbol="
-       var symbol = $("stockSymbol").value;
-        // var symbol = document.getElementById("stockSymbol"); // Added : to end in case autocomplete is not used and only stock symbol is used
+        var symbol = document.getElementById("stockSymbol").value.toUpperCase() + ":"; // Added : to end in case autocomplete is not used and only stock symbol is used
+        symbol = symbol.substr(0, symbol.indexOf(":")); // Keeps symbol only
         console.log(symbol);
 
         //specifies time interval
@@ -147,4 +146,4 @@ function drawChart() {
     })();
 
 };
-
+*/
