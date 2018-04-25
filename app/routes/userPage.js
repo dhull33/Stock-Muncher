@@ -30,7 +30,6 @@ router.get('/userPage',function(req,res){
         // res.render(page to render, object to pass to the page)
         res.render('userPage',{
             pageTitle: "User's Page",
-
             stocks : data
 
         });
