@@ -60,7 +60,11 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 
+<<<<<<< HEAD
 var port = 3004;
+=======
+var port = 3000;
+>>>>>>> 690030f0b7e2f96e9d753d1a41355ca1626fdec1
 
 var myStock = require('./util/updateStockPrices.js');
 

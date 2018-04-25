@@ -66,7 +66,11 @@ function update_sector_price() {
             window.alert("Failed");
             updateUIError();
         })
+<<<<<<< HEAD
         var sectorResponse = ["Rank A: Real-Time Performance", "Rank B: 1 Day Performance", "Rank C: 5 Day Performance", "Rank D: 1 Month Performance", "Rank E: 3 Month Performance", "Rank F: Year-to-Date (YTD) Performance", "Rank G: 1 Year Performance", "Rank H: 3 Year Performance", "Rank I: 5 Year Performance"];
+=======
+        var sectorResponse = ["Rank A: Real-Time Performance", "Rank B: 1 Day Performance", "Rank C: 5 Day Performance", "Rank D: 1 Month Performance", "Rank E: 3 Month Performance", "Rank F: Year-to-Date (YTD) Performance", "Rank G: 1 Year Performance", "Rank H: 3 Year Performance", "Rank I: 5 Year Performance", "Rank J: 10 Year Performance"];
+>>>>>>> 690030f0b7e2f96e9d753d1a41355ca1626fdec1
         var sectors = ["Energy", "Utilities", "Real Estate", "Consumer Staples", "Health Care", "Materials", "Telecommunication Services", "Industrials", "Information Technology", "Consumer Discretionary", "Financials"]
         // handle success
         function updateUISuccess(response) {
@@ -84,7 +88,11 @@ function update_sector_price() {
                 rowHeading.innerHTML = sectors[i];
                 // console.log(sectors[i]);
                 for (let j = 0; j < sectorResponse.length; j++) {
+<<<<<<< HEAD
                     var cell = row.insertCell(j+1);
+=======
+                    var cell = row.insertCell(j + 1);
+>>>>>>> 690030f0b7e2f96e9d753d1a41355ca1626fdec1
 
                     cell.innerHTML = response[sectorResponse[j]][sectors[i]];
                     //console.log(response[sectorResponse[j]][sectors[i]]);

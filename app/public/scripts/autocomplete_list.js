@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 
+=======
+$("#loading").hide();
+>>>>>>> 690030f0b7e2f96e9d753d1a41355ca1626fdec1
 var str = " Stock Muncher.";
 var n = 0;
 var eatenString = " ";
@@ -31,8 +35,14 @@ function typeLines() {
 
 setInterval(typeLines, 400);
 
+<<<<<<< HEAD
 
 // Autocomplete list
+=======
+// Autocomplete list
+$("#loading").hide();
+
+>>>>>>> 690030f0b7e2f96e9d753d1a41355ca1626fdec1
 $(document).ready(function(){
 
     var url = '/api_stocks';
@@ -69,7 +79,11 @@ $(document).ready(function(){
                 console.log(res, 'got a response')
                 if(res.stocks.length){
                     stockData = res.stocks;
+<<<<<<< HEAD
                     var stockDataLength = stockData.length;
+=======
+                    stockDataLength = stockData.length;
+>>>>>>> 690030f0b7e2f96e9d753d1a41355ca1626fdec1
 
                     for (var i = 0; i <= Math.min(stockDataLength, 5);i++) {
                         var stockName = stockData[i].stock_name;
@@ -123,14 +137,24 @@ $(document).ready(function(){
 })
 
 // loads some stock data on page load so that the stock data section is not empty
+<<<<<<< HEAD
 function defaultData() {
+=======
+$(document).ready(function(){
+>>>>>>> 690030f0b7e2f96e9d753d1a41355ca1626fdec1
     var url = '/api_all_stocks';
 
     var success = function(res){
     console.log(res, 'got page load response')
     if(res.stocks.length){
+<<<<<<< HEAD
         var stockData = res.stocks;
         var stockDataLength = stockData.length;
+=======
+        console.log(res);
+        stockData = res.stocks;
+        stockDataLength = stockData.length;
+>>>>>>> 690030f0b7e2f96e9d753d1a41355ca1626fdec1
 
         for (var i = 0; i <= Math.min(stockDataLength, 5);i++) {
             var stockName = stockData[i].stock_name;
@@ -154,6 +178,7 @@ function defaultData() {
         dataType: 'json'
     });
 
+<<<<<<< HEAD
 }
 
 defaultData();
@@ -177,6 +202,34 @@ function drawChart(symbol) {
         //var symbol = document.getElementById("stockSymbol").value.toUpperCase(); // Added : to end in case autocomplete is not used and only stock symbol is used
         //symbol = symbol.substr(0, symbol.indexOf(":")); // Keeps symbol only
         //console.log(symbol);
+=======
+});
+
+// Makes the on click work on page load before the user types anything. Place anything here that should be updated when the user selects a stock.
+$(".stockData").on("click", function(stockLine){ 
+    currentStockSymbol = $(this).html().substring($(this).html().indexOf(">") + 1, $(this).html().indexOf("</td>"));
+    $("#stockSymbol").val(currentStockSymbol); // Keeps stock symbol only in input box
+    
+    $("#loading").addClass("loader");
+    $("#chart_div").hide();
+    $("#loading").show();
+    console.log(this);
+    drawChart(currentStockSymbol);
+    $("#chartTitle").text(currentStockSymbol);
+    
+    company_logo(currentStockSymbol);
+
+    $("#res").empty();
+ });
+
+ function drawChart(symbol) {
+    (function() {
+        console.log("Submitted")
+        var url = "https://www.alphavantage.co/query?function=TIME_SERIES_INTRADAY&symbol="
+       
+        // var symbol = document.getElementById("stockSymbol"); // Added : to end in case autocomplete is not used and only stock symbol is used
+        console.log(symbol);
+>>>>>>> 690030f0b7e2f96e9d753d1a41355ca1626fdec1
 
         //specifies time interval
         var url2 = "&interval=1min&apikey="
@@ -195,6 +248,12 @@ function drawChart(symbol) {
 
         // handle success
         function updateUISuccess(response) {
+<<<<<<< HEAD
+=======
+            $("#chart_div").show();
+            $("#loading").hide();
+            $("#loading").removeClass("loader");
+>>>>>>> 690030f0b7e2f96e9d753d1a41355ca1626fdec1
             console.log(response);
             var timeSeries15 = response["Time Series (1min)"];
 
@@ -203,6 +262,11 @@ function drawChart(symbol) {
             var timeZone = response["Meta Data"]["6. Time Zone"];
             //console.log(timeSeries15[currentDateData]);
 
+<<<<<<< HEAD
+=======
+            console.log('test')
+            console.log(currentDateData.length);
+>>>>>>> 690030f0b7e2f96e9d753d1a41355ca1626fdec1
             var stockPrice = timeSeries15[currentDateData]["4. close"];
 
             // ### CHARTZZZZZZZ ###
@@ -246,6 +310,7 @@ function drawChart(symbol) {
             const data = new google.visualization.arrayToDataTable(newData, true); // Treat first row as data as well
 
             let options = {
+<<<<<<< HEAD
                 title: symbol,
                 titleTextStyle: {
                     color: '#FBFBFB',
@@ -254,6 +319,9 @@ function drawChart(symbol) {
                 },
                 titlePosition: 'out',
                 legend: 'none',
+=======
+                legend: 'right',
+>>>>>>> 690030f0b7e2f96e9d753d1a41355ca1626fdec1
                 colors: ["white"],
                 backgroundColor: '#0A2E36',
                 candlestick: {
@@ -263,8 +331,12 @@ function drawChart(symbol) {
                 hAxis: {
                     title: 'Time',
                     titleTextStyle: {
+<<<<<<< HEAD
                         color: '#FBFBFB',
                         fontSize: 25
+=======
+                        color: '#FBFBFB'
+>>>>>>> 690030f0b7e2f96e9d753d1a41355ca1626fdec1
                     },
                     textStyle: {
                         color: '#FBFBFB'
@@ -273,10 +345,16 @@ function drawChart(symbol) {
                 },
 
                 vAxis: {
+<<<<<<< HEAD
                     title: 'Price',
                     titleTextStyle: {
                         color: '#FBFBFB',
                         fontSize: 25
+=======
+                    title: '$Price',
+                    titleTextStyle: {
+                        color: '#FBFBFB'
+>>>>>>> 690030f0b7e2f96e9d753d1a41355ca1626fdec1
                     },
                     textStyle: {
                         color:'#FBFBFB'
@@ -286,6 +364,7 @@ function drawChart(symbol) {
             };
 
 
+<<<<<<< HEAD
             const dashboard = new google.visualization.Dashboard(document.getElementById('dashboard_div'));
 
             const zoom = new google.visualization.ControlWrapper({
@@ -349,11 +428,21 @@ function drawChart(symbol) {
 
 
             dashboard.draw(data);
+=======
+            const chart = new google.visualization.CandlestickChart(document.getElementById('chart_div'));
+
+
+            chart.draw(data, options);
+>>>>>>> 690030f0b7e2f96e9d753d1a41355ca1626fdec1
 
             // ### Re-sizes and Draws the chart
             function resize () {
                 // change dimensions if necessary
+<<<<<<< HEAD
                 dashboard.draw(data);
+=======
+                chart.draw(data, options);
+>>>>>>> 690030f0b7e2f96e9d753d1a41355ca1626fdec1
             };
 
             if (window.addEventListener) {
@@ -371,4 +460,43 @@ function drawChart(symbol) {
 
     })();
 
+<<<<<<< HEAD
 };
+=======
+};
+
+// To show company logo
+function company_logo(symbol) {
+    (function() {
+        console.log("Submitted")
+        var url = "https://api.iextrading.com/1.0/stock/"
+        //specifies time interval
+        var url2 = "/logo"
+
+
+        // Retreives individual stock prices
+        $.get(url + symbol + url2).done(function(response) {
+            console.log("Success");
+            updateUISuccess(response);
+        }).fail(function(error) {
+            console.log("Failed");
+            alert("Failed. Please Try Again.");
+            updateUIError();
+        })
+
+        // handle success
+        function updateUISuccess(response) {
+            var companyLogo = response["url"];
+            console.log(companyLogo);
+            $("#companyLogo").attr("src", companyLogo);
+        }
+
+        // handle error
+        function updateUIError() {
+            console.log("Fail");
+        }
+
+    })();
+
+}
+>>>>>>> 690030f0b7e2f96e9d753d1a41355ca1626fdec1

@@ -11,7 +11,11 @@ google.charts.setOnLoadCallback(function(){
 
 
 
+<<<<<<< HEAD
 /*function drawChart() {
+=======
+function drawChart() {
+>>>>>>> 690030f0b7e2f96e9d753d1a41355ca1626fdec1
     (function() {
         console.log("Submitted")
         var url = "https://www.alphavantage.co/query?function=TIME_SERIES_INTRADAY&symbol="
@@ -147,4 +151,8 @@ google.charts.setOnLoadCallback(function(){
     })();
 
 };
+<<<<<<< HEAD
 */
+=======
+
+>>>>>>> 690030f0b7e2f96e9d753d1a41355ca1626fdec1
