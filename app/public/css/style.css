@@ -3,6 +3,7 @@
 body {
     background-color: #0A2E36;
     color: #27FB6B;
+    overflow-x: hidden;
     /*font-family: 'Cute Font', cursive;*/
     /*font-size: 27px;*/
 }
@@ -36,7 +37,7 @@ body {
 /* Styles for custom dropdown list */
 #res {
     padding: 0;
-    margin-left: 0;
+    margin-left: 0px;
     background-color: black;
 
 }
@@ -112,7 +113,6 @@ body {
     margin-top: 0;
     padding-top: 0;
 }
-
 .modal-content {
     background-color: rgba(17, 33, 36, .6);
     color: gray;
@@ -222,17 +222,9 @@ table{
 }
 
 .graph{
-    width: 110vw;
+    width: 120vw;
     height: 75vh;
-
 }
-
-.filter{
-    width: 90vw;
-    margin: -5rem auto auto 10rem;
-
-}
-
 
 /* Animation section  */
 #stockMuncherText {
@@ -284,6 +276,17 @@ table{
     -webkit-animation: spin 2s linear infinite; /* Safari */
     animation: spin 2s linear infinite;
   }
+  .graph{
+    width: 110vw;
+    height: 75vh;
+
+}
+
+.filter{
+    width: 90vw;
+    margin: -5rem auto auto 10rem;
+
+}
   
   /* Safari */
   @-webkit-keyframes spin {
@@ -295,4 +298,8 @@ table{
     0% { transform: rotate(0deg); }
     100% { transform: rotate(360deg); }
   }
-
+ .navB{
+     border-bottom: 1px black solid;
+     background-color: darkslategray;
+     font-family: Arial, Helvetica, sans-serif;
+ }

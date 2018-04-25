@@ -40,12 +40,15 @@ router.get('/login', function(req, res){
     console.log(req.user)
     res.render('login')
 
-})
+});
 
 router.post('/login',
   passport.authenticate('local', { successRedirect: '/userPage',
-                                   failureRedirect: '/login'})
+                                   failureRedirect: '/login',
+                                    session: false}
+                                   )
 );
+
 
 passport.use(new LocalStrategy((username, password, done) => {
     db.any('SELECT * FROM users WHERE username=$1', [username]).then ((results) => {
@@ -78,11 +81,12 @@ passport.use(new LocalStrategy((username, password, done) => {
     
 
     
-}))
+}));
+
 passport.serializeUser((user, done) => {
     done(null, user.id)
     
-})
+});
 
 passport.deserializeUser((id, done) => {
     db.one('SELECT id, username FROM users WHERE id = $1', [parseInt(id, 10)]).then( (data) => {
@@ -93,6 +97,5 @@ passport.deserializeUser((id, done) => {
     )//end of promise
     
 })
-
 
 module.exports = router;

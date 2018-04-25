@@ -60,7 +60,7 @@ CREATE TABLE high_score (
     _gain REAL
 );
 
-
+DROP TABLE session;
 
 CREATE TABLE session (
       sid varchar NOT NULL COLLATE "default",
@@ -68,6 +68,4 @@ CREATE TABLE session (
         expire timestamp(6) NOT NULL
 ) WITH (OIDS=FALSE);
 
-ALTER TABLE "session"
-ADD CONSTRAINT "session_pkey"
-PRIMARY KEY("sid") NOT DEFERRABLE INITIALLY IMMEDIATE;
+ALTER TABLE "session" ADD CONSTRAINT "session_pkey" PRIMARY KEY ("sid") NOT DEFERRABLE INITIALLY IMMEDIATE;

@@ -3,7 +3,7 @@ var str = " Stock Muncher.";
 var n = 0;
 var eatenString = " ";
 
-// Stock Munch animation
+// var typeLines = function() { 
 function typeLines() {
 
     var brokenLetterList = ["$"];
@@ -70,7 +70,7 @@ $(document).ready(function(){
                 console.log(res, 'got a response')
                 if(res.stocks.length){
                     stockData = res.stocks;
-                    var stockDataLength = stockData.length;
+                    stockDataLength = stockData.length;
 
                     for (var i = 0; i <= Math.min(stockDataLength, 5);i++) {
                         var stockName = stockData[i].stock_name;
@@ -130,10 +130,9 @@ $(document).ready(function(){
     var success = function(res){
     console.log(res, 'got page load response')
     if(res.stocks.length){
-        var stockData = res.stocks;
-        var stockDataLength = stockData.length;
         console.log(res);
-
+        stockData = res.stocks;
+        stockDataLength = stockData.length;
 
         for (var i = 0; i <= Math.min(stockDataLength, 5);i++) {
             var stockName = stockData[i].stock_name;
@@ -160,247 +159,453 @@ $(document).ready(function(){
 });
 
 // Makes the on click work on page load before the user types anything. Place anything here that should be updated when the user selects a stock.
-$(".stockData").on("click", function(stockLine){
+$(".stockData").on("click", function(stockLine){ 
     var currentStockSymbol = $(this).html().substring($(this).html().indexOf(">") + 1, $(this).html().indexOf("</td>"));
-
-
-    drawChart(currentStockSymbol);
     $("#stockSymbol").val(currentStockSymbol); // Keeps stock symbol only in input box
-    
-    $("#loading").addClass("loader");
-    $("#chart_div").hide();
-    $("#loading").show();
     console.log(this);
     drawChart(currentStockSymbol);
     $("#chartTitle").text(currentStockSymbol);
-    
+    $("#res").empty();
+
     company_logo(currentStockSymbol);
+
 
  });
 
-
  function drawChart(symbol) {
+
     (function() {
+
         console.log("Submitted")
+
         var url = "https://www.alphavantage.co/query?function=TIME_SERIES_INTRADAY&symbol="
-       
+
         // var symbol = document.getElementById("stockSymbol"); // Added : to end in case autocomplete is not used and only stock symbol is used
+
         console.log(symbol);
 
 
+
+
+
         //specifies time interval
+
         var url2 = "&interval=1min&apikey="
+
         var apiKey = "3SW8F3VSYVSP0VAZ";
 
 
+
+
+
         // Retreives individual stock prices
+
         $.get(url + symbol + url2 + apiKey).done(function(response) {
+
             console.log("Success");
+
             updateUISuccess(response);
+
         }).fail(function(error) {
+
             console.log("Failed");
+
             alert("Failed. Please Try Again.");
+
             updateUIError();
+
         })
 
+
+
         // handle success
+
         function updateUISuccess(response) {
 
+
+
             console.log(response);
+
             var timeSeries15 = response["Time Series (1min)"];
 
+
+
             //Use object.keys to access data
+
             var currentDateData = Object.keys(timeSeries15)[0];
+
             var timeZone = response["Meta Data"]["6. Time Zone"];
+
             //console.log(timeSeries15[currentDateData]);
+
+
+
 
 
             var stockPrice = timeSeries15[currentDateData]["4. close"];
 
+
+
             // ### CHARTZZZZZZZ ###
 
+
+
             // array that holds intra-day prices
+
             const todayDate= currentDateData.slice(0,10);
+
+
 
             let newData = [];
 
+
+
             const accessStrings = ['1. open', '2. high', '3. low', '4. close']
+
             for(let i=0; i < Object.keys(timeSeries15).length; i++) {
 
+
+
                 let curDateData = Object.keys(timeSeries15)[i];
+
                 let testDate = currentDateData.slice(0,10);
 
+
+
                 if (testDate == todayDate) {
+
                     let date= new Date(curDateData);
+
+
 
                     let points = timeSeries15[curDateData];
 
+
+
                     let rows = [date, parseFloat(points['3. low']), parseFloat(points['1. open']), parseFloat(points['4. close']), parseFloat(points['2. high']) ];
+
+
 
                     newData.push(rows);
 
+
+
                 }
+
                 else{
+
                     continue;
+
                 }
+
             }
 
+
+
             //console.log("");
+
             //console.log(newData);
+
             //console.log(timeSeries15.length);
+
+
+
+
 
 
 
             //Load google charts
 
+
+
             //Draws chart
+
+
 
             const data = new google.visualization.arrayToDataTable(newData, true); // Treat first row as data as well
 
+
+
             let options = {
 
+
+
                 title: symbol,
+
                 titleTextStyle: {
+
                     color: '#FBFBFB',
+
                     fontSize: 35,
+
                     bold: true
+
                 },
+
                 titlePosition: 'out',
+
                 legend: 'none',
+
                 colors: ["white"],
+
                 backgroundColor: '#0A2E36',
+
                 candlestick: {
+
                     fallingColor: { strokeWidth: 0, stroke: 'black', fill: '#a52714' }, // red
+
                     risingColor: { strokeWidth: 0, stroke: 'black', fill: '#0f9d58' }   // green
+
                 },
+
                 hAxis: {
+
                     title: 'Time',
+
                     titleTextStyle: {
+
                         color: '#FBFBFB',
+
                         fontSize: 25
 
 
+
+
+
                     },
+
                     textStyle: {
+
                         color: '#FBFBFB'
+
                     },
+
                     viewWindowMode: 'pretty',
+
                 },
+
+
 
                 vAxis: {
 
+
+
                     title: 'Price',
+
                     titleTextStyle: {
+
                         color: '#FBFBFB',
+
                         fontSize: 25
 
+
+
                     },
+
                     textStyle: {
+
                         color:'#FBFBFB'
+
                     }
+
                 }
 
+
+
             };
+
+
+
+
 
 
 
             const dashboard = new google.visualization.Dashboard(document.getElementById('dashboard_div'));
 
+
+
             const zoom = new google.visualization.ControlWrapper({
+
                 'controlType': 'ChartRangeFilter',
+
                 'containerId': 'filter_div',
+
                 'options': {
+
                     'filterColumnIndex': 0
+
                 }
+
             });
+
+
+
 
 
             const candleStick = new google.visualization.ChartWrapper({
+
                 'chartType': 'CandlestickChart',
+
                 'containerId': 'chart_div',
+
                 'options': {
+
                     'title': symbol,
+
                     'titleTextStyle': {
+
                         'color': '#FBFBFB',
+
                         'fontSize': 35,
+
                         'bold': true
+
                     },
+
                     'titlePosition': 'out',
+
                     'legend': 'none',
+
                     'colors': ["white"],
+
                     'backgroundColor': '#0A2E36',
+
                     'candlestick': {
+
                         'fallingColor': { 'strokeWidth': 0, 'stroke': 'black', 'fill': '#a52714' }, // red
+
                         'risingColor': { 'strokeWidth': 0, 'stroke': 'black', 'fill': '#0f9d58' }   // green
+
                     },
+
                     'hAxis': {
+
                         'textStyle': {
+
                             'color': '#FBFBFB'
+
                         },
+
                         'viewWindowMode': 'pretty',
+
                     },
+
+
 
                     'vAxis': {
+
                         'title': 'Price',
+
                         'titleTextStyle': {
+
                             'color': '#FBFBFB',
+
                             'fontSize': 25
+
                         },
+
                         'textStyle': {
+
                             'color':'#FBFBFB'
+
                         }
+
                     },
+
                     'ui':{
+
                     'chartOptions': {
+
                         'backgroundColor': '#0A2E36',
+
                         'legend': {
+
                             'position': 'top'
 
-                        }
+
 
                         }
+
+
+
+                        }
+
                     }
+
                 }
+
             });
+
+
 
             dashboard.bind(zoom, candleStick);
 
 
+
+
+
             dashboard.draw(data);
+
+
 
             const chart = new google.visualization.CandlestickChart(document.getElementById('chart_div'));
 
 
 
+
+
+
+
             // ### Re-sizes and Draws the chart
+
             function resize () {
+
                 // change dimensions if necessary
+
                 dashboard.draw(data);
+
+
 
             };
 
+
+
             if (window.addEventListener) {
+
                 window.addEventListener('resize', resize);
+
             }
+
             else {
+
                 window.attachEvent('onresize', resize);
+
             }
+
         }
 
+
+
         // handle error
+
         function updateUIError() {
+
             console.log("FailGraph");
+
         }
+
+
 
     })();
 
 
+
+
+
 };
 
-
-// To show company logo
 function company_logo(symbol) {
-    (function () {
+    (function() {
         console.log("Submitted")
         var url = "https://api.iextrading.com/1.0/stock/"
         //specifies time interval
@@ -408,10 +613,10 @@ function company_logo(symbol) {
 
 
         // Retreives individual stock prices
-        $.get(url + symbol + url2).done(function (response) {
+        $.get(url + symbol + url2).done(function(response) {
             console.log("Success");
             updateUISuccess(response);
-        }).fail(function (error) {
+        }).fail(function(error) {
             console.log("Failed");
             alert("Failed. Please Try Again.");
             updateUIError();

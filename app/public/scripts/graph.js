@@ -1,11 +1,11 @@
 
 google.charts.load('current', {packages: ['corechart', 'controls']});
 
-google.charts.setOnLoadCallback(function(){
-    $("#stockPriceUpdate").on("click", function() {
-        drawChart(symbol);
-    });
-});
+// google.charts.setOnLoadCallback(function(){
+//     $(".stockData").on("click", function() {
+//         drawChart(symbol);
+//     });
+//});
 
 
 
@@ -14,8 +14,8 @@ google.charts.setOnLoadCallback(function(){
     (function() {
         console.log("Submitted")
         var url = "https://www.alphavantage.co/query?function=TIME_SERIES_INTRADAY&symbol="
-        var symbol = document.getElementById("stockSymbol").value.toUpperCase(); // Added : to end in case autocomplete is not used and only stock symbol is used
-        //symbol = symbol.substr(0, symbol.indexOf(":")); // Keeps symbol only
+        var symbol = document.getElementById("stockSymbol").value.toUpperCase() + ":"; // Added : to end in case autocomplete is not used and only stock symbol is used
+        symbol = symbol.substr(0, symbol.indexOf(":")); // Keeps symbol only
         console.log(symbol);
 
         //specifies time interval
@@ -36,13 +36,15 @@ google.charts.setOnLoadCallback(function(){
         // handle success
         function updateUISuccess(response) {
             console.log(response);
-            var timeSeries15 = response["Time Series (15min)"];
+            var timeSeries15 = response["Time Series (1min)"];
 
             //Use object.keys to access data
             var currentDateData = Object.keys(timeSeries15)[0];
             var timeZone = response["Meta Data"]["6. Time Zone"];
             //console.log(timeSeries15[currentDateData]);
 
+            console.log('test')
+            console.log(currentDateData.length);
             var stockPrice = timeSeries15[currentDateData]["4. close"];
 
             // ### CHARTZZZZZZZ ###
@@ -144,6 +146,4 @@ google.charts.setOnLoadCallback(function(){
     })();
 
 };
-
 */
-
