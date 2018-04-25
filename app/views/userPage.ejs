@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <!--Head.ejs goes here-->
+        <% include partials/template/head.ejs %>
+    </head>
+<body>
+<!-- CONTENT GOES HERE -->
+    <!-- Stock muncher animation -->
+    
+
+    <!-- CONTENT GOES HERE -->
+    <% include partials/template/navBar.ejs %>
+    
+    <h1 id="stockMuncherText">Stock Monster</h1>
+    <img id="logo" src="images/scaryPac.svg" class="topAnimation">
+  
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm">
+
+                <h1 style="display: flex; justify-content: center">Sector Performance</h1>
+                <table id="sectorTable" class="table table-bordered">
+                    <tr>
+                        <th>Sector Name</th>
+                        <th>Real Time</th>
+                        <th>1 Day</th>
+                        <th>5 Day</th>
+                        <th>1 Month</th>
+                        <th>3 Month</th>
+                        <th>YTD</th>
+                        <th>1 Year</th>
+                        <th>3 Year</th>
+                        <th>5 Year</th>
+                    </tr>
+                </table>
+
+            </div>
+
+            <div class="row" style="margin-left: 3vw;">
+
+                <div id="stockSearchArea" class="col-sm">
+                    <form class="form-inline my-lg-0">
+
+                        <input id="stockSymbol" list="stockSymbolList" class="form-control" type="search" placeholder="Ticker Symbol" aria-label="Search" autocomplete="off">
+
+                        <button id='stockPriceUpdate' class="btn btn-outline-success my-2 my-sm-0" type="submit" data-target=""><i class="fa fa-search"></i></button>
+
+
+
+                    </form>
+                    <!-- Stock List autocomplete table -->
+
+                    <table id="stockListTable" class="table table-bordered">
+                        <div>
+                            <tr>
+                                <td colspan="4" class="stockName stockName0"></td>
+                            </tr>
+                            <tr class="stockData">
+                                <td class="stockSymbol stockSymbol0"></td>
+                                <td class="stockSector stockSector0"> </td>
+                                <td class="stockPrice stockPrice0"> </td>
+                            </tr>
+
+                        </div>
+                        <tr id="blankrow">
+                        </tr>
+                        <div>
+                            <tr>
+                                <td colspan="4" class="stockName stockName1"></td>
+                            </tr>
+                            <tr class="stockData">
+                                <td class="stockSymbol stockSymbol1"></td>
+                                <td class="stockSector stockSector1"></td>
+                                <td class="stockPrice stockPrice1"></td>
+                            </tr>
+                        </div>
+
+                        <tr id="blankrow">
+                        </tr>
+                        <div >
+                            <tr>
+                                <td colspan="4" class="stockName stockName2"></td>
+                            </tr>
+                            <tr class="stockData">
+                                <td class="stockSymbol stockSymbol2"></td>
+                                <td class="stockSector stockSector2"> </td>
+                                <td class="stockPrice stockPrice2"></td>
+                            </tr>
+                        </div>
+
+
+                    <tr id="blankrow">
+                    </tr>
+                    <div>
+                        <tr>
+                            <td colspan="4" class="stockName stockName3"></td>
+                        </tr>
+                        <tr class="stockData">
+                            <td class="stockSymbol stockSymbol3"></td>
+                            <td class="stockSector stockSector3"></td>
+                            <td class="stockPrice stockPrice3"></td>
+                        </tr>
+                    </div>
+                    <tr id="blankrow">
+                    </tr>
+                    <div>
+                        <tr>
+                            <td colspan="4" class="stockName stockName4"></td>
+                        </tr>
+                        <tr class="stockData">
+                            <td class="stockSymbol stockSymbol4"></td>
+                            <td class="stockSector stockSector4"></td>
+                            <td class="stockPrice stockPrice4"></td>
+                        </tr>
+                    </div>
+
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="dashboard_div" >
+    <div id='chart_div' class="container-fluid graph"></div>
+    <div id="filter_div" class="d-flex justify-content-center filter"></div>
+</div>
+
+<div id="news" class="container-fluid"></div>
+
+        <% include partials/template/footer.ejs %>
+
+</body>
+
+    <!-- end.ejs goes here -->
+    <% include partials/template/end.ejs %>
+</html>
