@@ -130,14 +130,10 @@ $(document).ready(function(){
     var success = function(res){
     console.log(res, 'got page load response')
     if(res.stocks.length){
-<<<<<<< HEAD
         var stockData = res.stocks;
         var stockDataLength = stockData.length;
-=======
         console.log(res);
-        stockData = res.stocks;
-        stockDataLength = stockData.length;
->>>>>>> 690030f0b7e2f96e9d753d1a41355ca1626fdec1
+
 
         for (var i = 0; i <= Math.min(stockDataLength, 5);i++) {
             var stockName = stockData[i].stock_name;
@@ -180,21 +176,8 @@ $(".stockData").on("click", function(stockLine){
     
     company_logo(currentStockSymbol);
 
-<<<<<<< HEAD
  });
 
-
-//Draws Chart
-function drawChart(symbol) {
-    (function() {
-        console.log("Submitted")
-        var url = "https://www.alphavantage.co/query?function=TIME_SERIES_INTRADAY&symbol="
-        //var symbol = document.getElementById("stockSymbol").value.toUpperCase(); // Added : to end in case autocomplete is not used and only stock symbol is used
-        //symbol = symbol.substr(0, symbol.indexOf(":")); // Keeps symbol only
-        //console.log(symbol);
-=======
-    $("#res").empty();
- });
 
  function drawChart(symbol) {
     (function() {
@@ -203,7 +186,7 @@ function drawChart(symbol) {
        
         // var symbol = document.getElementById("stockSymbol"); // Added : to end in case autocomplete is not used and only stock symbol is used
         console.log(symbol);
->>>>>>> 690030f0b7e2f96e9d753d1a41355ca1626fdec1
+
 
         //specifies time interval
         var url2 = "&interval=1min&apikey="
@@ -222,12 +205,7 @@ function drawChart(symbol) {
 
         // handle success
         function updateUISuccess(response) {
-<<<<<<< HEAD
-=======
-            $("#chart_div").show();
-            $("#loading").hide();
-            $("#loading").removeClass("loader");
->>>>>>> 690030f0b7e2f96e9d753d1a41355ca1626fdec1
+
             console.log(response);
             var timeSeries15 = response["Time Series (1min)"];
 
@@ -236,11 +214,7 @@ function drawChart(symbol) {
             var timeZone = response["Meta Data"]["6. Time Zone"];
             //console.log(timeSeries15[currentDateData]);
 
-<<<<<<< HEAD
-=======
-            console.log('test')
-            console.log(currentDateData.length);
->>>>>>> 690030f0b7e2f96e9d753d1a41355ca1626fdec1
+
             var stockPrice = timeSeries15[currentDateData]["4. close"];
 
             // ### CHARTZZZZZZZ ###
