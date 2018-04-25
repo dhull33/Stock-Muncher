@@ -24,11 +24,15 @@ var apiKey = "3SW8F3VSYVSP0VAZ";
 
 router.get('/userPage',function(req,res){
     var symbol = req.body.stock_symbol
+    var user= req.user.username
     db.any('SELECT * FROM stocks').then(function(data){
 
         // res.render(page to render, object to pass to the page)
         res.render('userPage',{
             pageTitle: "User's Page",
+
+            stocks : data,
+            user : user,
             stocks : data
         });
     })

@@ -1,4 +1,39 @@
+$("#loading").hide();
+var str = " Stock Muncher.";
+var n = 0;
+var eatenString = " ";
+
+// Stock Munch animation
+function typeLines() {
+
+    var brokenLetterList = ["$"];
+    var strLen = str.length;
+
+    if (n < strLen) {
+        newStrArray = str.substring(n, strLen);
+    }
+    
+    n += 2; // to eat two letters at a time
+
+    if (n >= strLen + 24) { // Added 24 to make sure timing is right at the time the stock muncher is not earing the letters
+        n = 0;
+        eatenString = "";
+    }
+    if (n > 2 && n <= strLen) {
+        eatenString += brokenLetterList[Math.floor(Math.random() * brokenLetterList.length)];
+    }
+    
+
+    $("#stockMuncherText").html(eatenString + newStrArray);
+    //$("#text").html(j);
+        
+}
+
+setInterval(typeLines, 400);
+
 // Autocomplete list
+$("#loading").hide();
+
 $(document).ready(function(){
 
     var url = '/api_stocks';
@@ -89,14 +124,20 @@ $(document).ready(function(){
 })
 
 // loads some stock data on page load so that the stock data section is not empty
-function defaultData() {
+$(document).ready(function(){
     var url = '/api_all_stocks';
 
     var success = function(res){
     console.log(res, 'got page load response')
     if(res.stocks.length){
+<<<<<<< HEAD
         var stockData = res.stocks;
         var stockDataLength = stockData.length;
+=======
+        console.log(res);
+        stockData = res.stocks;
+        stockDataLength = stockData.length;
+>>>>>>> 690030f0b7e2f96e9d753d1a41355ca1626fdec1
 
         for (var i = 0; i <= Math.min(stockDataLength, 5);i++) {
             var stockName = stockData[i].stock_name;
@@ -120,9 +161,7 @@ function defaultData() {
         dataType: 'json'
     });
 
-}
-
-defaultData();
+});
 
 // Makes the on click work on page load before the user types anything. Place anything here that should be updated when the user selects a stock.
 $(".stockData").on("click", function(stockLine){
@@ -131,7 +170,17 @@ $(".stockData").on("click", function(stockLine){
 
     drawChart(currentStockSymbol);
     $("#stockSymbol").val(currentStockSymbol); // Keeps stock symbol only in input box
+    
+    $("#loading").addClass("loader");
+    $("#chart_div").hide();
+    $("#loading").show();
+    console.log(this);
+    drawChart(currentStockSymbol);
+    $("#chartTitle").text(currentStockSymbol);
+    
+    company_logo(currentStockSymbol);
 
+<<<<<<< HEAD
  });
 
 
@@ -143,6 +192,18 @@ function drawChart(symbol) {
         //var symbol = document.getElementById("stockSymbol").value.toUpperCase(); // Added : to end in case autocomplete is not used and only stock symbol is used
         //symbol = symbol.substr(0, symbol.indexOf(":")); // Keeps symbol only
         //console.log(symbol);
+=======
+    $("#res").empty();
+ });
+
+ function drawChart(symbol) {
+    (function() {
+        console.log("Submitted")
+        var url = "https://www.alphavantage.co/query?function=TIME_SERIES_INTRADAY&symbol="
+       
+        // var symbol = document.getElementById("stockSymbol"); // Added : to end in case autocomplete is not used and only stock symbol is used
+        console.log(symbol);
+>>>>>>> 690030f0b7e2f96e9d753d1a41355ca1626fdec1
 
         //specifies time interval
         var url2 = "&interval=1min&apikey="
@@ -161,6 +222,12 @@ function drawChart(symbol) {
 
         // handle success
         function updateUISuccess(response) {
+<<<<<<< HEAD
+=======
+            $("#chart_div").show();
+            $("#loading").hide();
+            $("#loading").removeClass("loader");
+>>>>>>> 690030f0b7e2f96e9d753d1a41355ca1626fdec1
             console.log(response);
             var timeSeries15 = response["Time Series (1min)"];
 
@@ -169,6 +236,11 @@ function drawChart(symbol) {
             var timeZone = response["Meta Data"]["6. Time Zone"];
             //console.log(timeSeries15[currentDateData]);
 
+<<<<<<< HEAD
+=======
+            console.log('test')
+            console.log(currentDateData.length);
+>>>>>>> 690030f0b7e2f96e9d753d1a41355ca1626fdec1
             var stockPrice = timeSeries15[currentDateData]["4. close"];
 
             // ### CHARTZZZZZZZ ###
@@ -212,6 +284,7 @@ function drawChart(symbol) {
             const data = new google.visualization.arrayToDataTable(newData, true); // Treat first row as data as well
 
             let options = {
+
                 title: symbol,
                 titleTextStyle: {
                     color: '#FBFBFB',
@@ -231,6 +304,8 @@ function drawChart(symbol) {
                     titleTextStyle: {
                         color: '#FBFBFB',
                         fontSize: 25
+
+
                     },
                     textStyle: {
                         color: '#FBFBFB'
@@ -239,10 +314,12 @@ function drawChart(symbol) {
                 },
 
                 vAxis: {
+
                     title: 'Price',
                     titleTextStyle: {
                         color: '#FBFBFB',
                         fontSize: 25
+
                     },
                     textStyle: {
                         color:'#FBFBFB'
@@ -250,6 +327,7 @@ function drawChart(symbol) {
                 }
 
             };
+
 
 
             const dashboard = new google.visualization.Dashboard(document.getElementById('dashboard_div'));
@@ -316,10 +394,15 @@ function drawChart(symbol) {
 
             dashboard.draw(data);
 
+            const chart = new google.visualization.CandlestickChart(document.getElementById('chart_div'));
+
+
+
             // ### Re-sizes and Draws the chart
             function resize () {
                 // change dimensions if necessary
                 dashboard.draw(data);
+
             };
 
             if (window.addEventListener) {
@@ -337,4 +420,41 @@ function drawChart(symbol) {
 
     })();
 
+
 };
+
+
+// To show company logo
+function company_logo(symbol) {
+    (function () {
+        console.log("Submitted")
+        var url = "https://api.iextrading.com/1.0/stock/"
+        //specifies time interval
+        var url2 = "/logo"
+
+
+        // Retreives individual stock prices
+        $.get(url + symbol + url2).done(function (response) {
+            console.log("Success");
+            updateUISuccess(response);
+        }).fail(function (error) {
+            console.log("Failed");
+            alert("Failed. Please Try Again.");
+            updateUIError();
+        })
+
+        // handle success
+        function updateUISuccess(response) {
+            var companyLogo = response["url"];
+            console.log(companyLogo);
+            $("#companyLogo").attr("src", companyLogo);
+        }
+
+        // handle error
+        function updateUIError() {
+            console.log("Fail");
+        }
+
+    })();
+
+}

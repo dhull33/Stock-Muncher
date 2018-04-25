@@ -7,6 +7,14 @@
     </head>
 <body>
 <!-- CONTENT GOES HERE -->
+
+    <!-- Stock muncher animation -->
+    <h1 id="stockMuncherText">Stock Monster</h1>
+    <img id="logo" src="images/scaryPac.svg" class="topAnimation">
+  
+
+    <!-- CONTENT GOES HERE -->
+
     <% include partials/template/navBar.ejs %>
 
     <div class="container-fluid">
@@ -57,7 +65,7 @@
                             </tr>
 
                         </div>
-                        <tr id="blankrow">
+                        <tr>
                         </tr>
                         <div>
                             <tr>
@@ -70,7 +78,7 @@
                             </tr>
                         </div>
 
-                        <tr id="blankrow">
+                        <tr>
                         </tr>
                         <div >
                             <tr>
@@ -84,7 +92,7 @@
                         </div>
 
 
-                    <tr id="blankrow">
+                    <tr>
                     </tr>
                     <div>
                         <tr>
@@ -96,7 +104,7 @@
                             <td class="stockPrice stockPrice3"></td>
                         </tr>
                     </div>
-                    <tr id="blankrow">
+                    <tr>
                     </tr>
                     <div>
                         <tr>
@@ -115,10 +123,14 @@
     </div>
 </div>
 
+
 <div id="dashboard_div" >
     <div id='chart_div' class="container-fluid graph"></div>
     <div id="filter_div" class="d-flex justify-content-center filter"></div>
 </div>
+
+
+
 <div id="news" class="container-fluid"></div>
 
         <% include partials/template/footer.ejs %>
