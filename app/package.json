@@ -1,0 +1,47 @@
+{
+  "name": "beat_the_market",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app/app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "bluebird": "^3.5.5",
+    "body-parser": "^1.19.0",
+    "cheerio": "^1.0.0-rc.3",
+    "connect-pg-simple": "^4.2.1",
+    "cookie-parser": "^1.4.4",
+    "easy-autocomplete": "^1.3.5",
+    "ejs": "^2.6.2",
+    "encodeurl": "^1.0.2",
+    "express": "^4.17.1",
+    "express-session": "^1.16.2",
+    "finalhandler": "^1.1.2",
+    "jquery": "^3.4.1",
+    "jquery-csv": "^0.8.12",
+    "merge-descriptors": "^1.0.1",
+    "node-fetch": "^2.6.0",
+    "passport": "^0.4.0",
+    "passport-local": "^1.0.0",
+    "pg": "^7.11.0",
+    "pg-hstore": "^2.3.3",
+    "pg-promise": "^8.7.2",
+    "request": "^2.88.0",
+    "sequelize": "^4.44.0",
+    "serialize": "^0.1.3",
+    "serialized": "^1.0.0"
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Adrian-Jablonski/Beat_the_Market.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Adrian-Jablonski/Beat_the_Market/issues"
+  },
+  "homepage": "https://github.com/Adrian-Jablonski/Beat_the_Market#readme"
+}
