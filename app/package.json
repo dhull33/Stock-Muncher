@@ -21,7 +21,7 @@
     "express": "^4.17.1",
     "express-session": "^1.16.2",
     "finalhandler": "^1.1.2",
-    "jquery": "^3.4.1",
+    "jquery": "^3.5.0",
     "jquery-csv": "^0.8.12",
     "merge-descriptors": "^1.0.1",
     "node-fetch": "^2.6.0",
